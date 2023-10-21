@@ -1,0 +1,121 @@
+<Loomenes-header-navigator></Loomenes-header-navigator>
+
+<header>
+  <div class="Baners">
+    <img class="imgBaners" [src]="imgBaners" />
+    <div class="overlay"></div>
+    <div class="textBanners">
+      <h1 class="textBanners1">ˈLoomənəs</h1>
+      <h1 class="textBanners2">SẠCH SẼ</h1>
+      <h1 class="textBanners2">SÁNG BÓNG</h1>
+      <br />
+      <h1 class="textBanners3">
+        Dịch vụ giặt giày chất lượng, để bước chân của bạn luôn tự tin
+      </h1>
+      <h1 class="textBanners3">trên mọi nẻo đường</h1>
+    </div>
+
+    <button class="buttonBanners">Đặt lịch ngay</button>
+  </div>
+</header>
+
+<div class="introduce">
+  <h1 class="introduceTitle">Lý Do Chọn ˈLoomənəs</h1>
+  <h1 class="introduceParagraph">
+    Với 4 năm kinh nghiệm trong lĩnh vực vệ sinh và phục chế, sửa chữa giày đồ
+    hiệu, ˈloomənəs cam kết mang <br />lại cho khách hàng trải nghiệm dịch vụ
+    tốt nhất
+  </h1>
+
+  <div class="introduceContents">
+    <div class="introduceStickers">
+      <img [src]="stickerBag" />
+      <h1 class="introduceNote">Hơn 100.00+ sản phẩm đã <br />được bán</h1>
+    </div>
+    <div class="introduceStickers">
+      <img [src]="stickerPackage" />
+      <h1 class="introduceNote">
+        Tiện ích giao nhận 2 chiều tiện <br />lợi,giao và nhận đồ tại nhà
+      </h1>
+    </div>
+    <div class="introduceStickers">
+      <img [src]="stickerShoe" />
+      <h1 class="introduceNote">
+        Hơn 300.000 + đôi giày <br />đã được vệ sinh
+      </h1>
+    </div>  
+  </div>
+
+</div>
+
+<div class="bns">
+  <img class="bnsBackgroundImage" [src]="bns" />
+  <div class="bnsContent">
+    <div class="text">
+      <h1 class="text1">ˈLoomənəs</h1>
+      <h1 class="text2">TƯ VẤN MIỄN PHÍ</h1>
+      <h1 class="text3">Sửa Chữa, Phục Hồi, Custom Giày</h1>
+      <button class="button">CHAT NGAY</button>
+    </div>
+
+    <div
+      class="box-scroll"
+      #scrollBox
+      (mousedown)="onMouseDown($event)"
+      (mouseup)="onMouseUp()"
+      (mousemove)="onMouseMove($event)"
+      (mouseleave)="onMouseLeave()"
+    >
+      <img [src]="scroll_box_img1" draggable="false" />
+      <img [src]="scroll_box_img2" draggable="false" />
+      <img [src]="scroll_box_img3" draggable="false" />
+      <img [src]="scroll_box_img4" draggable="false" />
+    </div>
+  </div>
+</div>
+
+<div class="services">
+  <div class="title">
+    <h1 class="text1">Dịch vụ</h1>
+    <h1 class="text2">Preview</h1>
+  </div>
+
+  <div class="contents"><div>
+    <img [src]="">
+    <div class="overlay"></div>
+  </div>
+  <div>
+    <img [src]="">
+    <div class="overlay"></div>
+  </div>
+  <div>
+    <img [src]="">
+    <div class="overlay"></div>
+  </div>
+  <div>
+    <img [src]="">
+    <div class="overlay"></div>
+  </div>
+  <div>
+    <img [src]="">
+    <div class="overlay"></div>
+  </div>
+  <div>
+    <img [src]="">
+    <div class="overlay"></div>
+  </div>
+  <div>
+    <img [src]="">
+    <div class="overlay"></div>
+  </div></div>
+
+  <div class="btnPagination"><button>Trước</button><button>Sau</button></div>
+  <div class="btnNavServiceLayout">
+    <button class="btnNavService">
+      <img [src]="iconMenuBook" />
+      <p>BẢNG GIÁ DỊCH VỤ</p>
+    </button>
+  </div>
+</div>
+
+
