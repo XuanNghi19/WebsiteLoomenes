@@ -1,65 +1,75 @@
-<Loomenes-header-navigator></Loomenes-header-navigator>
-
 <header>
-  <div class="Baners">
-    <img class="imgBaners" [src]="imgBaners" />
-    <div class="overlay"></div>
-    <div class="textBanners">
-      <h1 class="textBanners1">ˈLoomənəs</h1>
-      <h1 class="textBanners2">SẠCH SẼ</h1>
-      <h1 class="textBanners2">SÁNG BÓNG</h1>
+  <div class="flex relative">
+    <img class="h-[826px]" [src]="imgBaners" />
+    <div class="absolute w-full h-[826px] bg-black bg-opacity-40"></div>
+    <div class="absolute text-white mt-[351px] ml-[258px]">
+      <h1 class="font-playfairDisplay font-bold text-[20px]">ˈLoomənəs</h1>
+      <h1 class="font-extrabold text-[52px]">SẠCH SẼ</h1>
+      <h1 class="font-extrabold text-[52px]">SÁNG BÓNG</h1>
       <br />
-      <h1 class="textBanners3">
+      <h1 class="font-semibold text-[18px]">
         Dịch vụ giặt giày chất lượng, để bước chân của bạn luôn tự tin
       </h1>
-      <h1 class="textBanners3">trên mọi nẻo đường</h1>
+      <h1 class="font-semibold text-[18px]">trên mọi nẻo đường</h1>
+      <button
+        class="border-2 border-color-amber rounded-[10px] w-[267px] h-[72px] font-bold text-[16px] text-color-amber uppercase mt-[48px] hover:bg-color-amber hover:text-color-boldYellow"
+      >
+        Đặt lịch ngay
+      </button>
     </div>
-
-    <button class="buttonBanners">Đặt lịch ngay</button>
   </div>
 </header>
 
-<div class="introduce">
-  <h1 class="introduceTitle">Lý Do Chọn ˈLoomənəs</h1>
-  <h1 class="introduceParagraph">
+<div class="bg-white h-[779px] flex flex-col items-center">
+  <h1 class="capitalize font-bold text-[48px] mt-[67px]">
+    Lý Do Chọn ˈLoomənəs
+  </h1>
+  <h1 class="font-semibold text-center text-[20px] mt-[29px]">
     Với 4 năm kinh nghiệm trong lĩnh vực vệ sinh và phục chế, sửa chữa giày đồ
     hiệu, ˈloomənəs cam kết mang <br />lại cho khách hàng trải nghiệm dịch vụ
     tốt nhất
   </h1>
 
-  <div class="introduceContents">
-    <div class="introduceStickers">
-      <img [src]="stickerBag" />
-      <h1 class="introduceNote">Hơn 100.00+ sản phẩm đã <br />được bán</h1>
+  <div class="flex justify-center items-center gap-[167px] mt-[132px]">
+    <div class="flex flex-col items-center">
+      <img class="" [src]="stickerBag" />
+      <h1 class="text-center font-semibold text-[20px] mt-[92px]">
+        Hơn 100.00+ sản phẩm đã <br />được bán
+      </h1>
     </div>
-    <div class="introduceStickers">
+    <div class="flex flex-col items-center">
       <img [src]="stickerPackage" />
-      <h1 class="introduceNote">
+      <h1 class="text-center font-semibold text-[20px] mt-[92px]">
         Tiện ích giao nhận 2 chiều tiện <br />lợi,giao và nhận đồ tại nhà
       </h1>
     </div>
-    <div class="introduceStickers">
+    <div class="flex flex-col items-center">
       <img [src]="stickerShoe" />
-      <h1 class="introduceNote">
+      <h1 class="text-center font-semibold text-[20px] mt-[92px]">
         Hơn 300.000 + đôi giày <br />đã được vệ sinh
       </h1>
-    </div>  
+    </div>
   </div>
-
 </div>
 
-<div class="bns">
-  <img class="bnsBackgroundImage" [src]="bns" />
-  <div class="bnsContent">
-    <div class="text">
-      <h1 class="text1">ˈLoomənəs</h1>
-      <h1 class="text2">TƯ VẤN MIỄN PHÍ</h1>
-      <h1 class="text3">Sửa Chữa, Phục Hồi, Custom Giày</h1>
-      <button class="button">CHAT NGAY</button>
+<div class="h-[410px] flex justify-center">
+  <img class="absolute h-[410px] w-[1440px]" [src]="bns" />
+  <div class="h-[410px] absolute flex items-center justify-center gap-[189px]">
+    <div class="text-center font-openSans">
+      <h1 class="text-[36px] font-semibold font-playfairDisplay">ˈLoomənəs</h1>
+      <h1 class="text-[48px] font-bold uppercase mt-[26px]">TƯ VẤN MIỄN PHÍ</h1>
+      <h1 class="text-[40px] font-semibold capitalize mt-[22px]">
+        Sửa Chữa, Phục Hồi, Custom Giày
+      </h1>
+      <button
+        class="w-[267px] h-[72px] rounded-[10px] bg-white font-semibold text-[24px] uppercase mt-[42px] hover:text-white hover:bg-black"
+      >
+        CHAT NGAY
+      </button>
     </div>
 
     <div
-      class="box-scroll"
+      class="h-[352px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[7px] cursor-pointer"
       #scrollBox
       (mousedown)="onMouseDown($event)"
       (mouseup)="onMouseUp()"
@@ -74,48 +84,188 @@
   </div>
 </div>
 
-<div class="services">
-  <div class="title">
-    <h1 class="text1">Dịch vụ</h1>
-    <h1 class="text2">Preview</h1>
+<div class="h-[894px] flex flex-col items-center bg-white">
+  <div class="text-center mt-[92px]">
+    <h1 class="font-bold text-[48px]">Dịch vụ</h1>
+    <h1 class="font-semibold text-[36px] text-color-amberGray mt-[16px]">
+      Preview
+    </h1>
   </div>
 
-  <div class="contents"><div>
-    <img [src]="">
-    <div class="overlay"></div>
+  <div
+    class="whitespace-nowrap w-[1155px] h-[237px] overflow-hidden mt-[50px]"
+    #serviceBox
+  >
+    <div class="relative inline-block w-[353px] h-[237px] cursor-pointer">
+      <img
+        class="absolute rounded-[10px] w-[353px] h-[237px]"
+        [src]="serviceImgs[0]"
+      />
+      <div
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center"
+      >
+        <div
+          class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+        ></div>
+        <h1
+          class="absolute font-bold text-[36px] text-color-amberGray text-center"
+        >
+          CHUYÊN SÂU
+        </h1>
+      </div>
+    </div>
+    <div class="inline-block w-[48px]"></div>
+    <div class="relative inline-block w-[353px] h-[237px] cursor-pointer">
+      <img
+        class="absolute rounded-[10px] w-[353px] h-[237px]"
+        [src]="serviceImgs[1]"
+      />
+      <div
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center"
+      >
+        <div
+          class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+        ></div>
+        <h1
+          class="absolute font-bold text-[36px] text-color-amberGray uppercase text-center"
+        >
+          Sửa đóng<br />đế giày âu
+        </h1>
+      </div>
+    </div>
+    <div class="inline-block w-[48px]"></div>
+    <div class="relative inline-block w-[353px] h-[237px] cursor-pointer">
+      <img
+        class="absolute rounded-[10px] w-[353px] h-[237px]"
+        [src]="serviceImgs[2]"
+      />
+      <div
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center"
+      >
+        <div
+          class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+        ></div>
+        <h1
+          class="absolute font-bold text-[36px] text-color-amberGray uppercase text-center"
+        >
+          Custom Giày
+        </h1>
+      </div>
+    </div>
+    <div class="inline-block w-[48px]"></div>
+    <div class="relative inline-block w-[353px] h-[237px] cursor-pointer">
+      <img
+        class="absolute rounded-[10px] w-[353px] h-[237px]"
+        [src]="serviceImgs[3]"
+      />
+      <div
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center"
+      >
+        <div
+          class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+        ></div>
+        <h1
+          class="absolute font-bold text-[36px] text-color-amberGray uppercase text-center"
+        >
+          Sửa đế giày
+        </h1>
+      </div>
+    </div>
+    <div class="inline-block w-[48px]"></div>
+    <div class="relative inline-block w-[353px] h-[237px] cursor-pointer">
+      <img
+        class="absolute rounded-[10px] w-[353px] h-[237px]"
+        [src]="serviceImgs[4]"
+      />
+      <div
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center"
+      >
+        <div
+          class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+        ></div>
+        <h1
+          class="absolute font-bold text-[36px] text-color-amberGray uppercase text-center"
+        >
+          Sơn giày
+        </h1>
+      </div>
+    </div>
+    <div class="inline-block w-[48px]"></div>
+    <div class="relative inline-block w-[353px] h-[237px] cursor-pointer">
+      <img
+        class="absolute rounded-[10px] w-[353px] h-[237px]"
+        [src]="serviceImgs[5]"
+      />
+      <div
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center"
+      >
+        <div
+          class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+        ></div>
+        <h1
+          class="absolute font-bold text-[36px] text-color-amberGray uppercase text-center"
+        >
+          vệ sinh<br />nâng cao
+        </h1>
+      </div>
+    </div>
   </div>
-  <div>
-    <img [src]="">
-    <div class="overlay"></div>
-  </div>
-  <div>
-    <img [src]="">
-    <div class="overlay"></div>
-  </div>
-  <div>
-    <img [src]="">
-    <div class="overlay"></div>
-  </div>
-  <div>
-    <img [src]="">
-    <div class="overlay"></div>
-  </div>
-  <div>
-    <img [src]="">
-    <div class="overlay"></div>
-  </div>
-  <div>
-    <img [src]="">
-    <div class="overlay"></div>
-  </div></div>
 
-  <div class="btnPagination"><button>Trước</button><button>Sau</button></div>
-  <div class="btnNavServiceLayout">
-    <button class="btnNavService">
-      <img [src]="iconMenuBook" />
-      <p>BẢNG GIÁ DỊCH VỤ</p>
+  <div class="flex font-semibold text-[20px] gap-[138px] mt-[74px]">
+    <button
+      class="bg-color-amber rounded-[10px] w-[98px] h-[60px] hover:bg-color-amberGray"
+      (click)="prevServiceBox()"
+    >
+      Trước
+    </button>
+    <button
+      class="bg-color-amber rounded-[10px] w-[98px] h-[60px] hover:bg-color-amberGray"
+      (click)="nextServiceBox()"
+    >
+      Sau
     </button>
   </div>
+  <button
+    class="bg-color-amber rounded-[10px] w-[334px] h-[72px] flex justify-center items-center gap-[10px] mt-[81px] hover:bg-color-amberGray"
+  >
+    <img [src]="iconMenuBook" />
+    <p class="font-semibold text-[24px]">BẢNG GIÁ DỊCH VỤ</p>
+  </button>
 </div>
 
+<div class="flex flex-col items-center h-[894px] bg-white">
+  <h1 class="text-[48px] font-bold mt-[81px]">SẢN PHẨM NỔI BẬT</h1>
+  <div class="w-[313px] h-[3px] bg-black mt-[26px]"></div>
 
+  <div class="whitespace-nowrap w-[1156px] h-[427px] overflow-hidden mt-[74px]">
+    <div class="inline-block w-[337px] h-[337px] cursor-pointer">
+      <img [src]="product[0]" class="w-[337px] h-[337px]">
+      <h1 class="text-center font-semibold text-[28px]">Dung dịch vệ sinh giày<br>Cure Crep</h1>
+    </div>
+    <div class="inline-block w-[74px]"></div>
+    <div class="inline-block w-[337px] h-[337px] cursor-pointer">
+      <img [src]="product[1]" class="w-[337px] h-[337px]">
+      <h1 class="text-center font-semibold text-[28px]">Bàn chải đế cao su<br>Timberland</h1>
+    </div>
+    <div class="inline-block w-[74px]"></div>
+    <div class="inline-block w-[337px] h-[337px] cursor-pointer">
+      <img [src]="product[2]" class="w-[337px] h-[337px]">
+      <h1 class="text-center font-semibold text-[28px]">Bộ làm sạch giày thể thao<br>Angelus Foam Tex</h1>
+    </div>
+    <div class="inline-block w-[74px]"></div>
+    <div class="inline-block w-[337px] h-[337px] cursor-pointer">
+      <img [src]="product[3]" class="w-[337px] h-[337px]">
+      <h1 class="text-center font-semibold text-[28px]">Sản phẩm chăm sóc<br>giày dầu sáp ECCO</h1>
+    </div>
+    <div class="inline-block w-[74px]"></div>
+    <div class="inline-block w-[337px] h-[337px] cursor-pointer">
+      <img [src]="product[4]" class="w-[337px] h-[337px]">
+      <h1 class="text-center font-semibold text-[28px]">Miếng bọt biển đánh<br>giày KIWI Express</h1>
+    </div>
+    <div class="inline-block w-[74px]"></div>
+    <div class="inline-block w-[337px] h-[337px] cursor-pointer">
+      <img [src]="product[5]" class="w-[337px] h-[337px]">
+      <h1 class="text-center font-semibold text-[28px]">Chất tẩy rửa giày<br>KIWI</h1>
+    </div>
+  </div>
+</div>
