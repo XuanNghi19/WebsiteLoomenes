@@ -9,3 +9,19 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.disable {
+  background-color: #ebebeb;
+}
+
+.require {
+  border: 1px solid #d80203;
+}
+
+.active {
+  display: block;
+}
+
+.hide {
+  display: hidden;
+}

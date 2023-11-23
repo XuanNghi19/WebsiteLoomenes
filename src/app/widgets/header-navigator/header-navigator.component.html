@@ -1,17 +1,41 @@
-<header class="flex justify-center items-center bg-white h-[110px] w-[1440px]">
-  <nav
-    class="flex items-center gap-[51px] font-openSans font-semibold text-[16px]"
+<header class="w-screen relative font-openSans">
+  <div
+    class="h-[112px] px-5 flex justify-between items-center sm:h-[163px] sm:px-[60px] xl:px-[120px] xl:h-[109px]"
   >
-    <a href="" class="mr-[106px] font-playfairDisplay font-bold text-[32px]"
-      >ˈLoomənəs</a
+    <img
+      src="assets/header/menu.svg"
+      alt=""
+      class="block sm:h-[30px] xl:hidden"
+    />
+    <img
+      src="assets/header/logo.svg"
+      alt=""
+      class="block sm:h-[52px] sm:w-[170px] xl:h-[43px] xl:w-[152px]"
+    />
+    <div
+      class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[594px] font-semibold justify-between xl:flex"
     >
-    <a class="" href="">Trang chủ</a>
-    <a class="" href="">Giới thiệu</a>
-    <a class="" href="">Dịch vụ</a>
-    <a class="" href="">Sản phẩm</a>
-    <a class="" href="">Bài viết</a>
-    <a href="">
-      <img class="ml-[229px]" [src]="shopping_cart_path" />
-    </a>
-  </nav>
+      <a href="">Trang chủ</a>
+      <a href="">Giới thiệu</a>
+      <a href="">Dịch vụ</a>
+      <a href="">Sản phẩm</a>
+      <a href="">Bài viết</a>
+    </div>
+    <img
+      src="assets/header/shopping-cart.svg"
+      alt=""
+      class="block sm:h-[28px]"
+    />
+  </div>
+  <div
+    class="absolute top-0 left-0 h-[448px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 hide xl:hidden"
+  >
+    <img src="assets/header/close.svg" alt="" />
+    <a href="" class="mt-9 block">Trang chủ</a>
+    <a href="" class="mt-9 block">Giới thiệu</a>
+    <a href="" class="mt-9 block">Dịch vụ</a>
+    <a href="" class="mt-9 block">Sản phẩm</a>
+    <a href="" class="mt-9 block">Bài viết</a>
+    <a href="" class="mt-9 block">Đặt lịch</a>
+  </div>
 </header>
