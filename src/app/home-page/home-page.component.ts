@@ -5,7 +5,9 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css'],
 })
+
 export class HomePageComponent implements AfterViewInit {
+  
   imgBaners = '/assets/home/header_home_banners.png';
   stickerBag = '/assets/home/bag.svg';
   stickerPackage = '/assets/home/package.svg';
