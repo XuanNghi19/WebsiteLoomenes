@@ -8,6 +8,7 @@ import { HeaderNavigatorComponent } from './widgets/header-navigator/header-navi
 import { FooterComponent } from './widgets/footer/footer.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { InfoCustomerPageComponent } from './info-customer-page/info-customer-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     HeaderNavigatorComponent,
     FooterComponent,
     ServicesPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    InfoCustomerPageComponent
   ],
   imports: [
     BrowserModule,
