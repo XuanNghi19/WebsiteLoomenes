@@ -3,6 +3,7 @@
     class="h-[112px] px-5 flex justify-between items-center sm:h-[120px] sm:px-[60px] xl:px-[120px] xl:h-[120px]"
   >
     <img
+      (click)="onToggleMenu()"
       src="assets/header/menu.svg"
       alt=""
       class="block sm:h-[30px] xl:hidden"
@@ -28,9 +29,10 @@
     />
   </div>
   <div
-    class="absolute top-0 left-0 h-[448px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 hide xl:hidden"
+    *ngIf="isOpenedMenu"
+    class="absolute top-0 left-0 h-[448px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 xl:hidden"
   >
-    <img src="assets/header/close.svg" alt="" />
+    <img (click)="onToggleMenu()" src="assets/header/close.svg" alt="" />
     <a href="" class="mt-9 block">Trang chủ</a>
     <a href="" class="mt-9 block">Giới thiệu</a>
     <a href="" class="mt-9 block">Dịch vụ</a>

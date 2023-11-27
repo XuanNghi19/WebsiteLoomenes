@@ -28,46 +28,55 @@
           >THÔNG TIN GIỎ HÀNG</span
         >
         <div
+          *ngFor="let product of products"
           class="mt-2 w-full h-[120px] bg-white px-5 py-5 flex justify-between sm:px-0 sm:h-[124px] sm:py-0 sm:mt-12 sm:w-[500px] xl:w-[600px] xl:h-[160px] 2xl:w-[750px]"
         >
           <img
-            src="assets/cart/item.svg"
+            [src]="product.url"
             alt=""
             class="sm:h-[124px] block xl:h-[160px]"
           />
           <div
-            class="w-[278px] sm:w-[350px] relative xl:w-[486px] 2xl:w-[530px]"
+            class="ml-5 w-[278px] sm:ml-0 sm:w-[350px] relative xl:w-[486px] 2xl:w-[530px]"
           >
-            <span class="font-semibold block sm:text-[20px] xl:text-2xl"
-              >Dung dịch vệ sinh Cure Crep</span
-            >
+            <span class="font-semibold block sm:text-[20px] xl:text-2xl">
+              {{ product.name }}
+            </span>
             <img
+              (click)="onDelete(product.id)"
               src="assets/cart/delete.svg"
               alt=""
               class="h-[10px] absolute top-0 right-0 mt-2 cursor-pointer sm:h-4 sm:mt-2 xl:h-5"
             />
             <span
               class="block mt-2 text-xs text-[#9F9F9F] font-semibold sm:text-base xl:text-xl xl:mt-5"
-              >40.000đ</span
+              >{{
+                product.price | currency : "VND" : "symbol" : "1.0-0" : "vi-VN"
+              }}</span
             >
             <span
               class="mt-3 font-semibold absolute bottom-0 right-0 block sm:text-[20px] xl:text-2xl"
-              >80.000đ</span
+              >{{
+                product.price * product.quantity
+                  | currency : "VND" : "symbol" : "1.0-0" : "vi-VN"
+              }}</span
             >
             <div
               class="mt-3 h-[22px] w-[70px] border rounded-3xl absolute bottom-0 left-0 sm:h-9 sm:w-[120px]"
             >
               <div
+                (click)="onDecrease(product.id)"
                 class="h-full py-[11px] cursor-pointer absolute -top-[1px] px-1 left-[6px] sm:top-[5px] sm:left-[10px]"
               >
                 <img src="assets/cart/sub.svg" alt="" class="sm:w-3" />
               </div>
               <input
+                [(ngModel)]="product.quantity"
                 type="number"
-                value="2"
                 class="w-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10px] mt-[1px] outline-none text-center sm:text-base sm:w-10 sm:mt-0"
               />
               <div
+                (click)="onIncrease(product.id)"
                 class="h-full py-[8px] cursor-pointer absolute -top-[2px] px-1 right-[6px] sm:top-[2px] sm:right-[10px]"
               >
                 <img src="assets/cart/plus.svg" alt="" class="sm:h-4" />
@@ -75,7 +84,10 @@
             </div>
           </div>
         </div>
-        <div class="hidden text-center my-2 sm:mb-0 lg:mt-6 xl:w-[600px]">
+        <div
+          *ngIf="!products.length"
+          class="text-center my-2 sm:mb-0 lg:mt-6 xl:w-[600px]"
+        >
           <img
             src="assets/cart/no-item.svg"
             alt=""
@@ -88,16 +100,19 @@
       </div>
 
       <div
+        *ngIf="products.length"
         class="mt-0 px-5 sm:px-0 sm:mt-10 xl:w-[600px] xl:mt-8 2xl:w-[750px]"
       >
         <span class="font-semibold sm:text-xl xl:text-2xl">Mã giảm giá</span>
         <div class="flex justify-between mt-3 xl:mt-8">
           <input
+            id="promoCodeInput"
             type="text"
             class="w-[220px] h-11 bg-[#F5F6F8] rounded-lg outline-none px-4 text-[12px] sm:h-[56px] sm:text-base sm:w-[320px] xl:h-16 xl:w-[390px] 2xl:w-[480px] 2xl:px-8"
             placeholder="Vui lòng nhập"
           />
           <button
+            (click)="onApplyPromoCode()"
             class="w-[120px] h-11 border border-black font-bold rounded-lg text-[12px] hover:text-white hover:bg-black transition sm:h-[56px] sm:w-[160px] sm:text-base xl:h-16 xl:w-[180px] 2xl:w-[220px]"
           >
             Áp dụng
@@ -142,16 +157,18 @@
       <span>94.000đ</span>
     </div>
     <div
+      *ngIf="products.length"
       class="flex justify-between mt-5 sm:text-xl sm:w-[500px] sm:mt-8 xl:w-[600px] 2xl:w-[750px]"
     >
       <span>Tổng ship</span>
-      <span>30.000đ</span>
+      <span>{{ 30000 | currency : "VND" : "symbol" : "1.0-0" : "vi-VN" }}</span>
     </div>
     <div
+      *ngIf="products.length && promoCode === 'PTIT'"
       class="flex justify-between mt-5 text-[#9F9F9F] sm:text-xl sm:w-[500px] sm:mt-8 xl:w-[600px] 2xl:w-[750px]"
     >
       <span>Giảm giá</span>
-      <span>-40.000đ</span>
+      <span>{{ 40000 | currency : "VND" : "symbol" : "1.0-0" : "vi-VN" }}</span>
     </div>
     <div
       class="h-[1px] w-full bg-black mt-5 sm:w-[500px] sm:mt-8 xl:w-[600px] 2xl:w-[750px]"
