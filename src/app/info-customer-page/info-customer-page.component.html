@@ -21,74 +21,88 @@
   <div
     class="sm:flex justify-between sm:px-[60px] sm:justify-center lg:justify-between xl:px-[120px] lg:relative"
   >
-    <div class="">
-      <div class="bg-white py-5 xl:py-10">
+    <div class="lg:w-7/12 xl:w-3/5 2xl:2/3">
+      <div class="bg-white py-5 xl:py-10 xl:w-full">
         <span
           class="pl-5 block font-bold text-base mt-2 sm:pl-0 sm:w-[500px] sm:text-3xl sm:pb-4 sm:mt-10 sm:font-bold sm:text-center lg:text-2xl lg:text-left lg:pb-0 xl:w-[690px] lg:relative 2xl:w-[750px]"
           >THÔNG TIN KHÁCH HÀNG</span
         >
         <div
-          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-10 sm:w-[500px] xl:w-[600px] 2xl:w-[750px]"
+          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-10 sm:w-[500px] lg:w-full"
         >
           <div class="w-full relative">
             <span class="block font-semibold text-[14px] sm:text-xl xl:text-2xl"
               >Họ và tên <span class="text-color-red">*</span></span
             >
             <input
+              #inputName
+              (blur)="onBlurInput(inputName)"
+              (input)="onChangeInput(inputName)"
+              [(ngModel)]="user.name"
               type="text"
               placeholder="Vui lòng nhập"
               class="bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
             />
             <span
-              class="absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
+              class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
               >Đây là trường bắt buộc</span
             >
           </div>
         </div>
         <div
-          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] xl:w-[600px] 2xl:w-[750px]"
+          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] lg:w-full"
         >
           <div class="w-full relative">
             <span class="block font-semibold text-[14px] sm:text-xl xl:text-2xl"
               >Số điện thoại <span class="text-color-red">*</span></span
             >
             <input
+              #inputTel
+              [(ngModel)]="user.tel"
+              (input)="onChangeInput(inputTel)"
+              (blur)="onBlurInput(inputTel)"
               type="tel"
               placeholder="Vui lòng nhập"
               class="bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
             />
             <span
-              class="absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
+              class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
               >Đây là trường bắt buộc</span
             >
           </div>
         </div>
         <div
-          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] xl:w-[600px] 2xl:w-[750px]"
+          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] lg:w-full"
         >
           <div class="w-full relative">
             <span class="block font-semibold text-[14px] sm:text-xl xl:text-2xl"
               >Địa chỉ <span class="text-color-red">*</span></span
             >
             <input
+              #inputAdd
+              [(ngModel)]="user.address"
+              (input)="onChangeInput(inputAdd)"
+              (blur)="onBlurInput(inputAdd)"
               type="text"
               placeholder="Vui lòng nhập"
               class="bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
             />
             <span
-              class="absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
+              class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
               >Đây là trường bắt buộc</span
             >
           </div>
         </div>
         <div
-          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] xl:w-[600px] 2xl:w-[750px]"
+          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] lg:w-full"
         >
           <div class="w-full">
             <span class="block font-semibold text-[14px] sm:text-xl xl:text-2xl"
               >Ghi chú</span
             >
             <textarea
+              #inputNote
+              [(ngModel)]="user.note"
               name=""
               id=""
               rows="6"
@@ -126,15 +140,15 @@
     </div>
   </div>
   <div
-    class="mt-1 px-5 font-semibold sm:mx-auto sm:px-0 sm:w-[500px] sm:mt-4 lg:ml-[60px] lg:px-0 lg:pr-0 lg:py-0 lg:my-0 lg:mt-4 xl:px-[120px] xl:ml-0 xl:w-[600px] 2xl:w-[750px] xl:mt-2"
+    class="mt-1 px-5 font-semibold sm:mx-auto sm:px-0 sm:w-[500px] sm:mt-4 lg:pl-[60px] lg:pr-3 lg:mx-0 lg:py-0 lg:my-0 lg:mt-4 xl:pr-6s xl:pl-[120px] xl:ml-0 lg:w-7/12 xl:w-3/5 2xl:2/3 xl:mt-2"
   >
     <button
-      class="font-bold w-full h-12 bg-color-amber rounded-lg hover:bg-color-amberGray sm:w-[500px] sm:h-[60px] sm:text-xl xl:w-[600px] 2xl:w-[750px]"
+      class="font-bold w-full h-12 bg-color-amber rounded-lg hover:bg-color-amberGray sm:w-[500px] sm:h-[60px] sm:text-xl lg:w-full"
     >
       ĐẶT HÀNG
     </button>
     <span
-      class="block text-center font-normal mt-4 hover:underline cursor-pointer sm:w-[500px] sm:text-xl sm:mt-5 xl:w-[600px] 2xl:w-[750px]"
+      class="block text-center font-normal mt-4 hover:underline cursor-pointer sm:w-[500px] sm:text-xl sm:mt-5 lg:w-full"
       >Quay lại giỏ hàng</span
     >
   </div>

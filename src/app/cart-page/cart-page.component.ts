@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'Loomenes-cart-page',
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
 })
-export class CartPageComponent {
+export class CartPageComponent implements OnInit {
   promoCode = '';
+
+  subTotal = 0;
 
   products = [
     {
@@ -46,6 +48,7 @@ export class CartPageComponent {
         else product.quantity--;
       }
     });
+    this.onUpdateSubTotal();
   }
 
   onIncrease(productId: String) {
@@ -54,6 +57,7 @@ export class CartPageComponent {
         product.quantity++;
       }
     });
+    this.onUpdateSubTotal();
   }
 
   onDelete(productId: String) {
@@ -61,6 +65,7 @@ export class CartPageComponent {
       (product) => product.id === productId
     );
     this.products.splice(index, 1);
+    this.onUpdateSubTotal();
   }
 
   onApplyPromoCode() {
@@ -69,5 +74,16 @@ export class CartPageComponent {
       const promoCodeValue = element.value;
       this.promoCode = promoCodeValue;
     }
+  }
+
+  onUpdateSubTotal() {
+    this.subTotal = 0;
+    this.products.forEach((product) => {
+      this.subTotal += product.price * product.quantity;
+    });
+  }
+
+  ngOnInit(): void {
+    this.onUpdateSubTotal();
   }
 }
