@@ -1,3 +1,4 @@
+<Loomenes-header-navigator></Loomenes-header-navigator>
 <div class="w-full font-openSans text-[14px]">
   <div
     class="h-[170px] relative w-full bg-no-repeat bg-cover bg-center bg-[url('assets/cart/cart-banner.svg')] sm:h-[240px] xl:h-[320px]"
@@ -147,9 +148,11 @@
     >
       ĐẶT HÀNG
     </button>
-    <span
+    <a
+      [routerLink]="['/cart-page']"
       class="block text-center font-normal mt-4 hover:underline cursor-pointer sm:w-[500px] sm:text-xl sm:mt-5 lg:w-full"
-      >Quay lại giỏ hàng</span
+      >Quay lại giỏ hàng</a
     >
   </div>
 </div>
+<Loomenes-footer></Loomenes-footer>

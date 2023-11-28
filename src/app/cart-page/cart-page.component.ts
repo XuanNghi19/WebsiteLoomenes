@@ -83,6 +83,13 @@ export class CartPageComponent implements OnInit {
     });
   }
 
+  onBlurQuantity(element: any, productId: String) {
+    if (element.value === '0' || element.value === '') {
+      this.onDelete(productId);
+    }
+    console.log(element);
+  }
+
   ngOnInit(): void {
     this.onUpdateSubTotal();
   }

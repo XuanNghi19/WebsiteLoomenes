@@ -1,3 +1,4 @@
+<Loomenes-header-navigator></Loomenes-header-navigator>
 <div class="w-full font-openSans text-[14px]">
   <div
     class="h-[170px] relative w-full bg-no-repeat bg-cover bg-center bg-[url('assets/cart/cart-banner.svg')] sm:h-[240px] xl:h-[320px]"
@@ -71,6 +72,8 @@
                 <img src="assets/cart/sub.svg" alt="" class="sm:w-3" />
               </div>
               <input
+                #inputQuantity
+                (blur)="onBlurQuantity(inputQuantity, product.id)"
                 (input)="onUpdateSubTotal()"
                 [(ngModel)]="product.quantity"
                 type="number"
@@ -87,7 +90,7 @@
         </div>
         <div
           *ngIf="!products.length"
-          class="text-center my-2 sm:mb-0 lg:mt-6 xl:w-[600px]"
+          class="text-center sm:mb-0 mt-6 lg:w-full"
         >
           <img
             src="assets/cart/no-item.svg"
@@ -209,13 +212,17 @@
       }}</span>
     </div>
     <button
+      [class.disable]="!products.length"
+      [disabled]="!products.length"
+      [routerLink]="['/info-customer-page']"
       class="font-bold w-full h-12 bg-color-amber mt-6 rounded-lg hover:bg-color-amberGray sm:w-[500px] sm:mt-10 sm:h-[60px] sm:text-xl lg:w-full"
     >
       ĐẶT HÀNG
     </button>
-    <span
+    <a
       class="block text-center font-normal mt-4 hover:underline cursor-pointer sm:w-[500px] sm:text-xl sm:mt-5 lg:w-full"
-      >Tiếp tục mua hàng</span
+      >Tiếp tục mua hàng</a
     >
   </div>
 </div>
+<Loomenes-footer></Loomenes-footer>

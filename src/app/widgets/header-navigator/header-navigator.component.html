@@ -9,6 +9,7 @@
       class="block sm:h-[30px] xl:hidden"
     />
     <img
+      [routerLink]="['/home-page']"
       src="assets/header/logo.svg"
       alt=""
       class="block cursor-pointer sm:h-[52px] sm:w-[170px] xl:h-[43px] xl:w-[152px]"
@@ -16,26 +17,33 @@
     <div
       class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[594px] font-semibold justify-between xl:flex"
     >
-      <a href="">Trang chủ</a>
+      <a [routerLink]="['/home-page']">Trang chủ</a>
       <a href="">Giới thiệu</a>
-      <a href="">Dịch vụ</a>
+      <a [routerLink]="['/service-page']">Dịch vụ</a>
       <a href="">Sản phẩm</a>
       <a href="">Bài viết</a>
     </div>
-    <img
-      src="assets/header/shopping-cart.svg"
-      alt=""
-      class="block sm:h-[28px] cursor-pointer"
-    />
+    <div [routerLink]="['/cart-page']" class="block cursor-pointer relative">
+      <img
+        src="assets/header/shopping-cart.svg"
+        alt=""
+        class="block sm:h-[28px]"
+      />
+      <div
+        class="absolute -top-[5px] -right-1 font-bold text-white bg-[#F1CF87] text-[8px] h-4 w-4 text-center rounded-2xl border-2 border-white sm:-right-2 sm:h-5 sm:w-5 sm:text-[10px] sm:pt-[2px]"
+      >
+        5
+      </div>
+    </div>
   </div>
   <div
     *ngIf="isOpenedMenu"
     class="absolute top-0 left-0 h-[448px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 xl:hidden"
   >
     <img (click)="onToggleMenu()" src="assets/header/close.svg" alt="" />
-    <a href="" class="mt-9 block">Trang chủ</a>
+    <a [routerLink]="['/home-page']" class="mt-9 block">Trang chủ</a>
     <a href="" class="mt-9 block">Giới thiệu</a>
-    <a href="" class="mt-9 block">Dịch vụ</a>
+    <a [routerLink]="['/service-page']" class="mt-9 block">Dịch vụ</a>
     <a href="" class="mt-9 block">Sản phẩm</a>
     <a href="" class="mt-9 block">Bài viết</a>
     <a href="" class="mt-9 block">Đặt lịch</a>

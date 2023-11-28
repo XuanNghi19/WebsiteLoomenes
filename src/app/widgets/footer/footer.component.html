@@ -2,11 +2,16 @@
   class="mt-[250px] border-t border-black relative lg:mt-[120px] font-openSans"
 >
   <div class="text-center mt-24 lg:hidden">
-    <img src="assets/footer/logo.svg" alt="" class="block mx-auto" />
+    <img
+      [routerLink]="['/home-page']"
+      src="assets/footer/logo.svg"
+      alt=""
+      class="block mx-auto"
+    />
     <div class="mt-8">
       <span class="font-semibold">LIÊN KẾT</span>
       <div class="text-[14px] mt-4">
-        <a href="" class="block">Trang chủ</a>
+        <a [routerLink]="['/home-page']" class="block">Trang chủ</a>
         <a href="" class="block mt-3">Giới thiệu</a>
         <a href="" class="block mt-3">Sản phẩm</a>
         <a href="" class="block mt-3">Bài viết</a>
@@ -15,7 +20,7 @@
     <div class="mt-8">
       <span class="font-semibold">TRỢ GIÚP</span>
       <div class="text-[14px] mt-4">
-        <a href="" class="block">Dịch vụ</a>
+        <a [routerLink]="['/service-page']" class="block">Dịch vụ</a>
         <a href="" class="block mt-3">Chính sách</a>
         <a href="" class="block mt-3">Điều khoản</a>
       </div>
@@ -42,7 +47,12 @@
   <div class="hidden mx-[60px] my-10 font-openSans lg:block xl:mx-[120px]">
     <div class="flex justify-between items-start">
       <div class="w-[320px] text-color-gray xl:w-[340px]">
-        <img src="assets/footer/logo.svg" alt="" class="h-[52px] w-[150px]" />
+        <img
+          [routerLink]="['/home-page']"
+          src="assets/footer/logo.svg"
+          alt=""
+          class="h-[52px] w-[150px] cursor-pointer"
+        />
         <span class="mt-10 block"
           >Km 10, đường Nguyễn Trãi, Quận Hà<br />
           Đông, Hà Nội
@@ -53,7 +63,7 @@
       <div class="">
         <span class="font-bold">Liên kết</span>
         <div class="mt-[56px]">
-          <a href="" class="block">Trang chủ</a>
+          <a [routerLink]="['/home-page']" class="block">Trang chủ</a>
           <a href="" class="block mt-12">Giới thiệu</a>
           <a href="" class="block mt-12">Sản phẩm</a>
           <a href="" class="block mt-12">Bài viết</a>
@@ -62,7 +72,7 @@
       <div class="">
         <span class="font-bold">Trợ giúp</span>
         <div class="mt-[56px]">
-          <a href="" class="block">Dịch vụ</a>
+          <a [routerLink]="['/service-page']" class="block">Dịch vụ</a>
           <a href="" class="block mt-12">Chính sách</a>
           <a href="" class="block mt-12">Điều khoản</a>
         </div>

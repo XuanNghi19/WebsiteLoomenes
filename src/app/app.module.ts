@@ -11,6 +11,7 @@ import { FooterComponent } from './widgets/footer/footer.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { InfoCustomerPageComponent } from './info-customer-page/info-customer-page.component';
+import { RouterModule } from '@angular/router';
 
 registerLocaleData(localeVi, 'vi-VN');
 
@@ -24,7 +25,7 @@ registerLocaleData(localeVi, 'vi-VN');
     CartPageComponent,
     InfoCustomerPageComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })
