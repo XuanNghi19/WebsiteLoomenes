@@ -12,7 +12,9 @@
       class="hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center absolute sm:block"
     >
       <div class="flex justify-center">
-        <span class="font-semibold cursor-pointer">Trang chủ</span>
+        <span [routerLink]="['/home-page']" class="font-semibold cursor-pointer"
+          >Trang chủ</span
+        >
         <img src="assets/cart/arrow-right.svg" alt="" class="ml-1" />
         <span class="block ml-1">Giỏ hàng</span>
       </div>
