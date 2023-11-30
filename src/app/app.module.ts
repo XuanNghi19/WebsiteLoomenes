@@ -12,6 +12,7 @@ import { ServicesPageComponent } from './services-page/services-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { InfoCustomerPageComponent } from './info-customer-page/info-customer-page.component';
 import { RouterModule } from '@angular/router';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 registerLocaleData(localeVi, 'vi-VN');
 
@@ -24,6 +25,7 @@ registerLocaleData(localeVi, 'vi-VN');
     ServicesPageComponent,
     CartPageComponent,
     InfoCustomerPageComponent,
+    ProductPageComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, RouterModule],
   providers: [],
