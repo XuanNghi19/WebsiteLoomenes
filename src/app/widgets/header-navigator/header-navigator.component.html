@@ -1,24 +1,4 @@
-<!-- <<<<<<< HEAD
-<header class="flex justify-center items-center h-[147px] w-[1903px]">
-  <nav class="flex items-center gap-[91px]">
-    <a href="" class="mr-[142px] font-playfairDisplay font-bold text-[43px]"
-      >ˈLoomənəs</a
-    >
-    <ul
-      class="flex items-center gap-[80px] font-openSans font-semibold text-[21px]"
-    >
-      <li class=""><a href="#">Trang chủ</a></li>
-      <li class=""><a href="#">Giới thiệu</a></li>
-      <li class=""><a href="#">Dịch vụ</a></li>
-      <li class=""><a href="#">Sản phẩm</a></li>
-      <li class=""><a href="#">Bài viết</a></li>
-    </ul>
-    <a href="">
-      <img class="ml-[307px]" [src]="shopping_cart_path" />
-    </a>
-  </nav>
-======= -->
-<header class="w-screen relative font-openSans">
+<header class="w-full relative font-openSans">
   <div
     class="h-[112px] px-5 flex justify-between items-center sm:h-[120px] sm:px-[60px] xl:px-[120px] xl:h-[120px]"
   >
@@ -35,13 +15,17 @@
       class="block cursor-pointer sm:h-[52px] sm:w-[170px] xl:h-[43px] xl:w-[152px]"
     />
     <div
-      class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[594px] font-semibold justify-between xl:flex"
+      class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold justify-between xl:flex"
     >
-      <a [routerLink]="['/home-page']">Trang chủ</a>
-      <a href="">Giới thiệu</a>
-      <a [routerLink]="['/service-page']">Dịch vụ</a>
-      <a href="">Sản phẩm</a>
-      <a href="">Bài viết</a>
+      <ul
+        class="flex items-center gap-[80px] font-openSans font-semibold text-[21px]"
+      >
+        <li class=""><a [routerLink]="['/home-page']">Trang chủ</a></li>
+        <li class=""><a href="#">Giới thiệu</a></li>
+        <li class=""><a [routerLink]="['/service-page']">Dịch vụ</a></li>
+        <li class=""><a href="#">Sản phẩm</a></li>
+        <li class=""><a href="#">Bài viết</a></li>
+      </ul>
     </div>
     <div [routerLink]="['/cart-page']" class="block cursor-pointer relative">
       <img

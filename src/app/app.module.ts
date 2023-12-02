@@ -21,6 +21,8 @@ registerLocaleData(localeVi, 'vi-VN');
     HomePageComponent,
     HeaderNavigatorComponent,
     FooterComponent,
+    InfoCustomerPageComponent,
+    CartPageComponent,
     ServicesPageComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, RouterModule],
