@@ -1,60 +1,120 @@
-<footer class="flex flex-col bg-white w-[1440px] h-[542px]">
-  <div class="bg-black h-[1px]"></div>
-
-  <div class="flex gap-[126px] justify-center mt-[66px]">
-    <div>
-      <h1 class="font-playfairDisplay text-[48px] font-bold">
-        <a href="">ˈLoomənəs</a>
-      </h1>
-      <div class="mt-[55px]">
-        <div class="text-[16px] text-color-gray hover:underline">
-          <a href="">Km 10, đường Nguyễn Trãi, Quận Hà <br />Đông, Hà Nội</a>
-        </div>
-        <div class="text-[16px] text-color-gray hover:underline mt-[40px]">
-          <a href="">loomenes@gmail.com</a>
-        </div>
-        <div class="text-[16px] text-color-gray hover:underline mt-[40px]">
-          <a href="">(+84) 969.048.062</a>
-        </div>
+<div
+  class="mt-[250px] border-t border-black relative lg:mt-[120px] font-openSans"
+>
+  <div class="text-center mt-24 lg:hidden">
+    <img
+      [routerLink]="['/home-page']"
+      src="assets/footer/logo.svg"
+      alt=""
+      class="block mx-auto"
+    />
+    <div class="mt-8">
+      <span class="font-semibold">LIÊN KẾT</span>
+      <div class="text-[14px] mt-4">
+        <a [routerLink]="['/home-page']" class="block">Trang chủ</a>
+        <a href="" class="block mt-3">Giới thiệu</a>
+        <a href="" class="block mt-3">Sản phẩm</a>
+        <a href="" class="block mt-3">Bài viết</a>
       </div>
     </div>
-
-    <div>
-      <h1 class="font-bold text-[16px] mt-[37px]">Liên kết</h1>
-      <div class="mt-[60px] text-[16px]">
-        <div class="hover:underline"><a href="">Trang chủ</a></div>
-        <div class="hover:underline mt-[52px]"><a href="">Trang chủ</a></div>
-        <div class="hover:underline mt-[52px]"><a href="">Trang chủ</a></div>
-        <div class="hover:underline mt-[52px]"><a href="">Trang chủ</a></div>
+    <div class="mt-8">
+      <span class="font-semibold">TRỢ GIÚP</span>
+      <div class="text-[14px] mt-4">
+        <a [routerLink]="['/service-page']" class="block">Dịch vụ</a>
+        <a href="" class="block mt-3">Chính sách</a>
+        <a href="" class="block mt-3">Điều khoản</a>
       </div>
     </div>
-
-    <div>
-      <h1 class="font-bold text-[16px] mt-[37px]">Trợ giúp</h1>
-      <div class="mt-[60px] text-[16px]">
-        <div class="hover:underline"><a href="">Dịch vụ</a></div>
-        <div class="hover:underline mt-[52px]"><a href="">Chính sách</a></div>
-        <div class="hover:underline mt-[52px]"><a href="">Điều khoản</a></div>
-      </div>
+    <div
+      class="w-full pl-5 h-[60px] mt-8 bg-color-amber text-left leading-[60px]"
+    >
+      2023 Multimedia PTIT. All rights reverved
     </div>
-
-    <div>
-      <h1 class="font-bold text-[16px] mt-[37px]">Nhận thông báo</h1>
-      <div class="mt-[60px] text-[16px] flex items-center gap-[37px]">
-        <input class="w-[210px] h-[38px] border-b-[1px] border-black cursor-pointer focus:outline-none" type="text" placeholder="Nhập địa chỉ email của bạn">
-        <button class="w-[130px] h-[52px] bg-color-amber flex justify-center items-center text-[14px] font-semibold rounded-[10px] hover:bg-color-amberGray">Đăng ký</button>
-      </div>
-    </div>
-
+  </div>
+  <div
+    class="absolute border left-1/2 -translate-x-1/2 -top-36 bg-white border-black h-[193px] w-[353px] rounded-2xl px-9 pt-6 pb-6 lg:hidden"
+  >
+    <span class="font-bold block">NHẬN THÔNG BÁO</span>
+    <input
+      type="email"
+      class="text-[14px] mt-7 w-[286px] outline-none"
+      placeholder="Nhập địa chỉ email của bạn"
+    />
+    <div class="h-[1px] bg-black mt-3"></div>
+    <button class="mt-4 bg-color-amber px-8 py-2 rounded">Đăng ký</button>
   </div>
 
-  <div class="mt-[64px] flex justify-center items-center gap-[682px]">
-    <p class="text-[16px]">2023 Multimedia PTIT. All rights reverved</p>
-    <p class="flex items-center gap-[59px]">
-      <a href=""><img [src]="iconExApp[0]"></a>
-      <a href=""><img [src]="iconExApp[1]"></a>
-      <a href=""><img [src]="iconExApp[2]"></a>
-    </p>
+  <div class="hidden mx-[60px] my-10 font-openSans lg:block xl:mx-[120px]">
+    <div class="flex justify-between items-start">
+      <div class="w-[320px] text-color-gray xl:w-[340px]">
+        <img
+          [routerLink]="['/home-page']"
+          src="assets/footer/logo.svg"
+          alt=""
+          class="h-[52px] w-[150px] cursor-pointer"
+        />
+        <span class="mt-10 block"
+          >Km 10, đường Nguyễn Trãi, Quận Hà<br />
+          Đông, Hà Nội
+        </span>
+        <span class="block mt-4">loomenes@gmail.com</span>
+        <span class="block mt-12">(+84) 969.048.062</span>
+      </div>
+      <div class="">
+        <span class="font-bold">Liên kết</span>
+        <div class="mt-[56px]">
+          <a [routerLink]="['/home-page']" class="block">Trang chủ</a>
+          <a href="" class="block mt-12">Giới thiệu</a>
+          <a href="" class="block mt-12">Sản phẩm</a>
+          <a href="" class="block mt-12">Bài viết</a>
+        </div>
+      </div>
+      <div class="">
+        <span class="font-bold">Trợ giúp</span>
+        <div class="mt-[56px]">
+          <a [routerLink]="['/service-page']" class="block">Dịch vụ</a>
+          <a href="" class="block mt-12">Chính sách</a>
+          <a href="" class="block mt-12">Điều khoản</a>
+        </div>
+      </div>
+      <div class="">
+        <span class="font-bold">Nhận thông báo</span>
+        <div class="mt-[56px] xl:mt-[24px] xl:flex items-end">
+          <div class="">
+            <input
+              type="email"
+              class="w-[180px] outline-none text-[14px] text-color-gray"
+              placeholder="Nhập địa chỉ email của bạn"
+            />
+            <div class="h-[1px] w-[180px] bg-black mt-3"></div>
+          </div>
+          <button
+            class="float-right mt-6 text-[14px] font-semibold w-[125px] h-12 bg-color-amber rounded hover:bg-color-amberGray transition xl:ml-10"
+          >
+            Đăng ký
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between items-center mt-[60px]">
+      <span class="block">2023 Multimedia PTIT. All rights reverved</span>
+      <div class="flex items-center">
+        <a
+          href="https://www.facebook.com/profile.php?id=61554037107114"
+          class="mr-16 block"
+          target="_blank"
+          ><img src="assets/footer/facebook-icon.svg" alt=""
+        /></a>
+        <a
+          href="https://www.instagram.com/loomenes9/"
+          class="mr-16 block"
+          target="_blank"
+          ><img src="assets/footer/instagram-icon.svg" alt=""
+        /></a>
+        <a href="https://www.youtube.com/@Loomenes9" target="_blank"
+          ><img src="assets/footer/youtube-icon.svg" alt=""
+        /></a>
+      </div>
+    </div>
   </div>
-
-</footer>
+</div>

@@ -1,3 +1,4 @@
+
 li {
   display: inline-block;
   position: relative;
@@ -16,4 +17,11 @@ li a:hover::before {
 
 li a:active {
   color: #3399ff;
+}
+.active {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
