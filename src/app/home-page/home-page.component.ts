@@ -8,7 +8,8 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 export class HomePageComponent implements AfterViewInit {
   
-  imgBaners = '/assets/home/header_home_banners.png';
+  imgBanersPhone = '/assets/home/home banner phone.svg';
+  imgBaners = '/assets/home/header_home_banners.svg';
   stickerBag = '/assets/home/bag.svg';
   stickerPackage = '/assets/home/package.svg';
   stickerShoe = '/assets/home/shoe.svg';

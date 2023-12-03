@@ -1,18 +1,21 @@
+<Loomenes-header-navigator></Loomenes-header-navigator>
+
 <header>
-  <div class="flex relative">
-    <img class="w-[1903px] h-[1106.84px]" [src]="imgBaners" />
-    <div class="absolute w-full h-[1106.84px] bg-black bg-opacity-40"></div>
-    <div class="absolute text-white mt-[470px] ml-[346px]">
-      <h1 class="font-playfairDisplay font-bold text-[27px]">ˈLoomənəs</h1>
-      <h1 class="font-extrabold text-[70px]">SẠCH SẼ</h1>
-      <h1 class="font-extrabold text-[70px]">SÁNG BÓNG</h1>
-      <br />
-      <h1 class="font-semibold text-[24px]">
-        Dịch vụ giặt giày chất lượng, để bước chân của bạn luôn tự tin
-      </h1>
-      <h1 class="font-semibold text-[24px]">trên mọi nẻo đường</h1>
+  <div class="w-full flex relative justify-center items-center">
+    <!--for phone-->
+    <img [src]="imgBanersPhone" class="w-full" />
+    <div class="absolute text-center text-white font-openSans">
+      <p class="text-[32px] font-extrabold">
+        SẠCH SẼ <br />
+        SÁNG BÓNG
+      </p>
+      <p class="text-[14px] font-semibold mt-[8px]">
+        Dịch vụ giặt giày chất lượng, <br />
+        để bước chân của bạn luôn <br />
+        tự tin trên mọi nẻo đường.
+      </p>
       <button
-        class="border-2 border-color-amber rounded-[10px] w-[358px] h-[96px] font-bold text-[21px] text-color-amber uppercase mt-[64px] hover:bg-color-amber hover:text-color-boldYellow"
+        class="uppercase font-bold w-[198px] h-[48px] border-[2px] rounded-[4px] border-color-amber mt-[44px] text-[14px] text-color-amber hover:bg-color-amber hover:text-color-boldYellow"
       >
         Đặt lịch ngay
       </button>
@@ -20,7 +23,111 @@
   </div>
 </header>
 
-<div class="bg-white h-[1043.86px] flex flex-col items-center">
+<body>
+  <!--introduce-->
+  <div
+    class="bg-white flex flex-col items-center text-center font-openSans mb-[26px]"
+  >
+    <p class="font-semibold text-[28px] mt-[36px]">Lý Do Chọn ˈLoomənəs</p>
+    <p class="text-center text-[12px] mt-[10px]">
+      4 năm kinh nghiệm vệ sinh, phục chế giày đồ hiệu, <br />
+      ˈlo͞omənəs cam kết dịch vụ tốt nhất cho khách hàng.
+    </p>
+
+    <div class="flex gap-[28px] mt-[45px]">
+      <div class="flex flex-col items-center">
+        <img [src]="stickerBag" class="w-[60px]" />
+        <p class="text-center text-[12px] mt-[19px]">
+          Hơn 100.00+ <br />sản phẩm <br />đã được bán
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img [src]="stickerPackage" class="w-[60px]" />
+        <p class="text-center text-[12px] mt-[14px]">
+          Tiện ích giao nhận 2 <br />
+          chiều tiện lợi,giao và nhận đồ <br />tại nhà
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img [src]="stickerShoe" class="w-[60px]" />
+        <p class="text-center text-[12px] mt-[25px]">
+          Hơn 300.000 + <br />
+          đôi giày <br />đã được vệ sinh
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--banners-->
+  <div class="flex h-[135px] relative justify-center items-center font-openSans">
+    <img class="w-full h-[135px]" [src]="bns" />
+    <div
+      class="absolute flex gap-[38px]"
+    >
+      <div class="text-center font-openSans">
+        <h1 class="text-[16px] font-semibold font-playfairDisplay">
+          ˈLoomənəs
+        </h1>
+        <h1 class="text-[16px] font-bold uppercase mt-[6px]">
+          TƯ VẤN MIỄN PHÍ
+        </h1>
+        <h1 class="text-[12px] font-semibold capitalize mt-[3px]">
+          Sửa Chữa, Phục Hồi, Custom Giày
+        </h1>
+        <button
+          class="w-[98px] h-[27px] rounded-[5px] bg-white font-semibold text-[10px] uppercase mt-[13px] hover:text-white hover:bg-black"
+        >
+          CHAT NGAY
+        </button>
+      </div>
+
+      <div
+        class="h-[115.4px] w-[115.4px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[2px] cursor-pointer"
+        #scrollBox
+        (mousedown)="onMouseDown($event)"
+        (mouseup)="onMouseUp()"
+        (mousemove)="onMouseMove($event)"
+        (mouseleave)="onMouseLeave()"
+      >
+        <img [src]="scroll_box_img1" draggable="false" />
+        <img [src]="scroll_box_img2" draggable="false" />
+        <img [src]="scroll_box_img3" draggable="false" />
+        <img [src]="scroll_box_img4" draggable="false" />
+      </div>
+    </div>
+  </div>
+
+  <!--services-->
+
+  <div class="flex flex-col items-center bg-white">
+    
+  </div>
+
+</body>
+
+<!-- <header>
+  <div class="flex relative">
+    <div class="bg-[]"></div>
+
+    <div class="absolute text-white xl:mt-[470px] xl:ml-[346px] sm:mt-[153px] sm:ml-[176px]">
+      <h1 class="font-playfairDisplay font-bold xl:text-[27px] sm:text-[20px]">ˈLoomənəs</h1>
+      <h1 class="font-extrabold xl:text-[70px] sm:text-[48px]">SẠCH SẼ</h1>
+      <h1 class="font-extrabold xl:text-[70px] sm:text-[48px]">SÁNG BÓNG</h1>
+      <br />
+      <h1 class="font-semibold xl:text-[24px] sm:text-[16px]">
+        Dịch vụ giặt giày chất lượng, để bước chân của bạn luôn tự tin
+      </h1>
+      <h1 class="font-semibold xl:text-[24px] sm:text-[16px]">trên mọi nẻo đường</h1>
+      <button
+        class="border-2 border-color-amber rounded-[10px] xl:w-[358px] xl:h-[96px] font-bold xl:text-[21px] text-color-amber uppercase mt-[64px] hover:bg-color-amber hover:text-color-boldYellow"
+      >
+        Đặt lịch ngay
+      </button>
+    </div>
+  </div>
+</header> -->
+
+<!-- <div class="bg-white h-[1043.86px] flex flex-col items-center">
   <h1 class="capitalize font-bold text-[64.32px] mt-[89.78px]">
     Lý Do Chọn ˈLoomənəs
   </h1>
@@ -50,9 +157,9 @@
       </h1>
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="h-[410px] flex justify-center">
+<!-- <div class="h-[410px] flex justify-center">
   <img class="absolute h-[410px] w-[1440px]" [src]="bns" />
   <div class="h-[410px] absolute flex items-center justify-center gap-[189px]">
     <div class="text-center font-openSans">
@@ -81,11 +188,10 @@
       <img [src]="scroll_box_img3" draggable="false" />
       <img [src]="scroll_box_img4" draggable="false" />
     </div>
-    
   </div>
-</div>
+</div> -->
 
-<div class="h-[1197.96px] flex flex-col items-center bg-white">
+<!-- <div class="h-[1197.96px] flex flex-col items-center bg-white">
   <div class="text-center mt-[123.28px]">
     <h1 class="font-bold text-[64.32px]">Dịch vụ</h1>
     <h1 class="font-semibold text-[48.32px] text-color-amberGray mt-[21.44px]">
@@ -115,7 +221,7 @@
         </h1>
       </div>
     </div>
-    
+
     <div class="inline-block w-[48px]"></div>
     <div class="relative inline-block w-[353px] h-[237px] cursor-pointer">
       <img
@@ -123,7 +229,7 @@
         [src]="serviceImgs[1]"
       />
       <div
-        class="group absolute w-[353px] h-[237px] flex justify-center items-center  rounded-[10px]"
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center rounded-[10px]"
       >
         <div
           class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
@@ -142,7 +248,7 @@
         [src]="serviceImgs[2]"
       />
       <div
-        class="group absolute w-[353px] h-[237px] flex justify-center items-center  rounded-[10px]"
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center rounded-[10px]"
       >
         <div
           class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
@@ -161,7 +267,7 @@
         [src]="serviceImgs[3]"
       />
       <div
-        class="group absolute w-[353px] h-[237px] flex justify-center items-center  rounded-[10px]"
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center rounded-[10px]"
       >
         <div
           class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
@@ -180,7 +286,7 @@
         [src]="serviceImgs[4]"
       />
       <div
-        class="group absolute w-[353px] h-[237px] flex justify-center items-center  rounded-[10px]"
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center rounded-[10px]"
       >
         <div
           class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
@@ -199,7 +305,7 @@
         [src]="serviceImgs[5]"
       />
       <div
-        class="group absolute w-[353px] h-[237px] flex justify-center items-center  rounded-[10px]"
+        class="group absolute w-[353px] h-[237px] flex justify-center items-center rounded-[10px]"
       >
         <div
           class="rounded-[10px] w-[353px] h-[237px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
@@ -233,41 +339,55 @@
     <img [src]="iconMenuBook" />
     <p class="font-semibold text-[24px]">BẢNG GIÁ DỊCH VỤ</p>
   </button>
-</div>
+</div> -->
 
-<div class="flex flex-col items-center h-[894px] bg-white">
+<!-- <div class="flex flex-col items-center h-[894px] bg-white">
   <h1 class="text-[48px] font-bold mt-[81px]">SẢN PHẨM NỔI BẬT</h1>
   <div class="w-[313px] h-[3px] bg-black mt-[26px]"></div>
 
   <div class="whitespace-nowrap w-[1156px] h-[427px] overflow-hidden mt-[74px]">
     <div class="inline-block w-[337px] h-[337px] cursor-pointer">
-      <img [src]="product[0]" class="w-[337px] h-[337px]">
-      <h1 class="text-center font-semibold text-[28px]">Dung dịch vệ sinh giày<br>Cure Crep</h1>
+      <img [src]="product[0]" class="w-[337px] h-[337px]" />
+      <h1 class="text-center font-semibold text-[28px]">
+        Dung dịch vệ sinh giày<br />Cure Crep
+      </h1>
     </div>
     <div class="inline-block w-[74px]"></div>
     <div class="inline-block w-[337px] h-[337px] cursor-pointer">
-      <img [src]="product[1]" class="w-[337px] h-[337px]">
-      <h1 class="text-center font-semibold text-[28px]">Bàn chải đế cao su<br>Timberland</h1>
+      <img [src]="product[1]" class="w-[337px] h-[337px]" />
+      <h1 class="text-center font-semibold text-[28px]">
+        Bàn chải đế cao su<br />Timberland
+      </h1>
     </div>
     <div class="inline-block w-[74px]"></div>
     <div class="inline-block w-[337px] h-[337px] cursor-pointer">
-      <img [src]="product[2]" class="w-[337px] h-[337px]">
-      <h1 class="text-center font-semibold text-[28px]">Bộ làm sạch giày thể thao<br>Angelus Foam Tex</h1>
+      <img [src]="product[2]" class="w-[337px] h-[337px]" />
+      <h1 class="text-center font-semibold text-[28px]">
+        Bộ làm sạch giày thể thao<br />Angelus Foam Tex
+      </h1>
     </div>
     <div class="inline-block w-[74px]"></div>
     <div class="inline-block w-[337px] h-[337px] cursor-pointer">
-      <img [src]="product[3]" class="w-[337px] h-[337px]">
-      <h1 class="text-center font-semibold text-[28px]">Sản phẩm chăm sóc<br>giày dầu sáp ECCO</h1>
+      <img [src]="product[3]" class="w-[337px] h-[337px]" />
+      <h1 class="text-center font-semibold text-[28px]">
+        Sản phẩm chăm sóc<br />giày dầu sáp ECCO
+      </h1>
     </div>
     <div class="inline-block w-[74px]"></div>
     <div class="inline-block w-[337px] h-[337px] cursor-pointer">
-      <img [src]="product[4]" class="w-[337px] h-[337px]">
-      <h1 class="text-center font-semibold text-[28px]">Miếng bọt biển đánh<br>giày KIWI Express</h1>
+      <img [src]="product[4]" class="w-[337px] h-[337px]" />
+      <h1 class="text-center font-semibold text-[28px]">
+        Miếng bọt biển đánh<br />giày KIWI Express
+      </h1>
     </div>
     <div class="inline-block w-[74px]"></div>
     <div class="inline-block w-[337px] h-[337px] cursor-pointer">
-      <img [src]="product[5]" class="w-[337px] h-[337px]">
-      <h1 class="text-center font-semibold text-[28px]">Chất tẩy rửa giày<br>KIWI</h1>
+      <img [src]="product[5]" class="w-[337px] h-[337px]" />
+      <h1 class="text-center font-semibold text-[28px]">
+        Chất tẩy rửa giày<br />KIWI
+      </h1>
     </div>
   </div>
-</div>
+</div> -->
+
+<Loomenes-footer></Loomenes-footer>
