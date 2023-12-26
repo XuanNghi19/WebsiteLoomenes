@@ -43,7 +43,7 @@
               [(ngModel)]="user.name"
               type="text"
               placeholder="Vui lòng nhập"
-              class="bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
+              class="inputName bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
             />
             <span
               class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
@@ -59,13 +59,14 @@
               >Số điện thoại <span class="text-color-red">*</span></span
             >
             <input
+              id="inputTel"
               #inputTel
               [(ngModel)]="user.tel"
               (input)="onChangeInput(inputTel)"
               (blur)="onBlurInput(inputTel)"
               type="tel"
               placeholder="Vui lòng nhập"
-              class="bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
+              class="inputTel bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
             />
             <span
               class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
@@ -87,7 +88,7 @@
               (blur)="onBlurInput(inputAdd)"
               type="text"
               placeholder="Vui lòng nhập"
-              class="bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
+              class="inputAdd bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
             />
             <span
               class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
@@ -145,6 +146,7 @@
     class="mt-1 px-5 font-semibold sm:mx-auto sm:px-0 sm:w-[500px] sm:mt-4 lg:pl-[60px] lg:pr-3 lg:mx-0 lg:py-0 lg:my-0 lg:mt-4 xl:pr-6s xl:pl-[120px] xl:ml-0 lg:w-7/12 xl:w-3/5 2xl:2/3 xl:mt-2"
   >
     <button
+      (click)="onSubmitPurchase()"
       class="font-bold w-full h-12 bg-color-amber rounded-lg hover:bg-color-amberGray sm:w-[500px] sm:h-[60px] sm:text-xl lg:w-full"
     >
       ĐẶT HÀNG
