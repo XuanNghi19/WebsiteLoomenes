@@ -4,13 +4,18 @@
 @tailwind utilities;
 
 @layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+  }
   .scrollbar-thin::-webkit-scrollbar-track {
-    border-radius: 10px;
+    border-radius: 5px;
+    
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 5px;
   }
+
 }
 
 /* Chrome, Safari, Edge, Opera */
