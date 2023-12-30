@@ -12,7 +12,6 @@ export class ProductPageComponent {
   currentPage = 1;
   itemsPerPage = 12;
 
-  // Hàm này cập nhật danh sách sản phẩm trên trang hiện tại
   updatePagedProductList(): void {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = Math.min(
@@ -22,19 +21,19 @@ export class ProductPageComponent {
     this.pagedProductList = this.productList.slice(startIndex, endIndex);
   }
 
-  // Hàm này được gọi khi thay đổi trang
   onPageChange(pageNumber: number, element1: any, element2: any): void {
     element1.classList.add('active');
     element2.classList.remove('active');
-
     this.currentPage = pageNumber;
     this.updatePagedProductList();
   }
 
-  // Hàm này được gọi khi component được khởi tạo
+  onSortProduct() {
+    this.productList.sort((a, b) => a.price - b.price);
+    this.updatePagedProductList();
+  }
+
   ngOnInit(): void {
-    // Khởi tạo danh sách sản phẩm và danh sách sản phẩm trên trang đầu tiên
-    // this.productList = ...; // Gán danh sách sản phẩm của bạn vào đây
     this.updatePagedProductList();
   }
 }

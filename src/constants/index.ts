@@ -7,9 +7,9 @@ export const PRODUCT_LIST = [
   },
   {
     id: '2',
-    name: 'Bảo vệ giày SNEAKER PROTECTOR',
+    name: 'Bộ dụng cụ đánh giày mini',
     price: 179000,
-    url: 'assets/products/dung-dich-bao-ve-giay.png',
+    url: 'assets/products/bo-dung-cu-danh-giay-mn.png',
   },
   {
     id: '3',
@@ -91,8 +91,8 @@ export const PRODUCT_LIST = [
   },
   {
     id: '16',
-    name: 'Hộp bảo vệ giày',
+    name: 'Kem đánh giày Wax Oil',
     price: 300000,
-    url: 'assets/products/hop-bao-ve-giay.png',
+    url: 'assets/products/kem-danh-giay-oil.png',
   },
 ];
