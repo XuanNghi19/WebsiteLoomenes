@@ -43,9 +43,9 @@ export class HomePageComponent implements AfterViewInit {
   ];
 
   tapletProduct: string[] = [
-    '/assets/home/tapletProduct01.svg',
-    '/assets/home/tapletProduct02.svg',
-    '/assets/home/tapletProduct03.svg',
+    '/assets/home/Group 302.svg',
+    '/assets/home/Group 301.svg',
+    '/assets/home/Group 242.svg',
   ];
 
   slProduct: string = this.mobileProduct[0];
