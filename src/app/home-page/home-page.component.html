@@ -251,14 +251,12 @@
   <div class="flex flex-col items-center bg-white font-openSans">
     <p class="font-bold text-[28px] mt-[39px]">SẢN PHẨM NỔI BẬT</p>
     <p class="w-[190px] h-[3px] bg-black mt-[13px]"></p>
-    <div class="whitespace-nowrap w-[277px] h-[303px] overflow-hidden">
-      <img
-        [src]="mobileProduct[slIdxProduct]"
-        class="relative inline-block cursor-pointer"
-        (touchstart)="onTouchStart($event)"
-        (touchend)="onTouchEnd($event)"
-      />
-    </div>
+    <img
+      [src]="mobileProduct[slIdxProduct]"
+      class="w-[277px] cursor-pointer h-[310px]"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+    />
     <div class="mt-[54px] gap-[20px] flex">
       <button
         (click)="getProduct(0)"
@@ -300,7 +298,7 @@
       </button>
     </div>
   </div>
-  
+
   <!--introduce-->
   <div
     class="bg-white flex flex-col items-center text-center font-openSans mb-[69.44px]"
@@ -542,7 +540,7 @@
     <p class="block font-bold text-[42px] mt-[61px]">SẢN PHẨM NỔI BẬT</p>
     <p class="w-[225.8px] h-[3px] bg-black mt-[21.78px]"></p>
     <div class="flex gap-[53px] mt-[43.62px]">
-      <div class="w-[239.64px] h-[303.07px]" *ngFor="let x of tapletProduct">
+      <div class="w-[239.64px] h-[310px] hover:shadow-lg" *ngFor="let x of tapletProduct">
         <img [src]="x" />
       </div>
     </div>
@@ -570,7 +568,7 @@
       </button>
     </div>
   </div>
-  
+
   <!--introduce-->
   <div
     class="bg-white flex flex-col items-center text-center font-openSans mb-[101px]"
@@ -606,9 +604,7 @@
   </div>
 
   <!--banners-->
-  <div
-    class="flex w-full relative items-center font-openSans"
-  >
+  <div class="flex w-full relative items-center font-openSans">
     <img class="w-full" [src]="bns" />
     <div class="absolute w-full flex justify-center gap-[20%]">
       <div class="text-center font-openSans">
@@ -660,9 +656,7 @@
       class="whitespace-nowrap w-[1163px] h-[249px] overflow-hidden mt-[50px]"
       #serviceBoxPc
     >
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[0]"
@@ -682,9 +676,7 @@
       </div>
 
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[1]"
@@ -703,9 +695,7 @@
         </div>
       </div>
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[2]"
@@ -724,9 +714,7 @@
         </div>
       </div>
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[3]"
@@ -745,9 +733,7 @@
         </div>
       </div>
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[4]"
@@ -766,9 +752,7 @@
         </div>
       </div>
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[5]"
@@ -796,7 +780,7 @@
         Trước
       </button>
       <button
-        class="bg-color-amber rounded-[5px]  w-[100px] h-[70px] hover:bg-color-amberGray"
+        class="bg-color-amber rounded-[5px] w-[100px] h-[70px] hover:bg-color-amberGray"
         (click)="nextServiceBox('xl')"
       >
         Sau
@@ -815,7 +799,10 @@
     <p class="block font-bold text-[48px] mt-[81px]">SẢN PHẨM NỔI BẬT</p>
     <p class="w-[313px] h-[3px] bg-black mt-[26px]"></p>
     <div class="w-full flex justify-center gap-[7%] mt-[74px]">
-      <div class="flex justify-center w-[337px] h-[427px]" *ngFor="let x of tapletProduct">
+      <div
+        class="flex justify-center w-[337px] h-[427px] hover:shadow-lg"
+        *ngFor="let x of tapletProduct"
+      >
         <img [src]="x" />
       </div>
     </div>
