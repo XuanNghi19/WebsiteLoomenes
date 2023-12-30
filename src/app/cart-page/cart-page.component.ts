@@ -16,28 +16,28 @@ export class CartPageComponent implements OnInit {
       name: 'Bộ vệ sinh giày cơ bản',
       price: 299000,
       quantity: 2,
-      url: 'assets/products/bo-ve-sinh-giay-co-ban.jpg',
+      url: 'assets/products/bo-ve-sinh-giay-co-ban.png',
     },
     {
       id: '2',
       name: 'Bộ vệ sinh giày chuyên sâu',
       price: 499000,
       quantity: 1,
-      url: 'assets/products/bo-ve-sinh-giay-chuyen-sau.jpg',
+      url: 'assets/products/bo-ve-sinh-giay-chuyen-sau.png',
     },
     {
       id: '3',
       name: 'Bộ vệ sinh giày cao cấp',
       price: 799000,
       quantity: 1,
-      url: 'assets/products/bo-ve-sinh-giay-cao-cap.jpg',
+      url: 'assets/products/bo-ve-sinh-giay-cao-cap.png',
     },
     {
       id: '4',
       name: 'Bộ kit vệ sinh giày Crep',
       price: 500000,
       quantity: 1,
-      url: 'assets/products/bo-kit-ve-sinh-giay.jpg',
+      url: 'assets/products/bo-kit-ve-sinh-giay.png',
     },
   ];
 

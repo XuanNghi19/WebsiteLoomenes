@@ -15,15 +15,15 @@
       class="block cursor-pointer sm:h-[52px] sm:w-[170px] xl:h-[43px] xl:w-[152px]"
     />
     <div
-      class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold justify-between xl:flex"
+      class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold justify-between xl:flex w-[47%]"
     >
       <ul
-        class="flex items-center gap-[80px] font-openSans font-semibold text-[21px]"
+        class="flex items-center justify-between font-openSans font-semibold text-[21px] w-full"
       >
         <li class=""><a [routerLink]="['/home-page']">Trang chủ</a></li>
         <li class=""><a href="#">Giới thiệu</a></li>
         <li class=""><a [routerLink]="['/service-page']">Dịch vụ</a></li>
-        <li class=""><a href="#">Sản phẩm</a></li>
+        <li class=""><a [routerLink]="['/product-page']">Sản phẩm</a></li>
         <li class=""><a href="#">Bài viết</a></li>
       </ul>
     </div>
@@ -48,9 +48,8 @@
     <a [routerLink]="['/home-page']" class="mt-9 block">Trang chủ</a>
     <a href="" class="mt-9 block">Giới thiệu</a>
     <a [routerLink]="['/service-page']" class="mt-9 block">Dịch vụ</a>
-    <a href="" class="mt-9 block">Sản phẩm</a>
+    <a [routerLink]="['/product-page']" class="mt-9 block">Sản phẩm</a>
     <a href="" class="mt-9 block">Bài viết</a>
     <a href="" class="mt-9 block">Đặt lịch</a>
   </div>
-  
 </header>
