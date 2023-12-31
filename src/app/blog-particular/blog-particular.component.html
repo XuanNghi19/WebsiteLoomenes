@@ -1,10 +1,24 @@
 <div class="relative h-[113px] px-5 w-full">
   <img
+  [routerLink]="['/blog-page']"
     src="assets/blog/Return_icon.svg"
     alt=""
     class="absolute top-1/2 -translate-y-1/2 ml-[335px]"
   />
+  <div
+    *ngIf="isOpenedMenu"
+    class="absolute top-0 left-0 h-[448px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 xl:hidden"
+  >
+    <img (click)="onToggleMenu()" src="assets/header/close.svg" alt="" />
+    <a [routerLink]="['/home-page']" class="mt-9 block">Trang chủ</a>
+    <a href="" class="mt-9 block">Giới thiệu</a>
+    <a [routerLink]="['/service-page']" class="mt-9 block">Dịch vụ</a>
+    <a href="" class="mt-9 block">Sản phẩm</a>
+    <a [routerLink]="['/blog-page']" class="mt-9 block">Bài viết</a>
+    <a href="" class="mt-9 block">Đặt lịch</a>
+  </div>
   <img
+  (click)="onToggleMenu()"
     src="assets/blog/menu_icon.svg"
     alt=""
     class="absolute top-1/2 -translate-y-1/2"

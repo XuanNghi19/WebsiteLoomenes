@@ -1,0 +1,86 @@
+export const PRODUCT_LIST = [
+  {
+    id: '1',
+    name: 'Dung dịch vệ sinh giày Sneaker',
+    price: 179000,
+    url: 'assets/products/dung-dich-ve-sinh-giay-sneaker.jpg',
+  },
+  {
+    id: '2',
+    name: 'Bảo vệ giày SNEAKER PROTECTOR',
+    price: 179000,
+    url: 'assets/products/dung-dich-bao-ve-giay.jpg',
+  },
+  {
+    id: '3',
+    name: 'Khử mùi kháng khuẩn',
+    price: 179000,
+    url: 'assets/products/khu-mui-khang-khuan.jpg',
+  },
+  {
+    id: '4',
+    name: 'Chăm sóc giày da',
+    price: 179000,
+    url: 'assets/products/cham-soc-giay-da.jpg',
+  },
+  {
+    id: '5',
+    name: 'Khăn ướt vệ sinh giày',
+    price: 249000,
+    url: 'assets/products/khan-uot-ve-sinh-giay.jpg',
+  },
+  {
+    id: '6',
+    name: 'Bộ vệ sinh giày cơ bản',
+    price: 299000,
+    url: 'assets/products/bo-ve-sinh-giay-co-ban.jpg',
+  },
+  {
+    id: '7',
+    name: 'Bộ vệ sinh giày chuyên sâu',
+    price: 499000,
+    url: 'assets/products/bo-ve-sinh-giay-chuyen-sau.jpg',
+  },
+  {
+    id: '8',
+    name: 'Bộ vệ sinh giày cao cấp',
+    price: 799000,
+    url: 'assets/products/bo-ve-sinh-giay-cao-cap.jpg',
+  },
+  {
+    id: '9',
+    name: 'Bộ kit vệ sinh giày',
+    price: 500000,
+    url: 'assets/products/bo-kit-ve-sinh-giay.jpg',
+  },
+  {
+    id: '10',
+    name: 'Crep Protect Starter Pack',
+    price: 650000,
+    url: 'assets/products/crep-protect-starter-pack.jpg',
+  },
+  {
+    id: '11',
+    name: 'Dụng cụ giữ form giày',
+    price: 400000,
+    url: 'assets/products/dung-cu-giu-form-giay.jpg',
+  },
+  {
+    id: '12',
+    name: 'Hộp bảo vệ giày',
+    price: 1150000,
+    url: 'assets/products/hop-bao-ve-giay.jpg',
+  },
+  {
+    id: '13',
+    name: 'Khăn lau vệ sinh',
+    price: 220000,
+    url: 'assets/products/khan-lau-ve-sinh.jpg',
+  },
+  {
+    id: '14',
+    name: 'Viên thuốc khử mùi',
+    price: 320000,
+    url: 'assets/products/vien-thuoc-khu-mui.jpg',
+  },
+];

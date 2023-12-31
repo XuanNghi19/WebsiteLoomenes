@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import localeVi from '@angular/common/locales/vi';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HeaderNavigatorComponent } from './widgets/header-navigator/header-navigator.component';
 import { FooterComponent } from './widgets/footer/footer.component';
@@ -13,6 +15,10 @@ import { ModalComponent } from './modal/modal.component';
 import { BlogParticularComponent } from './blog-particular/blog-particular.component';
 import { LichNewComponent } from './lich-new/lich-new.component';
 import { LichPage3Component } from './lich-page3/lich-page3.component';
+import { InfoCustomerPageComponent } from './info-customer-page/info-customer-page.component';
+import { RouterModule } from '@angular/router';
+
+registerLocaleData(localeVi, 'vi-VN');
 
 @NgModule({
   declarations: [
@@ -20,6 +26,8 @@ import { LichPage3Component } from './lich-page3/lich-page3.component';
     HomePageComponent,
     HeaderNavigatorComponent,
     FooterComponent,
+    InfoCustomerPageComponent,
+    CartPageComponent,
     ServicesPageComponent,
     CartPageComponent,
     BlogPageComponent,
@@ -28,7 +36,7 @@ import { LichPage3Component } from './lich-page3/lich-page3.component';
     LichNewComponent,
     LichPage3Component,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,162 @@
+<Loomenes-header-navigator></Loomenes-header-navigator>
+
+<div class="w-full font-openSans text-[14px]">
+  <div
+    class="h-[170px] relative w-full bg-no-repeat bg-cover bg-center bg-[url('assets/cart/cart-banner.svg')] sm:h-[240px] xl:h-[320px]"
+  >
+    <div class="bg-black w-full h-full absolute top-0 opacity-20"></div>
+    <span
+      class="block absolute font-extrabold text-[32px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white sm:hidden"
+      >GIỎ HÀNG</span
+    >
+    <div
+      class="hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center absolute sm:block"
+    >
+      <div class="flex justify-center">
+        <span class="font-semibold cursor-pointer">Trang chủ</span>
+        <img src="assets/cart/arrow-right.svg" alt="" class="ml-1" />
+        <span class="block ml-1">Giỏ hàng</span>
+      </div>
+      <div class="font-semibold text-[32px] mt-1 xl:text-[48px]">Giỏ hàng</div>
+    </div>
+  </div>
+  <div
+    class="sm:flex justify-between sm:px-[60px] sm:justify-center lg:justify-between xl:px-[120px] lg:relative"
+  >
+    <div class="lg:w-7/12 xl:w-3/5 2xl:2/3">
+      <div class="bg-white py-5 xl:py-10 xl:w-full">
+        <span
+          class="pl-5 block font-bold text-base mt-2 sm:pl-0 sm:w-[500px] sm:text-3xl sm:pb-4 sm:mt-10 sm:font-bold sm:text-center lg:text-2xl lg:text-left lg:pb-0 xl:w-[690px] lg:relative 2xl:w-[750px]"
+          >THÔNG TIN KHÁCH HÀNG</span
+        >
+        <div
+          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-10 sm:w-[500px] lg:w-full"
+        >
+          <div class="w-full relative">
+            <span class="block font-semibold text-[14px] sm:text-xl xl:text-2xl"
+              >Họ và tên <span class="text-color-red">*</span></span
+            >
+            <input
+              #inputName
+              (blur)="onBlurInput(inputName)"
+              (input)="onChangeInput(inputName)"
+              [(ngModel)]="user.name"
+              type="text"
+              placeholder="Vui lòng nhập"
+              class="inputName bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
+            />
+            <span
+              class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
+              >Đây là trường bắt buộc</span
+            >
+          </div>
+        </div>
+        <div
+          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] lg:w-full"
+        >
+          <div class="w-full relative">
+            <span class="block font-semibold text-[14px] sm:text-xl xl:text-2xl"
+              >Số điện thoại <span class="text-color-red">*</span></span
+            >
+            <input
+              id="inputTel"
+              #inputTel
+              [(ngModel)]="user.tel"
+              (input)="onChangeInput(inputTel)"
+              (blur)="onBlurInput(inputTel)"
+              type="tel"
+              placeholder="Vui lòng nhập"
+              class="inputTel bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
+            />
+            <span
+              class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
+              >Đây là trường bắt buộc</span
+            >
+          </div>
+        </div>
+        <div
+          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] lg:w-full"
+        >
+          <div class="w-full relative">
+            <span class="block font-semibold text-[14px] sm:text-xl xl:text-2xl"
+              >Địa chỉ <span class="text-color-red">*</span></span
+            >
+            <input
+              #inputAdd
+              [(ngModel)]="user.address"
+              (input)="onChangeInput(inputAdd)"
+              (blur)="onBlurInput(inputAdd)"
+              type="text"
+              placeholder="Vui lòng nhập"
+              class="inputAdd bg-[#F5F6F8] px-4 w-full h-11 outline-none rounded-lg text-[12px] mt-3 sm:text-base sm:h-[52px] sm:px-6 xl:h-16 xl:text-xl xl:mt-6"
+            />
+            <span
+              class="hidden absolute -bottom-6 right-0 font-semibold text-[10px] text-color-red sm:text-[12px] xl:text-base xl:-bottom-9"
+              >Đây là trường bắt buộc</span
+            >
+          </div>
+        </div>
+        <div
+          class="w-full bg-white px-5 pt-6 flex justify-between sm:px-0 sm:py-0 sm:mt-11 sm:w-[500px] lg:w-full"
+        >
+          <div class="w-full">
+            <span class="block font-semibold text-[14px] sm:text-xl xl:text-2xl"
+              >Ghi chú</span
+            >
+            <textarea
+              #inputNote
+              [(ngModel)]="user.note"
+              name=""
+              id=""
+              rows="6"
+              placeholder="Vui lòng nhập"
+              class="bg-[#F5F6F8] w-full px-4 outline-none rounded-lg text-[12px] mt-3 sm:text-base py-[14px] resize-none sm:px-6 xl:text-xl xl:py-4"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="hidden w-[320px] rounded-lg text-center mt-14 py-[60px] px-[25px] h-[588px] bg-[#F5F6F8] lg:w-[310px] lg:block xl:mt-16 xl:w-[340px] xl:h-[700px] xl:py-[85px] lg:absolute lg:top-0 lg:right-0 lg:mr-[60px] xl:mr-[120px]"
+    >
+      <div class="">
+        <span class="font-semibold text-2xl">Giao Hàng</span>
+        <span class="block mt-3 font-normal text-base text-[#9F9F9F]"
+          >Thời gian nhận hàng là<br />
+          3- 5 ngày sau khi đặt hàng</span
+        >
+      </div>
+      <div class="mt-[100px] xl:mt-[120px]">
+        <span class="font-semibold text-2xl">Hoàn Trả</span>
+        <span class="block mt-3 font-normal text-base text-[#9F9F9F]"
+          >Nếu sản phẩm có bất kì lỗi gì,<br />
+          bạn sẽ được hoàn tiền</span
+        >
+      </div>
+      <div class="mt-[100px] xl:mt-[130px]">
+        <span class="font-semibold text-2xl">Thanh Toán</span>
+        <span class="block mt-3 font-normal text-base text-[#9F9F9F]"
+          >Thanh toán an toàn<br />
+          với phương thức COD</span
+        >
+      </div>
+    </div>
+  </div>
+  <div
+    class="mt-1 px-5 font-semibold sm:mx-auto sm:px-0 sm:w-[500px] sm:mt-4 lg:pl-[60px] lg:pr-3 lg:mx-0 lg:py-0 lg:my-0 lg:mt-4 xl:pr-6s xl:pl-[120px] xl:ml-0 lg:w-7/12 xl:w-3/5 2xl:2/3 xl:mt-2"
+  >
+    <button
+      (click)="onSubmitPurchase()"
+      class="font-bold w-full h-12 bg-color-amber rounded-lg hover:bg-color-amberGray sm:w-[500px] sm:h-[60px] sm:text-xl lg:w-full"
+    >
+      ĐẶT HÀNG
+    </button>
+    <a
+      [routerLink]="['/cart-page']"
+      class="block text-center font-normal mt-4 hover:underline cursor-pointer sm:w-[500px] sm:text-xl sm:mt-5 lg:w-full"
+      >Quay lại giỏ hàng</a
+    >
+  </div>
+</div>
+
+<Loomenes-footer></Loomenes-footer>

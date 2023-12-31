@@ -1,0 +1,896 @@
+<Loomenes-header-navigator></Loomenes-header-navigator>
+
+<!-- mobile -->
+<div class="sm:hidden">
+  <div class="w-full flex relative justify-center items-center">
+    <img [src]="imgBanersPhone" class="w-full" />
+    <div class="absolute text-center text-white font-openSans">
+      <p class="text-[32px] font-extrabold">
+        SẠCH SẼ <br />
+        SÁNG BÓNG
+      </p>
+      <p class="text-[14px] font-semibold mt-[8px]">
+        Dịch vụ giặt giày chất lượng, <br />
+        để bước chân của bạn luôn <br />
+        tự tin trên mọi nẻo đường.
+      </p>
+      <button
+        class="relative uppercase font-bold w-[198px] h-[48px] border-[2px] rounded-[4px] border-color-amber mt-[44px] text-[14px] text-color-amber hover:bg-color-amber hover:text-color-boldYellow"
+        (click)="showPageConfirm()"
+      >
+        Đặt lịch ngay
+      </button>
+    </div>
+    <!-- page_confirm -->
+    <div
+      class="w-[354px] absolute h-[220px] bg-white rounded-[16px] hide"
+      id="pageconfirm"
+    >
+      <img
+        src="assets/datlich/xmark-solid.svg"
+        alt=""
+        class="ml-[322px] mt-[15px]"
+        (click)="hidePageConfirm()"
+      />
+      <div class="">
+        <h1 class="ml-[100px] font-bold text-[#152C5B] text-[18px]">
+          Thông tin đặt lịch
+        </h1>
+        <h2 class="ml-[75px] mt-[5px] text-[12px] text-[#9F9F9F]">
+          Vui lòng xác nhận để tiếp tục đặt lịch
+        </h2>
+      </div>
+      <!-- checked -->
+      <label class="flex mt-[25px] ml-[60px]">
+        <input type="checkbox" class="w-[25px]" />
+        <span class="ml-[12px] text-[14px] text-[#9F9F9F]"
+          >Tôi đồng ý cung cấp thông tin.</span
+        >
+      </label>
+      <!-- Button -->
+      <div class="ml-[132px] mt-[20px]">
+        <button
+          [routerLink]="['/lich-new']"
+          class="block text-white text-[12px] w-[90px] h-[24px] bg-[#3252DF] rounded-[10px]"
+        >
+          Tiếp tục
+        </button>
+        <button
+          class="mt-[8px] block text-[#B3B3B3] text-[12px] w-[90px] h-[24px] bg-[#F5F6F8] rounded-[10px] hover:bg-[#8c8c8c]"
+          (click)="CancelDatlich()"
+        >
+          Hủy
+        </button>
+      </div>
+    </div>
+    <!-- page_confirm_done -->
+    <div
+      class="w-[354px] absolute h-[343px] bg-white rounded-[16px]"
+      id="PageConfirmDone"
+    >
+      <img
+        src="assets/datlich/xmark-solid.svg"
+        alt=""
+        class="ml-[322px] mt-[15px]"
+      />
+      <div class="block justify-center"></div>
+      <h1 class="mt-[10px] text-center font-bold text-[32px] text-[#152C5B]">
+        THANK YOU
+      </h1>
+      <img
+        src="assets/datlich/ticke_btn_dt.svg"
+        alt=""
+        class="ml-[150px] mt-[20px]"
+      />
+      <p class="text-center text-[10px] text-[#152C5B] font-semibold mt-[40px]">
+        Cảm ơn bạn đã điền vào mẫu của chúng tôi. <br />Lich đang xử lí, chúng
+        tôi sẽ liên hệ với bạn sớm nhất có thể.
+      </p>
+      <p class="text-center text-[#B6BAC3] text-[10px] mt-[20px]">
+        2023 Multimedia PTIT. All rights reverved
+      </p>
+
+      <!-- Button -->
+      <div class="ml-[132px] mt-[40px]">
+        <button
+          class="block text-white text-[12px] w-[90px] h-[24px] bg-[#3252DF] rounded-[10px]"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  <!--introduce-->
+  <div
+    class="bg-white flex flex-col items-center text-center font-openSans mb-[26px]"
+  >
+    <p class="font-semibold text-[28px] mt-[36px]">Lý Do Chọn ˈLoomənəs</p>
+    <p class="text-center text-[12px] mt-[10px]">
+      4 năm kinh nghiệm vệ sinh, phục chế giày đồ hiệu, <br />
+      ˈloomənəs cam kết dịch vụ tốt nhất cho khách hàng.
+    </p>
+
+    <div class="flex gap-[28px] mt-[45px]">
+      <div class="flex flex-col items-center">
+        <img [src]="stickerBag" class="w-[60px]" />
+        <p class="text-center text-[12px] mt-[19px]">
+          Hơn 100.00+ <br />sản phẩm <br />đã được bán
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img [src]="stickerPackage" class="w-[60px]" />
+        <p class="text-center text-[12px] mt-[14px]">
+          Tiện ích giao nhận 2 <br />
+          chiều tiện lợi,giao và nhận đồ <br />tại nhà
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img [src]="stickerShoe" class="w-[60px]" />
+        <p class="text-center text-[12px] mt-[25px]">
+          Hơn 300.000 + <br />
+          đôi giày <br />đã được vệ sinh
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--banners-->
+  <div
+    class="flex h-[135px] relative justify-center items-center font-openSans"
+  >
+    <img class="w-full h-[135px]" [src]="bns" />
+    <div class="absolute flex gap-[38px]">
+      <div class="text-center font-openSans">
+        <h1 class="text-[16px] font-semibold font-playfairDisplay">
+          ˈLoomənəs
+        </h1>
+        <h1 class="text-[16px] font-bold uppercase mt-[6px]">
+          TƯ VẤN MIỄN PHÍ
+        </h1>
+        <h1 class="text-[12px] font-semibold capitalize mt-[3px]">
+          Sửa Chữa, Phục Hồi, Custom Giày
+        </h1>
+        <button
+          class="w-[98px] h-[27px] rounded-[5px] bg-white font-semibold text-[10px] uppercase mt-[13px] hover:text-white hover:bg-black"
+        >
+          CHAT NGAY
+        </button>
+      </div>
+
+      <div
+        class="h-[115.4px] w-[115.4px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[2px] cursor-pointer"
+        #scrollBox
+        (mousedown)="onMouseDown($event)"
+        (mouseup)="onMouseUp()"
+        (mousemove)="onMouseMove($event)"
+        (mouseleave)="onMouseLeave()"
+      >
+        <img [src]="scroll_box_img1" draggable="false" />
+        <img [src]="scroll_box_img2" draggable="false" />
+        <img [src]="scroll_box_img3" draggable="false" />
+        <img [src]="scroll_box_img4" draggable="false" />
+      </div>
+    </div>
+  </div>
+
+  <!--services-->
+
+  <div class="flex flex-col items-center bg-white">
+    <div class="text-center mt-[45px]">
+      <h1 class="font-bold text-[28px]">Dịch vụ</h1>
+      <h1 class="font-semibold text-[24px] text-color-amberGray mt-[6px]">
+        Preview
+      </h1>
+    </div>
+
+    <div
+      class="whitespace-nowrap w-[348px] h-[149px] overflow-hidden mt-[31px]"
+      #serviceBox
+    >
+      <div class="relative inline-block w-[105.93px] h-[149px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[105.93px] h-[149px]"
+          [src]="serviceImgs[0]"
+        />
+        <div
+          class="group absolute w-[105.93px] h-[149px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[105.93px] h-[149px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[14px] text-color-amberGray text-center"
+          >
+            CHUYÊN SÂU
+          </h1>
+        </div>
+      </div>
+
+      <div class="inline-block w-[15px]"></div>
+      <div class="relative inline-block w-[105.93px] h-[149px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[105.93px] h-[149px]"
+          [src]="serviceImgs[1]"
+        />
+        <div
+          class="group absolute w-[105.93px] h-[149px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[105.93px] h-[149px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[14px] text-color-amberGray uppercase text-center"
+          >
+            Sửa đóng<br />đế giày âu
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[15px]"></div>
+      <div class="relative inline-block w-[105.93px] h-[149px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[105.93px] h-[149px]"
+          [src]="serviceImgs[2]"
+        />
+        <div
+          class="group absolute w-[105.93px] h-[149px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[105.93px] h-[149px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[14px] text-color-amberGray uppercase text-center"
+          >
+            Custom Giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[15px]"></div>
+      <div class="relative inline-block w-[105.93px] h-[149px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[105.93px] h-[149px]"
+          [src]="serviceImgs[3]"
+        />
+        <div
+          class="group absolute w-[105.93px] h-[149px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[105.93px] h-[149px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[14px] text-color-amberGray uppercase text-center"
+          >
+            Sửa đế giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[15px]"></div>
+      <div class="relative inline-block w-[105.93px] h-[149px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[105.93px] h-[149px]"
+          [src]="serviceImgs[4]"
+        />
+        <div
+          class="group absolute w-[105.93px] h-[149px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[105.93px] h-[149px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[14px] text-color-amberGray uppercase text-center"
+          >
+            Sơn giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[15px]"></div>
+      <div class="relative inline-block w-[105.93px] h-[149px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[105.93px] h-[149px]"
+          [src]="serviceImgs[5]"
+        />
+        <div
+          class="group absolute w-[105.93px] h-[149px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[105.93px] h-[149px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[14px] text-color-amberGray uppercase text-center"
+          >
+            vệ sinh<br />nâng cao
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex font-semibold text-[16px] gap-[100px] mt-[41px]">
+      <button
+        class="bg-color-amber rounded-[10px] w-[80px] h-[48.98px] hover:bg-color-amberGray"
+        (click)="prevServiceBox('')"
+      >
+        Trước
+      </button>
+      <button
+        class="bg-color-amber rounded-[10px] w-[80px] h-[48.98px] hover:bg-color-amberGray"
+        (click)="nextServiceBox('')"
+      >
+        Sau
+      </button>
+    </div>
+    <button
+      class="bg-color-amber rounded-[10px] w-[260px] h-[58px] flex justify-center items-center gap-[22px] mt-[40px] hover:bg-color-amberGray"
+    >
+      <img [src]="iconMenuBook" class="w-[40px]" />
+      <p class="font-semibold text-[20px]">BẢNG GIÁ DỊCH VỤ</p>
+    </button>
+  </div>
+
+  <!--product-->
+  <div class="flex flex-col items-center bg-white font-openSans">
+    <p class="font-bold text-[28px] mt-[39px]">SẢN PHẨM NỔI BẬT</p>
+    <p class="w-[190px] h-[3px] bg-black mt-[13px]"></p>
+    <div class="whitespace-nowrap w-[277px] h-[303px] overflow-hidden">
+      <img
+        [src]="mobileProduct[slIdxProduct]"
+        class="relative inline-block cursor-pointer"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)"
+      />
+    </div>
+    <div class="mt-[54px] gap-[20px] flex">
+      <button
+        (click)="getProduct(0)"
+        #dot1
+        class="rounded-[14px] w-[14px] h-[14px] bg-color-amberGray"
+      ></button>
+      <button
+        (click)="getProduct(1)"
+        #dot2
+        class="rounded-[14px] w-[14px] h-[14px] bg-color-gray"
+      ></button>
+      <button
+        (click)="getProduct(2)"
+        #dot3
+        class="rounded-[14px] w-[14px] h-[14px] bg-color-gray"
+      ></button>
+    </div>
+  </div>
+</div>
+
+<!-- taplet -->
+<div class="hidden sm:block xl:hidden">
+  <div class="w-full flex relative">
+    <img [src]="imgBaners" class="w-full" />
+    <div class="ml-[176px] absolute text-white font-openSans mt-[153px]">
+      <p class="text-[20px] font-bold font-playfairDisplay">ˈloomənəs</p>
+      <p class="text-[48px] font-extrabold">
+        SẠCH SẼ <br />
+        SÁNG BÓNG
+      </p>
+      <p class="text-[16px] font-semibold mt-[18px]">
+        Dịch vụ giặt giày chất lượng, để bước chân của bạn luôn <br />
+        tự tin trên mọi nẻo đường.
+      </p>
+      <button
+        class="uppercase font-bold w-[250px] h-[56px] border-[2px] rounded-[5px] border-color-amber mt-[43px] text-[16px] text-color-amber hover:bg-color-amber hover:text-color-boldYellow"
+      >
+        Đặt lịch ngay
+      </button>
+    </div>
+    <!-- pageConfirm -->
+    <div
+      class="absolute block rounded-[12px] w-[622px] -translate-x-1/2 left-1/2 bg-white h-[500px] top-[50px]"
+    ></div>
+
+    <!--introduce-->
+    <div
+      class="bg-white flex flex-col items-center text-center font-openSans mb-[69.44px]"
+    >
+      <p class="font-bold text-[42px] mt-[44.8px]">Lý Do Chọn ˈLoomənəs</p>
+      <p class="text-center font-semibold text-[16px] mt-[21.2px]">
+        Với 4 năm kinh nghiệm trong lĩnh vực vệ sinh và phục chế, sửa chữa giày
+        đồ hiệu, ˈloomənəs <br />
+        cam kết mang lại cho khách hàng trải nghiệm dịch vụ tốt nhất.
+      </p>
+
+      <div class="flex gap-[71px] mt-[86px]">
+        <div class="flex flex-col items-center">
+          <img [src]="stickerBag" class="w-[123px]" />
+          <p class="text-center font-semibold text-[16px] mt-[77.7px]">
+            Hơn 100.00+ <br />sản phẩm đã được bán
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img [src]="stickerPackage" class="w-[126.29px]" />
+          <p class="text-center font-semibold text-[16px] mt-[66.24px]">
+            Tiện ích giao nhận 2 <br />
+            chiều tiện lợi,giao và nhận đồ tại nhà
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img [src]="stickerShoe" class="w-[167px] h-[126px]" />
+          <p class="text-center font-semibold text-[16px] mt-[63.42px]">
+            Hơn 300.000 + đôi giày <br />đã được vệ sinh
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--banners-->
+    <div
+      class="flex h-[291.42px] relative justify-center items-center font-openSans"
+    >
+      <img class="w-[1023.51px] h-[291.42px]" [src]="bns" />
+      <div class="absolute flex gap-[137.58px]">
+        <div class="text-center font-openSans">
+          <h1 class="text-[28px] font-semibold font-playfairDisplay">
+            ˈLoomənəs
+          </h1>
+          <h1 class="text-[36px] font-bold uppercase mt-[16px]">
+            TƯ VẤN MIỄN PHÍ
+          </h1>
+          <h1 class="text-[28px] font-semibold capitalize mt-[12.69px]">
+            Sửa Chữa, Phục Hồi, Custom Giày
+          </h1>
+          <button
+            class="w-[189.78px] h-[51.18px] rounded-[5px] bg-white font-semibold text-[20px] uppercase mt-[30.38px] hover:text-white hover:bg-black"
+          >
+            CHAT NGAY
+          </button>
+        </div>
+
+        <div
+          class="h-[258.72px] w-[213.94px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[3.56px] cursor-pointer"
+          #scrollBox
+          (mousedown)="onMouseDown($event)"
+          (mouseup)="onMouseUp()"
+          (mousemove)="onMouseMove($event)"
+          (mouseleave)="onMouseLeave()"
+        >
+          <img [src]="scroll_box_img1" draggable="false" />
+          <img [src]="scroll_box_img2" draggable="false" />
+          <img [src]="scroll_box_img3" draggable="false" />
+          <img [src]="scroll_box_img4" draggable="false" />
+        </div>
+      </div>
+    </div>
+
+    <!--services-->
+    <div class="flex flex-col items-center bg-white">
+      <div class="text-center mt-[46.14px]">
+        <h1 class="font-bold text-[42px]">Dịch vụ</h1>
+        <h1 class="font-semibold text-[28px] text-color-amberGray mt-[13px]">
+          Preview
+        </h1>
+      </div>
+
+      <div
+        class="whitespace-nowrap w-[827.02px] h-[177.07px] overflow-hidden mt-[31px]"
+        #serviceBoxTaplet
+      >
+        <div
+          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+        >
+          <img
+            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+            [src]="serviceImgs[0]"
+          />
+          <div
+            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray text-center"
+            >
+              CHUYÊN SÂU
+            </h1>
+          </div>
+        </div>
+
+        <div class="inline-block w-[36px]"></div>
+        <div
+          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+        >
+          <img
+            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+            [src]="serviceImgs[1]"
+          />
+          <div
+            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              Sửa đóng<br />đế giày âu
+            </h1>
+          </div>
+        </div>
+        <div class="inline-block w-[36px]"></div>
+        <div
+          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+        >
+          <img
+            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+            [src]="serviceImgs[2]"
+          />
+          <div
+            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              Custom Giày
+            </h1>
+          </div>
+        </div>
+        <div class="inline-block w-[36px]"></div>
+        <div
+          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+        >
+          <img
+            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+            [src]="serviceImgs[3]"
+          />
+          <div
+            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              Sửa đế giày
+            </h1>
+          </div>
+        </div>
+        <div class="inline-block w-[36px]"></div>
+        <div
+          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+        >
+          <img
+            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+            [src]="serviceImgs[4]"
+          />
+          <div
+            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              Sơn giày
+            </h1>
+          </div>
+        </div>
+        <div class="inline-block w-[36px]"></div>
+        <div
+          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+        >
+          <img
+            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+            [src]="serviceImgs[5]"
+          />
+          <div
+            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              vệ sinh<br />nâng cao
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex font-semibold text-[18px] gap-[89px] mt-[53px]">
+        <button
+          class="bg-color-amber rounded-[5px] w-[80px] h-[60px] hover:bg-color-amberGray"
+          (click)="prevServiceBox('sm')"
+        >
+          Trước
+        </button>
+        <button
+          class="bg-color-amber rounded-[5px] w-[80px] h-[60px] hover:bg-color-amberGray"
+          (click)="nextServiceBox('sm')"
+        >
+          Sau
+        </button>
+      </div>
+      <button
+        class="bg-color-amber rounded-[5px] w-[249px] h-[60px] flex justify-center items-center gap-[6px] mt-[49px] hover:bg-color-amberGray mb-[44px]"
+      >
+        <img [src]="iconMenuBook" class="w-[38px]" />
+        <p class="font-semibold text-[20px]">BẢNG GIÁ DỊCH VỤ</p>
+      </button>
+    </div>
+
+    <!--product-->
+    <div class="flex flex-col items-center bg-white font-openSans">
+      <p class="block font-bold text-[42px] mt-[61px]">SẢN PHẨM NỔI BẬT</p>
+      <p class="w-[225.8px] h-[3px] bg-black mt-[21.78px]"></p>
+      <div class="flex gap-[53px] mt-[43.62px]">
+        <div class="w-[239.64px] h-[303.07px]" *ngFor="let x of tapletProduct">
+          <img [src]="x" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- pc -->
+  <div class="hidden xl:block">
+    <div class="w-full flex relative">
+      <img [src]="imgBaners" class="w-full" />
+      <div class="ml-[258px] absolute text-white font-openSans mt-[351px]">
+        <p class="text-[20px] font-bold font-playfairDisplay">ˈloomənəs</p>
+        <p class="text-[52px] font-extrabold">
+          SẠCH SẼ <br />
+          SÁNG BÓNG
+        </p>
+        <p class="text-[18px] font-semibold mt-[18px]">
+          Dịch vụ giặt giày chất lượng, để bước chân của bạn luôn <br />
+          tự tin trên mọi nẻo đường.
+        </p>
+        <button
+          class="uppercase font-bold w-[267px] h-[72px] border-[2px] rounded-[5px] border-color-amber mt-[48px] text-[16px] text-color-amber hover:bg-color-amber hover:text-color-boldYellow"
+        >
+          Đặt lịch ngay
+        </button>
+      </div>
+    </div>
+
+    <!--introduce-->
+    <div
+      class="bg-white flex flex-col items-center text-center font-openSans mb-[101px]"
+    >
+      <p class="font-bold text-[48px] mt-[66px]">Lý Do Chọn ˈLoomənəs</p>
+      <p class="text-center font-semibold text-[20px] mt-[29px]">
+        Với 4 năm kinh nghiệm trong lĩnh vực vệ sinh và phục chế, sửa chữa giày
+        đồ hiệu, ˈloomənəs <br />
+        cam kết mang lại cho khách hàng trải nghiệm dịch vụ tốt nhất.
+      </p>
+
+      <div class="flex gap-[167px] mt-[132px]">
+        <div class="flex flex-col items-center">
+          <img [src]="stickerBag" class="w-[180.33px]" />
+          <p class="text-center font-semibold text-[20px] mt-[108px]">
+            Hơn 100.00+ <br />sản phẩm đã được bán
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img [src]="stickerPackage" class="w-[177.6px]" />
+          <p class="text-center font-semibold text-[20px] mt-[91px]">
+            Tiện ích giao nhận 2 <br />
+            chiều tiện lợi,giao và nhận đồ tại nhà
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img [src]="stickerShoe" class="w-[236.18px] h-[177.6px]" />
+          <p class="text-center font-semibold text-[20px] mt-[93px]">
+            Hơn 300.000 + đôi giày <br />đã được vệ sinh
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--banners-->
+    <div class="flex w-full relative items-center font-openSans">
+      <img class="w-full" [src]="bns" />
+      <div class="absolute w-full flex justify-center gap-[20%]">
+        <div class="text-center font-openSans">
+          <h1 class="text-[36px] font-semibold font-playfairDisplay">
+            ˈLoomənəs
+          </h1>
+          <h1 class="text-[48px] font-bold uppercase mt-[26px]">
+            TƯ VẤN MIỄN PHÍ
+          </h1>
+          <h1 class="text-[40px] font-semibold capitalize mt-[22px]">
+            Sửa Chữa, Phục Hồi, Custom Giày
+          </h1>
+          <button
+            class="w-[267px] h-[72px] rounded-[5px] bg-white font-semibold text-[24px] uppercase mt-[42px] hover:text-white hover:bg-black"
+          >
+            CHAT NGAY
+          </button>
+        </div>
+
+        <div
+          class="h-[365px] w-[301px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[5px] cursor-pointer"
+          #scrollBox
+          (mousedown)="onMouseDown($event)"
+          (mouseup)="onMouseUp()"
+          (mousemove)="onMouseMove($event)"
+          (mouseleave)="onMouseLeave()"
+        >
+          <img [src]="scroll_box_img1" draggable="false" />
+          <div class="h-[20px]"></div>
+          <img [src]="scroll_box_img2" draggable="false" />
+          <div class="h-[20px]"></div>
+          <img [src]="scroll_box_img3" draggable="false" />
+          <div class="h-[20px]"></div>
+          <img [src]="scroll_box_img4" draggable="false" />
+        </div>
+      </div>
+    </div>
+
+    <!--services-->
+    <div class="flex flex-col items-center bg-white">
+      <div class="text-center mt-[92px]">
+        <h1 class="font-bold text-[48px]">Dịch vụ</h1>
+        <h1 class="font-semibold text-[36px] text-color-amberGray mt-[16px]">
+          Preview
+        </h1>
+      </div>
+
+      <div
+        class="whitespace-nowrap w-[1163px] h-[249px] overflow-hidden mt-[50px]"
+        #serviceBoxPc
+      >
+        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+          <img
+            class="absolute rounded-[10px] w-[354px] h-[249px]"
+            [src]="serviceImgs[0]"
+          />
+          <div
+            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray text-center"
+            >
+              CHUYÊN SÂU
+            </h1>
+          </div>
+        </div>
+
+        <div class="inline-block w-[50px]"></div>
+        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+          <img
+            class="absolute rounded-[10px] w-[354px] h-[249px]"
+            [src]="serviceImgs[1]"
+          />
+          <div
+            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              Sửa đóng<br />đế giày âu
+            </h1>
+          </div>
+        </div>
+        <div class="inline-block w-[50px]"></div>
+        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+          <img
+            class="absolute rounded-[10px] w-[354px] h-[249px]"
+            [src]="serviceImgs[2]"
+          />
+          <div
+            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              Custom Giày
+            </h1>
+          </div>
+        </div>
+        <div class="inline-block w-[50px]"></div>
+        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+          <img
+            class="absolute rounded-[10px] w-[354px] h-[249px]"
+            [src]="serviceImgs[3]"
+          />
+          <div
+            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              Sửa đế giày
+            </h1>
+          </div>
+        </div>
+        <div class="inline-block w-[50px]"></div>
+        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+          <img
+            class="absolute rounded-[10px] w-[354px] h-[249px]"
+            [src]="serviceImgs[4]"
+          />
+          <div
+            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              Sơn giày
+            </h1>
+          </div>
+        </div>
+        <div class="inline-block w-[50px]"></div>
+        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+          <img
+            class="absolute rounded-[10px] w-[354px] h-[249px]"
+            [src]="serviceImgs[5]"
+          />
+          <div
+            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+          >
+            <div
+              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+            ></div>
+            <h1
+              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+            >
+              vệ sinh<br />nâng cao
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex font-semibold text-[20px] gap-[160px] mt-[100px]">
+        <button
+          class="bg-color-amber rounded-[5px] w-[100px] h-[70px] hover:bg-color-amberGray"
+          (click)="prevServiceBox('xl')"
+        >
+          Trước
+        </button>
+        <button
+          class="bg-color-amber rounded-[5px] w-[100px] h-[70px] hover:bg-color-amberGray"
+          (click)="nextServiceBox('xl')"
+        >
+          Sau
+        </button>
+      </div>
+      <button
+        class="bg-color-amber rounded-[5px] w-[360px] h-[80px] flex justify-center items-center gap-[20px] mt-[76px] hover:bg-color-amberGray mb-[47px]"
+      >
+        <img [src]="iconMenuBook" class="w-[55.23px]" />
+        <p class="font-semibold text-[28px]">BẢNG GIÁ DỊCH VỤ</p>
+      </button>
+    </div>
+
+    <!--product-->
+    <div class="flex flex-col items-center bg-white font-openSans">
+      <p class="block font-bold text-[48px] mt-[81px]">SẢN PHẨM NỔI BẬT</p>
+      <p class="w-[313px] h-[3px] bg-black mt-[26px]"></p>
+      <div class="w-full flex justify-center gap-[7%] mt-[74px]">
+        <div
+          class="flex justify-center w-[337px] h-[427px]"
+          *ngFor="let x of tapletProduct"
+        >
+          <img [src]="x" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Loomenes-footer></Loomenes-footer>
+</div>
