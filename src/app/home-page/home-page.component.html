@@ -1,7 +1,9 @@
+
 <Loomenes-header-navigator></Loomenes-header-navigator>
 
+
 <!-- mobile -->
-<div class="sm:hidden">
+<div class="sm:hidden z-0">
   <div class="w-full flex relative justify-center items-center">
     <img [src]="imgBanersPhone" class="w-full" />
     <div class="absolute text-center text-white font-openSans">
@@ -282,7 +284,7 @@
 </div>
 
 <!-- taplet -->
-<div class="hidden sm:block xl:hidden">
+<div class="hidden sm:block xl:hidden z-0">
   <div class="w-full flex relative">
     <img [src]="imgBaners" class="w-full" />
     <div class="ml-[176px] absolute text-white font-openSans mt-[153px]">
@@ -559,7 +561,7 @@
 </div>
 
 <!-- pc -->
-<div class="hidden xl:block">
+<div class="hidden xl:block z-0">
   <div class="w-full flex relative">
     <img [src]="imgBaners" class="w-full" />
     <div class="ml-[258px] absolute text-white font-openSans mt-[351px]">
@@ -830,5 +832,6 @@
     </div>
   </div>
 </div>
+
 
 <Loomenes-footer></Loomenes-footer>
