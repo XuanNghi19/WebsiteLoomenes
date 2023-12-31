@@ -1,0 +1,20 @@
+<div
+  class="w-full h-[100vh] bg-no-repeat bg-cover bg-center bg-[url('assets/404/bg.svg')]"
+>
+  <div
+    class="absolute xl:top-[13%] left-1/2 -translate-x-1/2 text-white text-center sm:top-[27%] top-[30%]"
+  >
+    <img src="assets/404/logo.svg" alt="" class="mx-auto w-[150px] sm:w-auto" />
+    <span class="block text-[80px] font-extrabold sm:text-[150px]">404</span>
+    <span class="font-bold sm:text-[30px] block text-[20px]"
+      >Trang không tồn tại</span
+    >
+
+    <button
+      [routerLink]="['/home-page']"
+      class="sm:h-20 mt-[40px] w-[200px] h-[45px] bg-white text-black sm:mt-[80px] xl:mt-[140px] font-semibold sm:text-[30px] sm:w-[500px] rounded-lg hover:bg-[#F4F4F4]"
+    >
+      Quay về trang chủ
+    </button>
+  </div>
+</div>
