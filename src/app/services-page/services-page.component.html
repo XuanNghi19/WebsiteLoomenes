@@ -50,6 +50,7 @@
     </div>
     <button
       class="text-[20px] font-semibold w-[282px] h-[91.8px] bg-[#F2ECBE] rounded-[10px] mt-[53px] hover:bg-[#F1CF87] mb-[53.2px]"
+      (click)="goToPart('mobieOffer')"
     >
       CHƯƠNG TRÌNH ƯU ĐÃI
     </button>
@@ -133,7 +134,7 @@
   </div>
 
   <!-- Special offers -->
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center" id="mobieOffer">
     <div class="bg-black w-[350px] h-[2.5px] mt-[47.3px]"></div>
     <p class="font-semibold text-[32px] text-center mt-[36.5px]">
       Chương trình ưu đãi
@@ -260,6 +261,7 @@
     </div>
     <button
       class="text-[18px] font-semibold w-[309px] h-[71px] bg-[#F2ECBE] rounded-[10px] mt-[69.48px] hover:bg-[#F1CF87] mb-[55px]"
+      (click)="goToPart('tabletOffer')"
     >
       CHƯƠNG TRÌNH ƯU ĐÃI
     </button>
@@ -271,6 +273,7 @@
       *ngFor="let item of stackServices[index]; let e = even"
       class="w-full flex justify-center items-center gap-[10%]"
       [ngClass]="e ? 'bg-[#F6F6F6]' : 'bg-white'"
+      id="{{item.name}}"
     >
       <ng-container *ngIf="e; else odd">
         <ng-container *ngTemplateOutlet="image"></ng-container>
@@ -366,7 +369,7 @@
   </div>
 
   <!-- Special offers -->
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center" id="tabletOffer">
     <div class="bg-black w-[617.11px] h-[2.13px] mt-[47.3px]"></div>
     <p class="font-semibold text-[42px] text-center mt-[25.23px]">
       Chương trình ưu đãi
@@ -470,6 +473,7 @@
     </div>
     <button
       class="text-[24px] font-semibold w-[309px] h-[71px] bg-[#F2ECBE] rounded-[10px] mt-[74px] hover:bg-[#F1CF87] mb-[41px]"
+      (click)="goToPart('pcOffer')"
     >
       CHƯƠNG TRÌNH ƯU ĐÃI
     </button>
@@ -576,7 +580,7 @@
   </div>
 
   <!-- Special offers -->
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center" id="pcOffer">
     <div class="bg-black w-[867.81px] h-[2.5px] mt-[30px]"></div>
     <p class="font-semibold text-[48px] text-center mt-[33.5px]">
       Chương trình ưu đãi

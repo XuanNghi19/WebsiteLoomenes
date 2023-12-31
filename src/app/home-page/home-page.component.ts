@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'Loomenes-home-page',
@@ -6,6 +7,9 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements AfterViewInit {
+
+  constructor(private router: Router) {}
+
   imgBanersPhone = '/assets/home/home banner phone.svg';
   imgBaners = '/assets/home/header_home_banners.svg';
   stickerBag = '/assets/home/bag.svg';
@@ -204,6 +208,14 @@ export class HomePageComponent implements AfterViewInit {
 
   onMouseMove(event: MouseEvent) {
     this.onMouseMove(event);
+  }
+
+  openChat(): void {
+    window.open('https://www.messenger.com/t/195174930336617', '_blank');
+  }
+
+  goToServiceDetails(nameService: string): void {
+    this.router.navigate(['/service-page', nameService]);
   }
 }
 

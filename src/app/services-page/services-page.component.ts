@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { ServiceObj, SpecialOffer } from '../app.component';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'Loomenes-services-page',
@@ -8,6 +8,13 @@ import { ServiceObj, SpecialOffer } from '../app.component';
   styleUrls: ['./services-page.component.css']
 })
 export class ServicesPageComponent implements AfterViewInit{
+
+  constructor(private router: Router) {}
+
+  goToPart(fragment: any): void {
+    document.getElementById(fragment)!.scrollIntoView();
+  }
+
   @ViewChild('dot1') dot1!: ElementRef;
   @ViewChild('dot2') dot2!: ElementRef;
   @ViewChild('dot3') dot3!: ElementRef;

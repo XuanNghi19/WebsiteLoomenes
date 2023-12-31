@@ -74,6 +74,7 @@
         </h1>
         <button
           class="w-[98px] h-[27px] rounded-[5px] bg-white font-semibold text-[10px] uppercase mt-[13px] hover:text-white hover:bg-black"
+          (click)="openChat()"
         >
           CHAT NGAY
         </button>
@@ -243,7 +244,9 @@
       class="bg-color-amber rounded-[10px] w-[260px] h-[58px] flex justify-center items-center gap-[22px] mt-[40px] hover:bg-color-amberGray"
     >
       <img [src]="iconMenuBook" class="w-[40px]" />
-      <p class="font-semibold text-[20px]">BẢNG GIÁ DỊCH VỤ</p>
+      <p [routerLink]="['/service-page']" class="font-semibold text-[20px]">
+        BẢNG GIÁ DỊCH VỤ
+      </p>
     </button>
   </div>
 
@@ -252,6 +255,7 @@
     <p class="font-bold text-[28px] mt-[39px]">SẢN PHẨM NỔI BẬT</p>
     <p class="w-[190px] h-[3px] bg-black mt-[13px]"></p>
     <img
+      [routerLink]="['/product-page']"
       [src]="mobileProduct[slIdxProduct]"
       class="w-[277px] cursor-pointer h-[310px]"
       (touchstart)="onTouchStart($event)"
@@ -351,6 +355,7 @@
         </h1>
         <button
           class="w-[189.78px] h-[51.18px] rounded-[5px] bg-white font-semibold text-[20px] uppercase mt-[30.38px] hover:text-white hover:bg-black"
+          (click)="openChat()"
         >
           CHAT NGAY
         </button>
@@ -531,7 +536,9 @@
       class="bg-color-amber rounded-[5px] w-[249px] h-[60px] flex justify-center items-center gap-[6px] mt-[49px] hover:bg-color-amberGray mb-[44px]"
     >
       <img [src]="iconMenuBook" class="w-[38px]" />
-      <p class="font-semibold text-[20px]">BẢNG GIÁ DỊCH VỤ</p>
+      <p [routerLink]="['/service-page']" class="font-semibold text-[20px]">
+        BẢNG GIÁ DỊCH VỤ
+      </p>
     </button>
   </div>
 
@@ -540,7 +547,11 @@
     <p class="block font-bold text-[42px] mt-[61px]">SẢN PHẨM NỔI BẬT</p>
     <p class="w-[225.8px] h-[3px] bg-black mt-[21.78px]"></p>
     <div class="flex gap-[53px] mt-[43.62px]">
-      <div class="w-[239.64px] h-[310px] hover:shadow-lg" *ngFor="let x of tapletProduct">
+      <div
+        class="w-[239.64px] h-[310px] hover:shadow-lg"
+        *ngFor="let x of tapletProduct"
+        [routerLink]="['/product-page']"
+      >
         <img [src]="x" />
       </div>
     </div>
@@ -619,6 +630,7 @@
         </h1>
         <button
           class="w-[267px] h-[72px] rounded-[5px] bg-white font-semibold text-[24px] uppercase mt-[42px] hover:text-white hover:bg-black"
+          (click)="openChat()"
         >
           CHAT NGAY
         </button>
@@ -694,7 +706,9 @@
           </h1>
         </div>
       </div>
+
       <div class="inline-block w-[50px]"></div>
+
       <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
@@ -713,7 +727,9 @@
           </h1>
         </div>
       </div>
+
       <div class="inline-block w-[50px]"></div>
+
       <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
@@ -732,7 +748,9 @@
           </h1>
         </div>
       </div>
+
       <div class="inline-block w-[50px]"></div>
+
       <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
@@ -752,6 +770,7 @@
         </div>
       </div>
       <div class="inline-block w-[50px]"></div>
+
       <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
@@ -790,7 +809,9 @@
       class="bg-color-amber rounded-[5px] w-[360px] h-[80px] flex justify-center items-center gap-[20px] mt-[76px] hover:bg-color-amberGray mb-[47px]"
     >
       <img [src]="iconMenuBook" class="w-[55.23px]" />
-      <p class="font-semibold text-[28px]">BẢNG GIÁ DỊCH VỤ</p>
+      <p [routerLink]="['/service-page']" class="font-semibold text-[28px]">
+        BẢNG GIÁ DỊCH VỤ
+      </p>
     </button>
   </div>
 
@@ -802,6 +823,7 @@
       <div
         class="flex justify-center w-[337px] h-[427px] bg-white hover:shadow-lg"
         *ngFor="let x of tapletProduct"
+        [routerLink]="['/product-page']"
       >
         <img [src]="x" />
       </div>
