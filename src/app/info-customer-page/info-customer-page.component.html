@@ -156,6 +156,28 @@
       >Quay lại giỏ hàng</a
     >
   </div>
+  <div
+    *ngIf="isShowPopUp"
+    class="fixed z-10 left-0 top-0 w-full h-full overflow-auto bg-[rgba(0,0,0,0.4)]"
+  >
+    <div
+      class="w-[65%] bg-white absolute top-[30%] left-1/2 -translate-x-1/2 text-center text-xs rounded-2xl lg:max-w-[600px]"
+    >
+      <img
+        src="assets/cart/popup.svg"
+        alt=""
+        class="mx-auto mt-6 sm:w-[300px] lg:mt-8"
+      />
+      <span class="block mt-4 sm:text-base sm:mt-8">Đặt hàng thành công</span>
+      <button
+        (click)="onChangeStatusPopUp()"
+        [routerLink]="['/product-page']"
+        class="h-10 bg-color-amber my-7 w-[58px] rounded-lg font-semibold hover:bg-color-amberGray sm:text-base sm:h-[52px] sm:w-[93px] sm:my-10"
+      >
+        OK
+      </button>
+    </div>
+  </div>
 </div>
 
 <Loomenes-footer></Loomenes-footer>
