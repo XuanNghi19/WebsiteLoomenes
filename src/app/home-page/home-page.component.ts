@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'Loomenes-home-page',
@@ -6,7 +12,35 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements AfterViewInit {
-  
+  stateDatLich = 0;
+  stateDatlich_pc = 0;
+
+  hideHome = false;
+  isConfirmDone = false;
+  isShowLichNew = false;
+  isShowLichPage3 = false;
+
+  statePageConfirmDone(flag: boolean) {
+    document.getElementById('top')?.scrollIntoView();
+    this.isShowLichPage3 = false;
+    this.isConfirmDone = flag;
+    this.hideHome = false;
+  }
+
+  cancelComfirmDone() {
+    this.isConfirmDone = false;
+  }
+
+  stateShowLichNew(flag: boolean) {
+    this.hideHome = true;
+    this.isShowLichNew = flag;
+  }
+
+  stateShowLichPage3(flag: boolean) {
+    document.getElementById('top')?.scrollIntoView();
+    this.isShowLichPage3 = flag;
+    this.isShowLichNew = !flag;
+  }
   showPageConfirm() {
     const pageconfirm = document.getElementById('pageconfirm');
     pageconfirm?.classList.add('show');
@@ -21,7 +55,49 @@ export class HomePageComponent implements AfterViewInit {
     pageconfirm?.classList.add('hide');
   }
 
-  
+  datlichtab() {
+    const pageconfirmtab = document.getElementById('pageconfirm_tab');
+    pageconfirmtab?.classList.remove('hide');
+  }
+  clickclosebtn_tab() {
+    const clickclosebtn_tab = document.getElementById('pageconfirm_tab');
+
+    clickclosebtn_tab?.classList.add('hide');
+    this.stateDatLich = 0;
+  }
+  clickclosebtn_pc() {
+    const clickclosebtn_pc = document.getElementById('pageconfirmpc');
+    clickclosebtn_pc?.classList.add('hide');
+    this.stateDatlich_pc = 0;
+  }
+  tieptucdatlich1() {
+    const clickclosebtn_tab = document.getElementById('pageconfirm_tab');
+    clickclosebtn_tab?.classList.add('hide');
+    const pagedatlich1_2_tab = document.getElementById('pagedatlich1_2_tab');
+    pagedatlich1_2_tab?.classList.remove('hide');
+    const thongtinpage1_tab = document.getElementById('thongtinpage1_tab');
+    thongtinpage1_tab?.classList.remove('hide');
+  }
+  statePagedatlich(index: number) {
+    document.getElementById('pageconfirm_tab')?.classList.add('hide');
+    if (index == 0) {
+      this.isConfirmDone = true;
+    }
+
+    this.stateDatLich = index;
+  }
+  statePagedatlichpc(index: number) {
+    document.getElementById('pageconfirmpc')?.classList.add('hide');
+    if (index == 0) {
+      this.isConfirmDone = true;
+    }
+    this.stateDatlich_pc = index;
+  }
+  showpageconfirm() {
+    const pageconfirmpc = document.getElementById('pageconfirmpc');
+    pageconfirmpc?.classList.remove('hide');
+  }
+
   imgBanersPhone = '/assets/home/home banner phone.svg';
   imgBaners = '/assets/home/header_home_banners.svg';
   stickerBag = '/assets/home/bag.svg';

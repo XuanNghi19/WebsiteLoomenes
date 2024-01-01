@@ -1,5 +1,3 @@
-<Loomenes-header-navigator></Loomenes-header-navigator>
-
 <div class="w-full font-openSans lg:hidden">
   <div
     class="h-[170px] relative w-full bg-no-repeat bg-[url('assets/blog/bgDatlich.svg')]"
@@ -145,8 +143,9 @@ Dịch vụ 3:      Vệ sinh.</textarea
           <button
             type="button"
             class="block rounded-[10px] bg-[#3252DF] w-[90px] h-[30px] hover:bg-[#8AA0FF]"
+            (click)="showLichPage3()"
           >
-            <span [routerLink]="['/lich-page-3']" class="text-[12px] text-white"
+            <span class="text-[12px] text-white"
               >Tiếp tục</span
             >
           </button>
@@ -166,4 +165,3 @@ Dịch vụ 3:      Vệ sinh.</textarea
     </div>
   </div>
 </div>
-<Loomenes-footer></Loomenes-footer>

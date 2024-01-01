@@ -19,173 +19,13 @@
       <div class="font-semibold text-[32px] mt-1 xl:text-[48px]">Bài viết</div>
     </div>
   </div>
-  <!-- div_tong_Mobile -->
-  <div class="px-5 mt-8 lg:px-[60px] sm:hidden">
-    <label class="relative block">
-      <span class="sr-only">Search</span>
-      <img
-        class="absolute top-1/2 -translate-y-1/2 right-4"
-        src="assets/blog/Icon_search.svg"
-        alt=""
-      />
-      <input
-        type="text"
-        class="h-9 w-full border rounded-lg play placeholder:text-slate-400 pl-3"
-        placeholder="Tìm kiếm"
-        name="search"
-      />
-    </label>
-    <h2 class="mt-4 font-bold text-base">Phổ biến</h2>
-    <!-- phobien1 -->
-    <div [routerLink]="['/blog-particular']"
-      class="relative mt-[12px] w-full h-[196px] bg-no-repeat bg-cover bg-[url('assets/blog/bg_img.svg')]"
-    >
-      <a
-        href="../blog-particular/blog-particular.component.html"
-        class="absolute font-bold text-white px-4 bottom-[51px]"
-      >
-        Vệ Sinh chuyên sâu đôi giày của bạn
-      </a>
-
-      <div class="absolute block px-[16px] h-[18px]">
-        <img
-          class="absolute mt-[156px]"
-          src="assets/blog/admin_icon.svg"
-          alt=""
-        />
-        <img
-          src="assets/blog/lich_icon.svg"
-          alt=""
-          class="absolute mt-[156px] ml-[226px]"
-        />
-
-        <p class="absolute mt-[154px] text-[12px] px-[23px] text-white">
-          Admin
-        </p>
-        <p class="text-white text-[12px] mt-[156px] ml-[251px]">14 Oct 2022</p>
-      </div>
-    </div>
-    <!-- nextpage -->
-    <img src="assets/blog/nextpage_btn.svg" alt="" class="mt-4 mx-auto" />
-    <!-- baivietganday -->
-    <p class="mt-[6px] font-bold text-base">Bài viết gần đây</p>
-    <div class="mt-[6px] w-full relative">
-      <!-- ganday1 -->
-      <div [routerLink]="['/blog-particular']" class="relative mt-[12px] w-full h-[92px] bg-zinc-50 rounded-xl ">
-        <img
-          src="assets/blog/giayda.svg"
-          alt=""
-          class="absolute top-1/2 -translate-y-1/2 left-[9px]"
-        />
-        <div class="absolute ml-[101px]">
-          <p class="text-[12px] mt-[17px] font-semibold">
-            Các mẫu giày tây thường gặp
-          </p>
-          <div class="mt-[30px] flex text-gray-400">
-            <div class="flex">
-              <img src="assets/blog/lich_gray.svg" alt="" class="" />
-              <p class="text-[12px] ml-[8.67px]">03 Aug 2022</p>
-            </div>
-            <div class="flex ml-[70px]">
-              <img src="assets/blog/admin_gray.svg" alt="" class="" />
-              <p class="text-[12px] ml-[8.67px] right-[24px]">Admin</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ganday2 -->
-      <div class="relative mt-[21px] w-full h-[92px] rounded-xl">
-        <img
-          src="assets/blog/dungdichvsgiay.svg"
-          alt=""
-          class="absolute top-1/2 -translate-y-1/2 left-[9px]"
-        />
-        <div class="absolute ml-[101px]">
-          <p class="font-semibold text-[12px] mt-[17px]">
-            4 loại nước giặt ai cũng nên có
-          </p>
-          <div class="mt-[30px] flex text-gray-400">
-            <div class="flex">
-              <img src="assets/blog/lich_gray.svg" alt="" class="" />
-              <p class="text-[12px] ml-[8.67px]">03 Aug 2022</p>
-            </div>
-            <div class="flex ml-[70px]">
-              <img src="assets/blog/admin_gray.svg" alt="" class="" />
-              <p class="text-[12px] ml-[8.67px] right-[24px]">Admin</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ganday3 -->
-      <div class="relative mt-[21px] w-full h-[92px] bg-zinc-50 rounded-xl">
-        <img
-          src="assets/blog/ddvs1.svg"
-          alt=""
-          class="absolute top-1/2 -translate-y-1/2 left-[9px]"
-        />
-        <div class="absolute ml-[101px]">
-          <p class="font-semibold text-[12px] mt-[17px]">
-            Những điều bạn chưa biết về chai vệ sinh giày?
-          </p>
-          <div class="mt-[30px] flex text-gray-400">
-            <div class="flex">
-              <img src="assets/blog/lich_gray.svg" alt="" class="" />
-              <p class="text-[12px] ml-[8.67px]">03 Aug 2022</p>
-            </div>
-            <div class="flex ml-[70px]">
-              <img src="assets/blog/admin_gray.svg" alt="" class="" />
-              <p class="text-[12px] ml-[8.67px] right-[24px]">Admin</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ganday4 -->
-      <div class="relative mt-[21px] w-full h-[92px] rounded-xl">
-        <img
-          src="assets/blog/Tet.svg"
-          alt=""
-          class="absolute top-1/2 -translate-y-1/2 left-[9px]"
-        />
-        <div class="absolute ml-[101px]">
-          <p class="font-semibold text-[12px] mt-[17px]">
-            Lịch hoạt động Tết nguyên đán 2024
-          </p>
-          <div class="mt-[30px] flex text-gray-400">
-            <div class="flex">
-              <img src="assets/blog/lich_gray.svg" alt="" class="" />
-              <p class="text-[12px] ml-[8.67px]">03 Aug 2022</p>
-            </div>
-            <div class="flex ml-[70px]">
-              <img src="assets/blog/admin_gray.svg" alt="" class="" />
-              <p class="text-[12px] ml-[8.67px] right-[24px]">Admin</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex justify-center mt-[30px]">
-        <img src="assets/blog/xemthembt.svg" alt="" class="" />
-      </div>
-    </div>
-
-    <!-- follow -->
-    <div class="w-full mt-[50px]">
-      <h1 class="text-[24px] font-bold text-center">Follow Us</h1>
-      <div class="flex mt-[18px]">
-        <img src="assets/blog/icon_fb.svg" alt="" class="ml-[36px]" />
-        <img src="assets/blog/ig_icon.svg" alt="" class="ml-[66px]" />
-        <img src="assets/blog/iconytb.svg" alt="" class="ml-[66px]" />
-      </div>
-    </div>
-  </div>
   <!-- Div_tong_Tablet -->
   <div
     class="px-[60px] mt-[60px] w-full justify-between xl:hidden hidden sm:flex"
   >
-    <!-- div_trai -->
     <div class="w-[556px]">
       <p class="font-bold text-[24px]">Phổ biến</p>
 
-      <!-- Phobien1 -->
       <div>
         <img src="assets/Tablet/ganday1_tab.svg" alt="" class="mt-[20px]" />
         <div class="w-[224px] flex mt-[14px] justify-between">
@@ -241,7 +81,7 @@
           >Xem thêm</span
         >
       </div>
-      <!-- Phobien2 -->
+
       <div class="">
         <img src="assets/Tablet/ganday2_tab.svg" alt="" class="mt-[60px]" />
         <div class="w-[224px] flex mt-[14px] justify-between">
@@ -288,8 +128,10 @@
           giày yêu thích của mình
         </p>
       </div>
+
+      <img src="assets/blognew/Group 348 1.png" alt="" class="mt-[60px] ml-[116px]" />
     </div>
-    <!-- div_phai -->
+
     <div class="w-[296px] mt-[50px]">
       <label class="relative block">
         <img
@@ -312,7 +154,7 @@
         </div>
       </div>
       <h2 class="mt-[70px] font-semibold text-[24px]">Bài viết gần đây</h2>
-      <!-- Baivietganday1 -->
+
       <div
         class="flex mt-[12px] w-full h-[92px] bg-zinc-50 rounded-xl justify-between"
       >
@@ -333,7 +175,7 @@
           </div>
         </div>
       </div>
-      <!-- Ganday2 -->
+
       <div class="flex mt-[20px] w-full h-[92px] rounded-xl justify-between">
         <div class="w-[76px] flex">
           <img src="assets/blog/dungdichvsgiay.svg" alt="" class="ml-[15px]" />
@@ -354,7 +196,7 @@
           </div>
         </div>
       </div>
-      <!-- Ganday3 -->
+
       <div
         class="flex mt-[20px] w-full h-[92px] bg-zinc-50 rounded-xl justify-between"
       >
@@ -377,7 +219,7 @@
           </div>
         </div>
       </div>
-      <!-- Ganday4 -->
+
       <div class="flex mt-[20px] w-full h-[92px] rounded-xl justify-between">
         <div class="w-[76px] flex">
           <img src="assets/blog/Tet.svg" alt="" class="ml-[15px]" />
@@ -403,9 +245,10 @@
       </div>
     </div>
   </div>
+  <!-- pageBlogAll -->
+
   <!-- Div_tong_PC -->
   <div class="px-[138px] justify-between hidden xl:flex">
-    <!-- div_trai -->
     <div class="w-[692px] mt-[100px]">
       <h1 class="font-bold text-[32px]">Phổ biến</h1>
       <div class="mt-[30px]">
@@ -457,7 +300,6 @@
       </div>
       <br />
       <hr width="50%" />
-      <!-- Phobien2 -->
 
       <div class="mt-[60px]">
         <img src="assets/PC/ganday2_pc.svg" alt="" />
@@ -508,12 +350,12 @@
       </div>
       <br />
       <hr width="50%" />
-      <!-- nextpagebtn -->
+
       <div class="w-full justify-center flex mt-[100px]">
         <img src="assets/PC/nextpage_pc.svg" alt="" />
       </div>
     </div>
-    <!-- div_phai -->
+
     <div class="w-[337px] mt-[175px]">
       <label class="relative">
         <img
@@ -531,16 +373,16 @@
       <div class="w-full justify-center flex mt-[40px]">
         <h1 class="font-bold text-[32px]">Follow Us</h1>
       </div>
-      <!-- Follow -->
+
       <div class="flex w-full justify-between mt-[30px]">
         <img class="" src="assets/PC/iconfb_pc.svg" alt="" />
         <img class="" src="assets/PC/iconig_pc.svg" alt="" />
         <img class="" src="assets/PC/iconytb_pc.svg" alt="" />
       </div>
-      <!-- baivietganday -->
+
       <div class="mt-[100px]">
         <h2 class="font-semibold text-[28px]">Các bài viết gần đây</h2>
-        <!-- Ganday1 -->
+
         <div
           class="bg-[#FAFAFA] h-[100px] rounded-[10px] flex justify-between mt-[40px]"
         >
@@ -565,7 +407,7 @@
             </div>
           </div>
         </div>
-        <!-- Ganday2 -->
+
         <div class="h-[100px] rounded-[10px] flex justify-between mt-[40px]">
           <div class="w-[100px]">
             <img
@@ -588,7 +430,7 @@
             </div>
           </div>
         </div>
-        <!-- Ganday3 -->
+
         <div
           class="bg-[#FAFAFA] h-[100px] rounded-[10px] flex justify-between mt-[40px]"
         >
@@ -615,7 +457,7 @@
             </div>
           </div>
         </div>
-        <!-- Ganday4 -->
+
         <div class="h-[100px] rounded-[10px] flex justify-between mt-[40px]">
           <div class="w-[100px]">
             <img
@@ -641,11 +483,12 @@
           </div>
         </div>
       </div>
-      <!-- Xemthem -->
+
       <div class="w-full flex justify-center">
         <img src="assets/PC/xemthem_pc.svg" alt="" class="mt-[40px]" />
       </div>
     </div>
   </div>
+
+  <Loomenes-footer></Loomenes-footer>
 </div>
-<Loomenes-footer></Loomenes-footer>

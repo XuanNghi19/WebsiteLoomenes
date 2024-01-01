@@ -1,6 +1,6 @@
 <div class="relative h-[113px] px-5 w-full">
   <img
-  [routerLink]="['/blog-page']"
+  [routerLink]="['/blog-all']"
     src="assets/blog/Return_icon.svg"
     alt=""
     class="absolute top-1/2 -translate-y-1/2 ml-[335px]"
@@ -72,7 +72,7 @@
       <p class="mt-[19px] font-bold text-base">Bài viết gần đây</p>
       <div class="mt-[6px] w-full relative">
         <!-- ganday1 -->
-        <div class="relative mt-[12px] w-full h-[92px] bg-zinc-50 rounded-xl">
+        <div [routerLink]="['/blog-particular']" class="relative mt-[12px] w-full h-[92px] bg-zinc-50 rounded-xl">
           <img
             src="assets/blog/giayda.svg"
             alt=""

@@ -17,6 +17,7 @@ import { LichNewComponent } from './lich-new/lich-new.component';
 import { LichPage3Component } from './lich-page3/lich-page3.component';
 import { InfoCustomerPageComponent } from './info-customer-page/info-customer-page.component';
 import { RouterModule } from '@angular/router';
+import { BlogAllComponent } from './blog-all/blog-all.component';
 
 registerLocaleData(localeVi, 'vi-VN');
 
@@ -35,6 +36,7 @@ registerLocaleData(localeVi, 'vi-VN');
     BlogParticularComponent,
     LichNewComponent,
     LichPage3Component,
+    BlogAllComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, RouterModule],
   providers: [],

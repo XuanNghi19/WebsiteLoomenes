@@ -1,7 +1,9 @@
-<Loomenes-header-navigator></Loomenes-header-navigator>
+<Loomenes-header-navigator  id="top"></Loomenes-header-navigator>
 
 <!-- mobile -->
-<div class="sm:hidden">
+<Loomenes-lich-new (newLichNewEvent)="stateShowLichPage3($event)" class="sm:hidden" *ngIf="isShowLichNew"></Loomenes-lich-new>
+<Loomenes-lich-page3 (newLichPage3Event)="statePageConfirmDone($event)" class="sm:hidden" *ngIf="isShowLichPage3"></Loomenes-lich-page3>
+<div class="sm:hidden z-0" *ngIf="!hideHome">
   <div class="w-full flex relative justify-center items-center">
     <img [src]="imgBanersPhone" class="w-full" />
     <div class="absolute text-center text-white font-openSans">
@@ -21,9 +23,10 @@
         Đặt lịch ngay
       </button>
     </div>
+
     <!-- page_confirm -->
     <div
-      class="w-[354px] absolute h-[220px] bg-white rounded-[16px] hide"
+      class="w-[354px] absolute h-[220px] bg-white rounded-[16px] hidden"
       id="pageconfirm"
     >
       <img
@@ -50,7 +53,7 @@
       <!-- Button -->
       <div class="ml-[132px] mt-[20px]">
         <button
-          [routerLink]="['/lich-new']"
+          (click)="stateShowLichNew(true)"
           class="block text-white text-[12px] w-[90px] h-[24px] bg-[#3252DF] rounded-[10px]"
         >
           Tiếp tục
@@ -67,6 +70,7 @@
     <div
       class="w-[354px] absolute h-[343px] bg-white rounded-[16px]"
       id="PageConfirmDone"
+      *ngIf="isConfirmDone"
     >
       <img
         src="assets/datlich/xmark-solid.svg"
@@ -94,6 +98,7 @@
       <div class="ml-[132px] mt-[40px]">
         <button
           class="block text-white text-[12px] w-[90px] h-[24px] bg-[#3252DF] rounded-[10px]"
+          (click)="statePageConfirmDone(false)"
         >
           OK
         </button>
@@ -358,7 +363,7 @@
 </div>
 
 <!-- taplet -->
-<div class="hidden sm:block xl:hidden">
+<div class="hidden sm:block xl:hidden z-0">
   <div class="w-full flex relative">
     <img [src]="imgBaners" class="w-full" />
     <div class="ml-[176px] absolute text-white font-openSans mt-[153px]">
@@ -372,525 +377,1281 @@
         tự tin trên mọi nẻo đường.
       </p>
       <button
+        (click)="datlichtab()"
         class="uppercase font-bold w-[250px] h-[56px] border-[2px] rounded-[5px] border-color-amber mt-[43px] text-[16px] text-color-amber hover:bg-color-amber hover:text-color-boldYellow"
       >
         Đặt lịch ngay
       </button>
     </div>
-    <!-- pageConfirm -->
-    <div
-      class="absolute block rounded-[12px] w-[622px] -translate-x-1/2 left-1/2 bg-white h-[500px] top-[50px]"
-    ></div>
+  </div>
 
-    <!--introduce-->
-    <div
-      class="bg-white flex flex-col items-center text-center font-openSans mb-[69.44px]"
-    >
-      <p class="font-bold text-[42px] mt-[44.8px]">Lý Do Chọn ˈLoomənəs</p>
-      <p class="text-center font-semibold text-[16px] mt-[21.2px]">
-        Với 4 năm kinh nghiệm trong lĩnh vực vệ sinh và phục chế, sửa chữa giày
-        đồ hiệu, ˈloomənəs <br />
-        cam kết mang lại cho khách hàng trải nghiệm dịch vụ tốt nhất.
+  <!-- pageConfirm -->
+  <div
+    class="absolute rounded-[12px] w-[520px] -translate-x-1/2 left-1/2 bg-white h-[420px] top-[185px] hide"
+    id="pageconfirm_tab"
+  >
+    <img
+      (click)="clickclosebtn_tab()"
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[30px] mt-[30px]"
+    />
+    <img
+      src="assets/datlich/pageNumber_tab.svg"
+      alt=""
+      class="mx-auto mt-[80px]"
+    />
+    <div class="text-center mt-[20px]">
+      <p class="font-semibold text-[#152C5B] text-[24px]">Thông tin đặt lịch</p>
+      <p class="text-[#999999] text-[16px]">
+        Vui lòng xác nhận để tiếp tục đặt lịch
       </p>
-
-      <div class="flex gap-[71px] mt-[86px]">
-        <div class="flex flex-col items-center">
-          <img [src]="stickerBag" class="w-[123px]" />
-          <p class="text-center font-semibold text-[16px] mt-[77.7px]">
-            Hơn 100.00+ <br />sản phẩm đã được bán
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img [src]="stickerPackage" class="w-[126.29px]" />
-          <p class="text-center font-semibold text-[16px] mt-[66.24px]">
-            Tiện ích giao nhận 2 <br />
-            chiều tiện lợi,giao và nhận đồ tại nhà
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img [src]="stickerShoe" class="w-[167px] h-[126px]" />
-          <p class="text-center font-semibold text-[16px] mt-[63.42px]">
-            Hơn 300.000 + đôi giày <br />đã được vệ sinh
-          </p>
-        </div>
-      </div>
     </div>
+    <!-- checked! -->
+    <div class="flex justify-center">
+      <label class="mt-[40px]">
+        <input
+          type="checkbox"
+          name=""
+          id=""
+          class="absolute w-[25px] h-[25px]"
+        />
 
-    <!--banners-->
-    <div
-      class="flex h-[291.42px] relative justify-center items-center font-openSans"
-    >
-      <img class="w-[1023.51px] h-[291.42px]" [src]="bns" />
-      <div class="absolute flex gap-[137.58px]">
-        <div class="text-center font-openSans">
-          <h1 class="text-[28px] font-semibold font-playfairDisplay">
-            ˈLoomənəs
-          </h1>
-          <h1 class="text-[36px] font-bold uppercase mt-[16px]">
-            TƯ VẤN MIỄN PHÍ
-          </h1>
-          <h1 class="text-[28px] font-semibold capitalize mt-[12.69px]">
-            Sửa Chữa, Phục Hồi, Custom Giày
-          </h1>
-          <button
-            class="w-[189.78px] h-[51.18px] rounded-[5px] bg-white font-semibold text-[20px] uppercase mt-[30.38px] hover:text-white hover:bg-black"
-          >
-            CHAT NGAY
-          </button>
-        </div>
-
-        <div
-          class="h-[258.72px] w-[213.94px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[3.56px] cursor-pointer"
-          #scrollBox
-          (mousedown)="onMouseDown($event)"
-          (mouseup)="onMouseUp()"
-          (mousemove)="onMouseMove($event)"
-          (mouseleave)="onMouseLeave()"
-        >
-          <img [src]="scroll_box_img1" draggable="false" />
-          <img [src]="scroll_box_img2" draggable="false" />
-          <img [src]="scroll_box_img3" draggable="false" />
-          <img [src]="scroll_box_img4" draggable="false" />
-        </div>
-      </div>
-    </div>
-
-    <!--services-->
-    <div class="flex flex-col items-center bg-white">
-      <div class="text-center mt-[46.14px]">
-        <h1 class="font-bold text-[42px]">Dịch vụ</h1>
-        <h1 class="font-semibold text-[28px] text-color-amberGray mt-[13px]">
-          Preview
-        </h1>
-      </div>
-
-      <div
-        class="whitespace-nowrap w-[827.02px] h-[177.07px] overflow-hidden mt-[31px]"
-        #serviceBoxTaplet
+        <span class="ml-[40px] text-[#999999]"
+          >Tôi đồng ý cung cấp thông tin</span
+        ></label
       >
-        <div
-          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
-        >
-          <img
-            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
-            [src]="serviceImgs[0]"
-          />
-          <div
-            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray text-center"
-            >
-              CHUYÊN SÂU
-            </h1>
-          </div>
-        </div>
+    </div>
 
-        <div class="inline-block w-[36px]"></div>
-        <div
-          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
-        >
-          <img
-            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
-            [src]="serviceImgs[1]"
-          />
-          <div
-            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              Sửa đóng<br />đế giày âu
-            </h1>
-          </div>
-        </div>
-        <div class="inline-block w-[36px]"></div>
-        <div
-          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
-        >
-          <img
-            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
-            [src]="serviceImgs[2]"
-          />
-          <div
-            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              Custom Giày
-            </h1>
-          </div>
-        </div>
-        <div class="inline-block w-[36px]"></div>
-        <div
-          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
-        >
-          <img
-            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
-            [src]="serviceImgs[3]"
-          />
-          <div
-            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              Sửa đế giày
-            </h1>
-          </div>
-        </div>
-        <div class="inline-block w-[36px]"></div>
-        <div
-          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
-        >
-          <img
-            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
-            [src]="serviceImgs[4]"
-          />
-          <div
-            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              Sơn giày
-            </h1>
-          </div>
-        </div>
-        <div class="inline-block w-[36px]"></div>
-        <div
-          class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
-        >
-          <img
-            class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
-            [src]="serviceImgs[5]"
-          />
-          <div
-            class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              vệ sinh<br />nâng cao
-            </h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex font-semibold text-[18px] gap-[89px] mt-[53px]">
-        <button
-          class="bg-color-amber rounded-[5px] w-[80px] h-[60px] hover:bg-color-amberGray"
-          (click)="prevServiceBox('sm')"
-        >
-          Trước
-        </button>
-        <button
-          class="bg-color-amber rounded-[5px] w-[80px] h-[60px] hover:bg-color-amberGray"
-          (click)="nextServiceBox('sm')"
-        >
-          Sau
-        </button>
-      </div>
+    <!-- button -->
+    <div class="absolute -translate-x-1/2 left-1/2 mt-[50px]">
       <button
-        class="bg-color-amber rounded-[5px] w-[249px] h-[60px] flex justify-center items-center gap-[6px] mt-[49px] hover:bg-color-amberGray mb-[44px]"
+        (click)="statePagedatlich(1)"
+        class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]"
       >
-        <img [src]="iconMenuBook" class="w-[38px]" />
-        <p class="font-semibold text-[20px]">BẢNG GIÁ DỊCH VỤ</p>
+        <span class="text-white">Tiếp tục</span>
+      </button>
+      <button
+        class="mt-[10px] block w-[150px] h-[34px] rounded-[10px] bg-[#F5F6F8]"
+      >
+        <span (click)="clickclosebtn_tab()" class="text-[#B3B3B3]">Hủy</span>
       </button>
     </div>
+  </div>
+  <!-- pageConfirmDone -->
+  <div
+    class="absolute rounded-[12px] w-[560px] -translate-x-1/2 left-1/2 bg-white h-[480px] top-[150px]"
+    *ngIf="isConfirmDone"
+  >
+    <img
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[30px] mt-[30px]"
+    />
 
-    <!--product-->
-    <div class="flex flex-col items-center bg-white font-openSans">
-      <p class="block font-bold text-[42px] mt-[61px]">SẢN PHẨM NỔI BẬT</p>
-      <p class="w-[225.8px] h-[3px] bg-black mt-[21.78px]"></p>
-      <div class="flex gap-[53px] mt-[43.62px]">
-        <div class="w-[239.64px] h-[303.07px]" *ngFor="let x of tapletProduct">
-          <img [src]="x" />
+    <div class="flex justify-center flex-wrap flex-col mt-[80px]">
+      <p class="font-bold text-center text-[#152C5B] text-[36px]">THANK YOU</p>
+      <img src="assets/datlich/ticked_tab.svg" alt="" class="mt-[20px]" />
+      <div
+        class="font-semibold text-[#152C5B] mt-[50px] text-[14px] text-center"
+      >
+        <p class="">Cảm ơn bạn đã điền vào mẫu của chúng tôi.</p>
+        <p class="">
+          Lịch của bạn đang được xử lí, chúng tôi sẽ liên hệ với bạn sớm nhất có
+          thể.
+        </p>
+      </div>
+      <p class="text-center text-[14px] text-[#B6BAC3] mt-[40px]">
+        2023 Multimedia PTIT. All rights reverved
+      </p>
+    </div>
+    <!-- button -->
+    <div class="absolute -translate-x-1/2 left-1/2 mt-[50px]">
+      <button class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]">
+        <span (click)="statePageConfirmDone(false)" class="text-white">OK</span>
+      </button>
+    </div>
+  </div>
+  <!-- datlich1 -->
+  <div
+    class="absolute rounded-[12px] w-[720px] -translate-x-1/2 left-1/2 bg-white h-[560px] top-[130px]"
+    [ngClass]="stateDatLich == 1 ? 'block' : 'hidden'"
+  >
+    <img
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[20px] mt-[20px]"
+    />
+    <img
+      src="assets/datlich/pageNumber_tab.svg"
+      alt=""
+      class="mx-auto mt-[60px]"
+    />
+    <div class="text-center mt-[15px]">
+      <h1 class="text-[24px] font-semibold text-[#152C5B]">
+        Thông tin đặt lịch
+      </h1>
+      <h6 class="text-[#999999]">Vui lòng nhập vào các trường còn trống</h6>
+    </div>
+    <div class="flex justify-between px-[20px]">
+      <!-- lich -->
+      <div class="flex w-[300px] h-[290px] justify-between items-center">
+        <div class="w-[10px] h-[10px]">
+          <img src="assets/datlich/pre_btn_tab.svg" alt="" class="" />
+        </div>
+        <div class="w-[261px] h-[209px]">
+          <img src="assets/datlich/lich_tab.svg" alt="" class="" />
+        </div>
+        <div class="w-[10px] h-[10px]">
+          <img src="assets/datlich/next_btn_tab.svg" alt="" class=" " />
+        </div>
+      </div>
+      <!-- line_center -->
+      <div class="w-[1px] h-[260px] bg-[#E5E5E5] mt-[10px]"></div>
+      <!-- thongtin page1 -->
+      <div class="w-[350px] h-[290px]" id="thongtinpage1_tab">
+        <div class="mt-[20px]">
+          <!-- Ho ten -->
+          <label for=""
+            ><span class="block text-[#152C5B]"
+              >Họ và tên <span class="text-color-red">*</span></span
+            >
+            <input
+              type="text "
+              placeholder="Vui lòng nhập"
+              class="bg-[#F5F6F8] w-full h-[35px] rounded-[10px] placeholder:text-[#B6BAC3] text-[14px] pl-[12px]"
+          /></label>
+          <!-- so dien thoai -->
+          <label for="" class="block mt-[5px]"
+            ><span class="block text-[#152C5B]"
+              >Số điện thoại <span class="text-color-red">*</span></span
+            >
+            <input
+              type="text "
+              placeholder="Vui lòng nhập"
+              class="bg-[#F5F6F8] w-full h-[35px] rounded-[10px] placeholder:text-[#B6BAC3] text-[14px] pl-[12px] pt-[5px]"
+          /></label>
+          <!-- Chọn cơ sở -->
+          <label for="" class="block mt-[5px]"
+            ><span class="block text-[#152C5B]"
+              >Chọn cơ sở <span class="text-color-red">*</span></span
+            >
+            <select
+              name=""
+              id=""
+              class="bg-[#F5F6F8] w-full h-[35px] rounded-[10px] pl-[12px] text-[14px]"
+            >
+              <option value="" class="text-[12px]">(Vui lòng chọn)</option>
+              <option value="" class="text-[12px]">
+                133 Nguyễn Văn Trỗi, Hà Đông, Hà Nội
+              </option>
+            </select>
+          </label>
+          <!-- Thời gian -->
+          <label for="" class="in-block mt-[5px]"
+            ><span class="block text-[#152C5B]"
+              >Thời gian <span class="text-color-red">*</span></span
+            >
+            <input
+              type="date"
+              name=""
+              id=""
+              class="bg-[#F5F6F8] w-[200px] h-[35px] pl-[12px] pr-[12px] rounded-[10px]"
+            />
+            <input
+              type="text"
+              placeholder="hh:mm"
+              name=""
+              id=""
+              class="bg-[#F5F6F8] w-[120px] h-[35px] text-center ml-[30px] rounded-[10px] placeholder:text-[#B6BAC3] pt-[5px]"
+            />
+          </label>
+        </div>
+        <!-- button -->
+        <div class="absolute -translate-x-1/2 left-1/2 mt-[25px]">
+          <button
+            (click)="statePagedatlich(2)"
+            class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]"
+          >
+            <span class="text-white">Tiếp tục</span>
+          </button>
+          <button
+            class="mt-[10px] block w-[150px] h-[34px] rounded-[10px] bg-[#F5F6F8]"
+          >
+            <span (click)="clickclosebtn_tab()" class="text-[#B3B3B3]"
+              >Hủy</span
+            >
+          </button>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- pc -->
-  <div class="hidden xl:block">
-    <div class="w-full flex relative">
-      <img [src]="imgBaners" class="w-full" />
-      <div class="ml-[258px] absolute text-white font-openSans mt-[351px]">
-        <p class="text-[20px] font-bold font-playfairDisplay">ˈloomənəs</p>
-        <p class="text-[52px] font-extrabold">
-          SẠCH SẼ <br />
-          SÁNG BÓNG
-        </p>
-        <p class="text-[18px] font-semibold mt-[18px]">
-          Dịch vụ giặt giày chất lượng, để bước chân của bạn luôn <br />
-          tự tin trên mọi nẻo đường.
-        </p>
-        <button
-          class="uppercase font-bold w-[267px] h-[72px] border-[2px] rounded-[5px] border-color-amber mt-[48px] text-[16px] text-color-amber hover:bg-color-amber hover:text-color-boldYellow"
-        >
-          Đặt lịch ngay
-        </button>
-      </div>
+  <!-- datlich2 -->
+  <div
+    class="absolute rounded-[12px] w-[720px] -translate-x-1/2 left-1/2 bg-white h-[560px] top-[130px]"
+    [ngClass]="stateDatLich == 2 ? 'block' : 'hidden'"
+  >
+    <img
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[20px] mt-[20px]"
+    />
+    <img
+      src="assets/datlich/pageNumber2_tab.svg"
+      alt=""
+      class="mx-auto mt-[60px]"
+    />
+    <div class="text-center mt-[15px]">
+      <h1 class="text-[24px] font-semibold text-[#152C5B]">
+        Thông tin đặt lịch
+      </h1>
+      <h6 class="text-[#999999]">Vui lòng nhập vào các trường còn trống</h6>
     </div>
-
-    <!--introduce-->
-    <div
-      class="bg-white flex flex-col items-center text-center font-openSans mb-[101px]"
-    >
-      <p class="font-bold text-[48px] mt-[66px]">Lý Do Chọn ˈLoomənəs</p>
-      <p class="text-center font-semibold text-[20px] mt-[29px]">
-        Với 4 năm kinh nghiệm trong lĩnh vực vệ sinh và phục chế, sửa chữa giày
-        đồ hiệu, ˈloomənəs <br />
-        cam kết mang lại cho khách hàng trải nghiệm dịch vụ tốt nhất.
-      </p>
-
-      <div class="flex gap-[167px] mt-[132px]">
-        <div class="flex flex-col items-center">
-          <img [src]="stickerBag" class="w-[180.33px]" />
-          <p class="text-center font-semibold text-[20px] mt-[108px]">
-            Hơn 100.00+ <br />sản phẩm đã được bán
-          </p>
+    <div class="flex justify-between px-[20px]">
+      <!-- lich -->
+      <div class="flex w-[300px] h-[290px] justify-between items-center">
+        <div class="w-[10px] h-[10px]">
+          <img src="assets/datlich/pre_btn_tab.svg" alt="" class="" />
         </div>
-        <div class="flex flex-col items-center">
-          <img [src]="stickerPackage" class="w-[177.6px]" />
-          <p class="text-center font-semibold text-[20px] mt-[91px]">
-            Tiện ích giao nhận 2 <br />
-            chiều tiện lợi,giao và nhận đồ tại nhà
-          </p>
+        <div class="w-[261px] h-[209px]">
+          <img src="assets/datlich/lich_tab.svg" alt="" class="" />
         </div>
-        <div class="flex flex-col items-center">
-          <img [src]="stickerShoe" class="w-[236.18px] h-[177.6px]" />
-          <p class="text-center font-semibold text-[20px] mt-[93px]">
-            Hơn 300.000 + đôi giày <br />đã được vệ sinh
-          </p>
+        <div class="w-[10px] h-[10px]">
+          <img src="assets/datlich/next_btn_tab.svg" alt="" class=" " />
         </div>
       </div>
-    </div>
+      <!-- line_center -->
+      <div class="w-[1px] h-[260px] bg-[#E5E5E5] mt-[10px]"></div>
+      <!-- thongtin page2 -->
+      <div class="w-[350px] h-[290px]" id="thongtinpage1_tab">
+        <div class="mt-[20px]">
+          <!-- Chon dich vu -->
+          <label for=""
+            ><span class="block text-[#152C5B]"
+              >Chọn dịch vụ <span class="text-color-red">*</span></span
+            >
+            <select
+              class="w-full h-[35px] bg-[#F5F6F8] rounded-[10px] pl-[12px] text-[14px]"
+            >
+              <option class="text-[12px]" value="">(Vui lòng chọn)</option>
+              <option class="text-[12px]">Vệ sinh giày</option>
+              <option class="text-[12px]">Sửa đế giày</option>
+            </select>
+            <textarea
+              class="mt-[10px] rounded-[10px] ml-[100px] w-[250px] h-[70px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+          <label for=""
+            ><span class="block text-[#152C5B]">Ghi chú </span>
 
-    <!--banners-->
-    <div class="flex w-full relative items-center font-openSans">
-      <img class="w-full" [src]="bns" />
-      <div class="absolute w-full flex justify-center gap-[20%]">
-        <div class="text-center font-openSans">
-          <h1 class="text-[36px] font-semibold font-playfairDisplay">
-            ˈLoomənəs
-          </h1>
-          <h1 class="text-[48px] font-bold uppercase mt-[26px]">
-            TƯ VẤN MIỄN PHÍ
-          </h1>
-          <h1 class="text-[40px] font-semibold capitalize mt-[22px]">
-            Sửa Chữa, Phục Hồi, Custom Giày
-          </h1>
+            <textarea
+              class="mt-[10px] rounded-[10px] w-full h-[70px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+        </div>
+        <!-- button -->
+        <div class="absolute -translate-x-1/2 left-1/2 mt-[20px]">
           <button
-            class="w-[267px] h-[72px] rounded-[5px] bg-white font-semibold text-[24px] uppercase mt-[42px] hover:text-white hover:bg-black"
+            (click)="statePagedatlich(3)"
+            class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]"
           >
-            CHAT NGAY
+            <span class="text-white">Tiếp tục</span>
           </button>
-        </div>
-
-        <div
-          class="h-[365px] w-[301px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[5px] cursor-pointer"
-          #scrollBox
-          (mousedown)="onMouseDown($event)"
-          (mouseup)="onMouseUp()"
-          (mousemove)="onMouseMove($event)"
-          (mouseleave)="onMouseLeave()"
-        >
-          <img [src]="scroll_box_img1" draggable="false" />
-          <div class="h-[20px]"></div>
-          <img [src]="scroll_box_img2" draggable="false" />
-          <div class="h-[20px]"></div>
-          <img [src]="scroll_box_img3" draggable="false" />
-          <div class="h-[20px]"></div>
-          <img [src]="scroll_box_img4" draggable="false" />
-        </div>
-      </div>
-    </div>
-
-    <!--services-->
-    <div class="flex flex-col items-center bg-white">
-      <div class="text-center mt-[92px]">
-        <h1 class="font-bold text-[48px]">Dịch vụ</h1>
-        <h1 class="font-semibold text-[36px] text-color-amberGray mt-[16px]">
-          Preview
-        </h1>
-      </div>
-
-      <div
-        class="whitespace-nowrap w-[1163px] h-[249px] overflow-hidden mt-[50px]"
-        #serviceBoxPc
-      >
-        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
-          <img
-            class="absolute rounded-[10px] w-[354px] h-[249px]"
-            [src]="serviceImgs[0]"
-          />
-          <div
-            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+          <button
+            class="mt-[10px] block w-[150px] h-[34px] rounded-[10px] bg-[#F5F6F8]"
           >
-            <div
-              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray text-center"
+            <span (click)="clickclosebtn_tab()" class="text-[#B3B3B3]"
+              >Hủy</span
             >
-              CHUYÊN SÂU
-            </h1>
-          </div>
-        </div>
-
-        <div class="inline-block w-[50px]"></div>
-        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
-          <img
-            class="absolute rounded-[10px] w-[354px] h-[249px]"
-            [src]="serviceImgs[1]"
-          />
-          <div
-            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              Sửa đóng<br />đế giày âu
-            </h1>
-          </div>
-        </div>
-        <div class="inline-block w-[50px]"></div>
-        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
-          <img
-            class="absolute rounded-[10px] w-[354px] h-[249px]"
-            [src]="serviceImgs[2]"
-          />
-          <div
-            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              Custom Giày
-            </h1>
-          </div>
-        </div>
-        <div class="inline-block w-[50px]"></div>
-        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
-          <img
-            class="absolute rounded-[10px] w-[354px] h-[249px]"
-            [src]="serviceImgs[3]"
-          />
-          <div
-            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              Sửa đế giày
-            </h1>
-          </div>
-        </div>
-        <div class="inline-block w-[50px]"></div>
-        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
-          <img
-            class="absolute rounded-[10px] w-[354px] h-[249px]"
-            [src]="serviceImgs[4]"
-          />
-          <div
-            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              Sơn giày
-            </h1>
-          </div>
-        </div>
-        <div class="inline-block w-[50px]"></div>
-        <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
-          <img
-            class="absolute rounded-[10px] w-[354px] h-[249px]"
-            [src]="serviceImgs[5]"
-          />
-          <div
-            class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
-          >
-            <div
-              class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
-            ></div>
-            <h1
-              class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
-            >
-              vệ sinh<br />nâng cao
-            </h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex font-semibold text-[20px] gap-[160px] mt-[100px]">
-        <button
-          class="bg-color-amber rounded-[5px] w-[100px] h-[70px] hover:bg-color-amberGray"
-          (click)="prevServiceBox('xl')"
-        >
-          Trước
-        </button>
-        <button
-          class="bg-color-amber rounded-[5px] w-[100px] h-[70px] hover:bg-color-amberGray"
-          (click)="nextServiceBox('xl')"
-        >
-          Sau
-        </button>
-      </div>
-      <button
-        class="bg-color-amber rounded-[5px] w-[360px] h-[80px] flex justify-center items-center gap-[20px] mt-[76px] hover:bg-color-amberGray mb-[47px]"
-      >
-        <img [src]="iconMenuBook" class="w-[55.23px]" />
-        <p class="font-semibold text-[28px]">BẢNG GIÁ DỊCH VỤ</p>
-      </button>
-    </div>
-
-    <!--product-->
-    <div class="flex flex-col items-center bg-white font-openSans">
-      <p class="block font-bold text-[48px] mt-[81px]">SẢN PHẨM NỔI BẬT</p>
-      <p class="w-[313px] h-[3px] bg-black mt-[26px]"></p>
-      <div class="w-full flex justify-center gap-[7%] mt-[74px]">
-        <div
-          class="flex justify-center w-[337px] h-[427px]"
-          *ngFor="let x of tapletProduct"
-        >
-          <img [src]="x" />
+          </button>
         </div>
       </div>
     </div>
   </div>
+  <!-- datlich3 -->
+  <div
+    class="absolute rounded-[12px] w-[720px] -translate-x-1/2 left-1/2 bg-white h-[560px] top-[130px]"
+    [ngClass]="stateDatLich == 3 ? 'block' : 'hidden'"
+  >
+    <img
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[20px] mt-[20px]"
+    />
+    <img
+      src="assets/datlich/pageNumber3_tab.svg"
+      alt=""
+      class="mx-auto mt-[60px]"
+    />
+    <div class="text-center mt-[15px]">
+      <h1 class="text-[24px] font-semibold text-[#152C5B]">
+        Thông tin đặt lịch
+      </h1>
+      <h6 class="text-[#999999]">Vui lòng xác nhận thông tin về đặt lịch</h6>
+    </div>
+    <div class="flex justify-between px-[20px]">
+      <!-- trai -->
+      <div class="w-[320px] h-[290px]">
+        <!-- ho va ten -->
+        <label for="" class="block">
+          <span class="block text-[#152C5B]">Họ và tên</span>
+          <textarea
+            name=""
+            class="w-full h-[35px] rounded-[8px] bg-[#F5F6F8] pl-[12px] pt-[5px]"
+          ></textarea>
+        </label>
+        <!-- so dien thoai -->
+        <label for="" class="block mt-[5px]">
+          <span class="block text-[#152C5B]">Số điện thoại</span>
+          <textarea
+            name=""
+            class="w-full h-[35px] rounded-[8px] bg-[#F5F6F8] pl-[12px] pt-[5px]"
+          ></textarea>
+        </label>
+        <!-- co so -->
+        <label for="" class="block mt-[5px]">
+          <span class="block text-[#152C5B]">Cơ sở</span>
+          <textarea
+            name=""
+            class="w-full h-[35px] rounded-[8px] bg-[#F5F6F8] pl-[12px] pt-[5px]"
+          ></textarea>
+        </label>
+        <!-- thoi gian -->
+        <label class="in-block">
+          <span class="block text-[#152C5B]">Thời gian</span>
+          <textarea
+            class="bg-[#F5F6F8] w-[200px] h-[35px] pl-[12px] pr-[12px] rounded-[10px] pt-[5px]"
+          ></textarea>
+          <textarea
+            class="pl-[12px] bg-[#F5F6F8] w-[90px] h-[35px] text-center ml-[30px] rounded-[10px] placeholder:text-[#B6BAC3] pt-[5px]"
+          ></textarea>
+        </label>
+      </div>
+      <!-- line_center -->
+      <div class="w-[1px] h-[260px] bg-[#E5E5E5] mt-[10px]"></div>
+      <!-- phai -->
+      <div class="w-[320px] h-[290px]">
+        <label for="" class="block mt-[5px]">
+          <span class="block text-[#152C5B]">Dịch vụ</span>
+          <textarea
+            name=""
+            class="w-full h-[100px] rounded-[8px] bg-[#F5F6F8] pl-[12px]"
+          ></textarea>
+        </label>
+        <label for="" class="block mt-[px]">
+          <span class="block text-[#152C5B]">Ghi chú</span>
+          <textarea
+            name=""
+            class="w-full h-[80px] rounded-[8px] bg-[#F5F6F8] pl-[12px]"
+          ></textarea>
+        </label>
+      </div>
+    </div>
 
-  <Loomenes-footer></Loomenes-footer>
+    <!-- button -->
+    <div class="absolute -translate-x-1/2 left-1/2 mb-[50px]">
+      <button
+        class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]"
+        (click)="statePagedatlich(0)"
+      >
+        <span class="text-white">Tiếp tục</span>
+      </button>
+      <button
+        class="mt-[10px] block w-[150px] h-[34px] rounded-[10px] bg-[#F5F6F8]"
+      >
+        <span (click)="clickclosebtn_tab()" class="text-[#B3B3B3]">Hủy</span>
+      </button>
+    </div>
+  </div>
+  <!--introduce-->
+  <div
+    class="bg-white flex flex-col items-center text-center font-openSans mb-[69.44px]"
+  >
+    <p class="font-bold text-[42px] mt-[44.8px]">Lý Do Chọn ˈLoomənəs</p>
+    <p class="text-center font-semibold text-[16px] mt-[21.2px]">
+      Với 4 năm kinh nghiệm trong lĩnh vực vệ sinh và phục chế, sửa chữa giày đồ
+      hiệu, ˈloomənəs <br />
+      cam kết mang lại cho khách hàng trải nghiệm dịch vụ tốt nhất.
+    </p>
+
+    <div class="flex gap-[71px] mt-[86px]">
+      <div class="flex flex-col items-center">
+        <img [src]="stickerBag" class="w-[123px]" />
+        <p class="text-center font-semibold text-[16px] mt-[77.7px]">
+          Hơn 100.00+ <br />sản phẩm đã được bán
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img [src]="stickerPackage" class="w-[126.29px]" />
+        <p class="text-center font-semibold text-[16px] mt-[66.24px]">
+          Tiện ích giao nhận 2 <br />
+          chiều tiện lợi,giao và nhận đồ tại nhà
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img [src]="stickerShoe" class="w-[167px] h-[126px]" />
+        <p class="text-center font-semibold text-[16px] mt-[63.42px]">
+          Hơn 300.000 + đôi giày <br />đã được vệ sinh
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--banners-->
+  <div
+    class="flex h-[291.42px] relative justify-center items-center font-openSans"
+  >
+    <img class="w-[1023.51px] h-[291.42px]" [src]="bns" />
+    <div class="absolute flex gap-[137.58px]">
+      <div class="text-center font-openSans">
+        <h1 class="text-[28px] font-semibold font-playfairDisplay">
+          ˈLoomənəs
+        </h1>
+        <h1 class="text-[36px] font-bold uppercase mt-[16px]">
+          TƯ VẤN MIỄN PHÍ
+        </h1>
+        <h1 class="text-[28px] font-semibold capitalize mt-[12.69px]">
+          Sửa Chữa, Phục Hồi, Custom Giày
+        </h1>
+        <button
+          class="w-[189.78px] h-[51.18px] rounded-[5px] bg-white font-semibold text-[20px] uppercase mt-[30.38px] hover:text-white hover:bg-black"
+        >
+          CHAT NGAY
+        </button>
+      </div>
+
+      <div
+        class="h-[258.72px] w-[213.94px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[3.56px] cursor-pointer"
+        #scrollBox
+        (mousedown)="onMouseDown($event)"
+        (mouseup)="onMouseUp()"
+        (mousemove)="onMouseMove($event)"
+        (mouseleave)="onMouseLeave()"
+      >
+        <img [src]="scroll_box_img1" draggable="false" />
+        <img [src]="scroll_box_img2" draggable="false" />
+        <img [src]="scroll_box_img3" draggable="false" />
+        <img [src]="scroll_box_img4" draggable="false" />
+      </div>
+    </div>
+  </div>
+
+  <!--services-->
+  <div class="flex flex-col items-center bg-white">
+    <div class="text-center mt-[46.14px]">
+      <h1 class="font-bold text-[42px]">Dịch vụ</h1>
+      <h1 class="font-semibold text-[28px] text-color-amberGray mt-[13px]">
+        Preview
+      </h1>
+    </div>
+
+    <div
+      class="whitespace-nowrap w-[827.02px] h-[177.07px] overflow-hidden mt-[31px]"
+      #serviceBoxTaplet
+    >
+      <div
+        class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+      >
+        <img
+          class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+          [src]="serviceImgs[0]"
+        />
+        <div
+          class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray text-center"
+          >
+            CHUYÊN SÂU
+          </h1>
+        </div>
+      </div>
+
+      <div class="inline-block w-[36px]"></div>
+      <div
+        class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+      >
+        <img
+          class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+          [src]="serviceImgs[1]"
+        />
+        <div
+          class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            Sửa đóng<br />đế giày âu
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[36px]"></div>
+      <div
+        class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+      >
+        <img
+          class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+          [src]="serviceImgs[2]"
+        />
+        <div
+          class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            Custom Giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[36px]"></div>
+      <div
+        class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+      >
+        <img
+          class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+          [src]="serviceImgs[3]"
+        />
+        <div
+          class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            Sửa đế giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[36px]"></div>
+      <div
+        class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+      >
+        <img
+          class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+          [src]="serviceImgs[4]"
+        />
+        <div
+          class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            Sơn giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[36px]"></div>
+      <div
+        class="relative inline-block w-[251.73px] h-[177.07px] cursor-pointer"
+      >
+        <img
+          class="absolute rounded-[10px] w-[251.73px] h-[177.07px]"
+          [src]="serviceImgs[5]"
+        />
+        <div
+          class="group absolute w-[251.73px] h-[177.07px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[251.73px] h-[177.07px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            vệ sinh<br />nâng cao
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex font-semibold text-[18px] gap-[89px] mt-[53px]">
+      <button
+        class="bg-color-amber rounded-[5px] w-[80px] h-[60px] hover:bg-color-amberGray"
+        (click)="prevServiceBox('sm')"
+      >
+        Trước
+      </button>
+      <button
+        class="bg-color-amber rounded-[5px] w-[80px] h-[60px] hover:bg-color-amberGray"
+        (click)="nextServiceBox('sm')"
+      >
+        Sau
+      </button>
+    </div>
+    <button
+      class="bg-color-amber rounded-[5px] w-[249px] h-[60px] flex justify-center items-center gap-[6px] mt-[49px] hover:bg-color-amberGray mb-[44px]"
+    >
+      <img [src]="iconMenuBook" class="w-[38px]" />
+      <p class="font-semibold text-[20px]">BẢNG GIÁ DỊCH VỤ</p>
+    </button>
+  </div>
+
+  <!--product-->
+  <div class="flex flex-col items-center bg-white font-openSans">
+    <p class="block font-bold text-[42px] mt-[61px]">SẢN PHẨM NỔI BẬT</p>
+    <p class="w-[225.8px] h-[3px] bg-black mt-[21.78px]"></p>
+    <div class="flex gap-[53px] mt-[43.62px]">
+      <div class="w-[239.64px] h-[303.07px]" *ngFor="let x of tapletProduct">
+        <img [src]="x" />
+      </div>
+    </div>
+  </div>
 </div>
+<!-- pc -->
+<div class="hidden xl:block z-0">
+  <div class="w-full flex relative">
+    <img [src]="imgBaners" class="w-full" />
+    <div class="ml-[258px] absolute text-white font-openSans mt-[351px]">
+      <p class="text-[20px] font-bold font-playfairDisplay">ˈloomənəs</p>
+      <p class="text-[52px] font-extrabold">
+        SẠCH SẼ <br />
+        SÁNG BÓNG
+      </p>
+      <p class="text-[18px] font-semibold mt-[18px]">
+        Dịch vụ giặt giày chất lượng, để bước chân của bạn luôn <br />
+        tự tin trên mọi nẻo đường.
+      </p>
+      <button
+        (click)="showpageconfirm()"
+        class="uppercase font-bold w-[267px] h-[72px] border-[2px] rounded-[5px] border-color-amber mt-[48px] text-[16px] text-color-amber hover:bg-color-amber hover:text-color-boldYellow"
+      >
+        Đặt lịch ngay
+      </button>
+    </div>
+    <!-- pageconfirm -->
+    <div
+      class="hide absolute w-[700px] h-[600px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
+      id="pageconfirmpc"
+    >
+      <img 
+        src="assets/datlich/clsBtn_pc.svg"
+        alt=""
+        class="absolute right-0 m-[30px] cursor-pointer"
+      />
+      <img
+        src="assets/datlich/pageNumber_pc.svg"
+        alt=""
+        class="absolute left-1/2 -translate-x-1/2 mt-[60px]"
+      />
+      <div class="text-center mt-[150px]">
+        <h1 class="t font-semibold text-[36px] text-[#152C5B]">
+          Thông tin đặt lịch
+        </h1>
+        <h6 class="text-[22px] text-[#999999]">
+          Vui lòng xác nhận để tiếp tục đặt lịch
+        </h6>
+      </div>
+      <label class="flex justify-center mt-[60px]">
+        <input class="w-[30px] h-[30px]" type="checkbox" />
+        <span class="text-[#999999] ml-[20px] text-[22px]"
+          >Tôi đồng ý cung cấp thông tin để sử dụng dịch vụ</span
+        >
+      </label>
+      <!-- Button -->
+      <label class="text-[22px] absolute left-1/2 -translate-x-1/2 mt-[80px]">
+        <button
+          (click)="statePagedatlichpc(1)"
+          class="rounded-[20px] block bg-[#3252DF] w-[220px] h-[50px] hover:bg-[#0B217E]"
+        >
+          <span class="text-white">Tiếp tục</span>
+        </button>
+        <button
+          (click)="clickclosebtn_pc()"
+          class="mt-[23px] rounded-[20px] block bg-[#F5F6F8] w-[220px] h-[50px]"
+        >
+          <span class="text-[#B3B3B3]">Hủy</span>
+        </button>
+      </label>
+    </div>
+    <!-- pageconfirmdone -->
+    <div
+      class="absolute w-[700px] h-[540px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
+      *ngIf="isConfirmDone"
+    >
+      <div class="text-center mt-[60px]">
+        <h1 class="text-[#152C5B] font-bold text-[48px]">THANK YOU</h1>
+      </div>
+      <div class="flex justify-center mt-[30px]">
+        <img
+          src="assets/datlich/ticked_pc.svg"
+          alt=""
+          class="items-center absolute"
+        />
+      </div>
+      <div class="text-[16px] text-center font-semibold mt-[80px]">
+        <p class="">Cảm ơn bạn đã điền vào mẫu của chúng tôi.</p>
+        <p class="">
+          Lịch của bạn đang được xử lí, chúng tôi sẽ liên hệ với bạn sớm nhất có
+          thể
+        </p>
+        <p class="mt-[30px] text-[#B6BAC3]">
+          2023 Multimedia PTIT. All rights reverved
+        </p>
+      </div>
+      <!-- button -->
+      <label class="text-[22px] absolute left-1/2 -translate-x-1/2 mt-[90px]">
+        <button
+          class="rounded-[20px] block bg-[#3252DF] w-[180px] h-[50px] hover:bg-[#0B217E]"
+          (click)="cancelComfirmDone()"
+        >
+          <span class="text-white"><span class="text-[16px]">OK</span></span>
+        </button>
+      </label>
+    </div>
+    <!-- datlich1 -->
+    <div
+      class="absolute w-[900px] h-[840px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
+      [ngClass]="stateDatlich_pc == 1 ? 'block' : 'hidden'"
+    >
+      <img (click)="clickclosebtn_pc()" 
+        src="assets/datlich/clsBtn_pc.svg"
+        alt=""
+        class="absolute right-0 m-[30px] cursor-pointer"
+      />
+      <img
+        src="assets/datlich/pageNumber_pc.svg"
+        alt=""
+        class="absolute left-1/2 -translate-x-1/2 mt-[60px]"
+      />
+      <div class="text-center mt-[150px]">
+        <h1 class="t font-semibold text-[36px] text-[#152C5B]">
+          Thông tin đặt lịch
+        </h1>
+        <h6 class="text-[22px] text-[#999999]">
+          Vui lòng xác nhận để tiếp tục đặt lịch
+        </h6>
+      </div>
+
+      <div class="flex justify-between px-[40px] mt-[30px]">
+        <!-- divtrailich -->
+        <div
+          class="items-center w-[400px] h-[280px] flex justify-between mt-[40px]"
+        >
+          <div class="w-[17px] h-[17px]">
+            <img src="assets/datlich/pre_btn_pc.svg" alt="" class="" />
+          </div>
+          <div class="w-[350px] h-[280px]">
+            <img src="assets/datlich/lich_btn_pc.svg" alt="" class="" />
+          </div>
+          <div class="w-[17px] h-[17px]">
+            <img src="assets/datlich/next_btn_pc.svg" alt="" class="" />
+          </div>
+        </div>
+        <!-- linecenter -->
+        <div class="h-[325px] w-[1px] bg-[#E5E5E5] mt-[20px]"></div>
+        <!-- thongtinpage1 -->
+        <div class="w-[380px] h-[400px] mt-[20px]">
+          <!-- Ho_ten -->
+          <label for="">
+            <span class="block text-[16px] font-semibold text-[#152C5B]"
+              >Họ và tên <span class="text-color-red">*</span></span
+            >
+            <input
+              type="text"
+              class="w-full h-[40px] rounded-[12px] bg-[#F5F6F8] placeholder:text-[#B6BAC3] pl-[20px]"
+              placeholder="Vui lòng nhập"
+            />
+          </label>
+          <!-- So dien thoai -->
+          <label class="block mt-[20px]">
+            <span class="block font-semibold text-[16px] text-[#152C5B]"
+              >Số điện thoại <span class="text-color-red">*</span></span
+            >
+            <input
+              type="text"
+              class="w-full h-[40px] rounded-[12px] bg-[#F5F6F8] placeholder:text-[#B6BAC3] pl-[20px]"
+              placeholder="Vui lòng nhập"
+            />
+          </label>
+          <!-- Chon co so -->
+          <label class="block mt-[20px]">
+            <span class="block font-semibold text-[16px] text-[#152C5B]"
+              >Chọn cơ sở <span class="text-color-red">*</span></span
+            >
+            <select
+              class="pl-[20px] w-full h-[40px] rounded-[12px] bg-[#F5F6F8]"
+            >
+              <option value="">(Vui lòng chọn)</option>
+              <option value="">Sửa giày</option>
+              <option value="">Vệ sinh giày</option>
+            </select>
+          </label>
+          <!-- Thoigian -->
+          <label class="inline-block mt-[20px]">
+            <span class="block text-[16px] font-semibold text-[#152C5B]"
+              >Thời gian <span class="text-color-red">*</span></span
+            >
+            <input
+              type="date"
+              class="pl-[20px] pr-[20px] w-[260px] h-[40px] rounded-[12px] bg-[#F5F6F8]"
+            />
+            <input
+              type="text"
+              class="ml-[35px] pl-[20px] w-[85px] h-[40px] rounded-[12px] bg-[#F5F6F8]"
+              placeholder="hh:mm"
+            />
+          </label>
+        </div>
+      </div>
+      <!-- Button -->
+      <label class="text-[22px] absolute left-1/2 -translate-x-1/2 mt-[10px]">
+        <button
+          (click)="statePagedatlichpc(2)"
+          class="rounded-[20px] block bg-[#3252DF] w-[220px] h-[50px] hover:bg-[#0B217E]"
+        >
+          <span class="text-white">Tiếp tục</span>
+        </button>
+        <button
+          (click)="clickclosebtn_pc()"
+          class="mt-[20px] rounded-[20px] block bg-[#F5F6F8] w-[220px] h-[50px] hover:bg-[#C2C2C2]"
+        >
+          <span class="text-[#B3B3B3]">Hủy</span>
+        </button>
+      </label>
+    </div>
+    <!-- datlich2 -->
+    <div
+      class="absolute w-[900px] h-[840px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
+      [ngClass]="stateDatlich_pc == 2 ? 'block' : 'hidden'"
+    >
+      <img (click)="clickclosebtn_pc() "
+        src="assets/datlich/clsBtn_pc.svg"
+        alt=""
+        class="absolute right-0 m-[30px] cursor-pointer"
+      />
+      <img
+        src="assets/datlich/pageNumber2_pc.svg"
+        alt=""
+        class="absolute left-1/2 -translate-x-1/2 mt-[60px]"
+      />
+      <div class="text-center mt-[150px]">
+        <h1 class="t font-semibold text-[36px] text-[#152C5B]">
+          Thông tin đặt lịch
+        </h1>
+        <h6 class="text-[22px] text-[#999999]">
+          Vui lòng xác nhận để tiếp tục đặt lịch
+        </h6>
+      </div>
+
+      <div class="flex justify-between px-[40px] mt-[30px]">
+        <!-- divtrailich -->
+        <div
+          class="items-center w-[400px] h-[280px] flex justify-between mt-[40px]"
+        >
+          <div class="w-[17px] h-[17px]">
+            <img src="assets/datlich/pre_btn_pc.svg" alt="" class="" />
+          </div>
+          <div class="w-[350px] h-[280px]">
+            <img src="assets/datlich/lich_btn_pc.svg" alt="" class="" />
+          </div>
+          <div class="w-[17px] h-[17px]">
+            <img src="assets/datlich/next_btn_pc.svg" alt="" class="" />
+          </div>
+        </div>
+        <!-- linecenter -->
+        <div class="h-[350px] w-[1px] bg-[#E5E5E5] mt-[20px]"></div>
+        <!-- thongtinpage1 -->
+        <div class="w-[380px] h-[400px] mt-[20px]">
+          <!-- Ho_ten -->
+          <label for="">
+            <span class="block text-[16px] font-semibold text-[#152C5B]"
+              >Chọn dịch vụ <span class="text-color-red">*</span></span
+            >
+            <select
+              class="w-full h-[40px] bg-[#F5F6F8] rounded-[12px] pl-[20px]"
+            >
+              <option value="">(Vui lòng chọn)</option>
+              <option value="">Sửa giày</option>
+              <option value="">Vệ sinh giày</option>
+            </select>
+            <textarea
+              class="mt-[15px] rounded-[12px] w-[300px] h-[100px] bg-[#F5F6F8] ml-[80px]"
+            ></textarea>
+          </label>
+          <!-- ghichu -->
+          <label for="" class="block mt-[20px]">
+            <span class="block"
+              ><span class="text-[#152C5B] font-semibold">Ghi chú</span></span
+            ><textarea
+              class="mt-[15px] rounded-[12px] w-full h-[100px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+        </div>
+      </div>
+      <!-- Button -->
+      <label class="text-[22px] absolute left-1/2 -translate-x-1/2 mt-[10px]">
+        <button
+          (click)="statePagedatlichpc(3)"
+          class="rounded-[20px] block bg-[#3252DF] w-[220px] h-[50px] hover:bg-[#0B217E]"
+        >
+          <span class="text-white">Tiếp tục</span>
+        </button>
+        <button (click)="clickclosebtn_pc()"
+          class="mt-[20px] rounded-[20px] block bg-[#F5F6F8] w-[220px] h-[50px]"
+        >
+          <span class="text-[#B3B3B3]">Hủy</span>
+        </button>
+      </label>
+    </div>
+    <!-- datlich3 -->
+    <div
+      class="absolute w-[900px] h-[840px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
+      [ngClass]="stateDatlich_pc == 3 ? 'block' : 'hidden'"
+    >
+      <img (click)="clickclosebtn_pc()"
+        src="assets/datlich/clsBtn_pc.svg"
+        alt=""
+        class="absolute right-0 m-[30px] cursor-pointer"
+      />
+      <img
+        src="assets/datlich/pageNumber3_pc.svg"
+        alt=""
+        class="absolute left-1/2 -translate-x-1/2 mt-[60px]"
+      />
+      <div class="text-center mt-[150px]">
+        <h1 class="t font-semibold text-[36px] text-[#152C5B]">
+          Thông tin đặt lịch
+        </h1>
+        <h6 class="text-[22px] text-[#999999]">
+          Vui lòng xác nhận thông tin đặt lịch
+        </h6>
+      </div>
+
+      <div class="flex justify-between px-[40px] mt-[30px]">
+        <!-- divtrailich -->
+        <div class="w-[380px] h-[400px] mt-[15px]">
+          <!-- Ho_ten -->
+          <label for="">
+            <span class="block text-[16px] font-semibold text-[#152C5B]"
+              >Họ và tên
+            </span>
+            <textarea
+              class="mt-[15px] pt-[10px] w-full h-[40px] pl-[20px] rounded-[12px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+          <!-- Sodienthoai -->
+          <label for="" class="block mt-[15px]">
+            <span class="block"
+              ><span class="text-[#152C5B] font-semibold"
+                >Số điện thoại</span
+              ></span
+            ><textarea
+              class="pt-[10px] pl-[20px] mt-[15px] rounded-[12px] w-full h-[40px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+          <!-- choncoso -->
+          <label for="" class="block mt-[15px]">
+            <span class="block"
+              ><span class="text-[#152C5B] font-semibold"
+                >Chọn cơ sở</span
+              ></span
+            ><textarea
+              class="pl-[20px] pt-[10px] mt-[15px] rounded-[12px] w-full h-[40px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+          <!-- Thời gian -->
+          <label for="" class="inline-block mt-[15px]">
+            <span class="block"
+              ><span class="text-[#152C5B] font-semibold">Thời gian</span></span
+            ><textarea
+              class="pt-[10px] pl-[20px] pr-[20px] w-[260px] h-[40px] rounded-[12px] bg-[#F5F6F8]"
+            ></textarea>
+            <textarea
+              class="pl-[10px] bg-[#F5F6F8] w-[90px] h-[40px] text-center ml-[30px] rounded-[10px] placeholder:text-[#B6BAC3] pt-[10px]"
+            ></textarea>
+          </label>
+        </div>
+        <!-- linecenter -->
+        <div class="h-[350px] w-[1px] bg-[#E5E5E5] mt-[20px]"></div>
+        <!-- thongtinpage1 -->
+        <div class="w-[380px] h-[400px] mt-[15px]">
+          <!-- Chon dich vu -->
+          <label for="">
+            <span class="block text-[16px] font-semibold text-[#152C5B]"
+              >Chọn dịch vụ
+            </span>
+            <textarea
+              class="w-full mt-[15px] h-[150px] rounded-[12px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+          <!-- Ghi chu -->
+          <label for="" class="block mt-[15px]">
+            <span class="block"
+              ><span class="text-[#152C5B] font-semibold">Ghi chú</span></span
+            ><textarea
+              class="mt-[15px] rounded-[12px] w-full h-[100px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+        </div>
+      </div>
+      <!-- Button -->
+      <label class="text-[22px] absolute left-1/2 -translate-x-1/2 mt-[10px]">
+        <button
+          class="rounded-[20px] block bg-[#3252DF] w-[220px] h-[50px] hover:bg-[#0B217E]"
+          (click)="statePagedatlichpc(0)"
+        >
+          <span class="text-white">Tiếp tục</span>
+        </button>
+        <button (click)="clickclosebtn_pc()"
+          class="mt-[20px] rounded-[20px] block bg-[#F5F6F8] w-[220px] h-[50px]"
+        >
+          <span class="text-[#B3B3B3]">Hủy</span>
+        </button>
+      </label>
+    </div>
+  </div>
+
+  <!--introduce-->
+  <div
+    class="bg-white flex flex-col items-center text-center font-openSans mb-[101px]"
+  >
+    <p class="font-bold text-[48px] mt-[66px]">Lý Do Chọn ˈLoomənəs</p>
+    <p class="text-center font-semibold text-[20px] mt-[29px]">
+      Với 4 năm kinh nghiệm trong lĩnh vực vệ sinh và phục chế, sửa chữa giày đồ
+      hiệu, ˈloomənəs <br />
+      cam kết mang lại cho khách hàng trải nghiệm dịch vụ tốt nhất.
+    </p>
+
+    <div class="flex gap-[167px] mt-[132px]">
+      <div class="flex flex-col items-center">
+        <img [src]="stickerBag" class="w-[180.33px]" />
+        <p class="text-center font-semibold text-[20px] mt-[108px]">
+          Hơn 100.00+ <br />sản phẩm đã được bán
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img [src]="stickerPackage" class="w-[177.6px]" />
+        <p class="text-center font-semibold text-[20px] mt-[91px]">
+          Tiện ích giao nhận 2 <br />
+          chiều tiện lợi,giao và nhận đồ tại nhà
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img [src]="stickerShoe" class="w-[236.18px] h-[177.6px]" />
+        <p class="text-center font-semibold text-[20px] mt-[93px]">
+          Hơn 300.000 + đôi giày <br />đã được vệ sinh
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--banners-->
+  <div class="flex w-full relative items-center font-openSans">
+    <img class="w-full" [src]="bns" />
+    <div class="absolute w-full flex justify-center gap-[20%]">
+      <div class="text-center font-openSans">
+        <h1 class="text-[36px] font-semibold font-playfairDisplay">
+          ˈLoomənəs
+        </h1>
+        <h1 class="text-[48px] font-bold uppercase mt-[26px]">
+          TƯ VẤN MIỄN PHÍ
+        </h1>
+        <h1 class="text-[40px] font-semibold capitalize mt-[22px]">
+          Sửa Chữa, Phục Hồi, Custom Giày
+        </h1>
+        <button
+          class="w-[267px] h-[72px] rounded-[5px] bg-white font-semibold text-[24px] uppercase mt-[42px] hover:text-white hover:bg-black"
+        >
+          CHAT NGAY
+        </button>
+      </div>
+
+      <div
+        class="h-[365px] w-[301px] scrollbar-thin scrollbar-thumb-color-dirtyYellow scrollbar-track-white overflow-y-auto pr-[5px] cursor-pointer"
+        #scrollBox
+        (mousedown)="onMouseDown($event)"
+        (mouseup)="onMouseUp()"
+        (mousemove)="onMouseMove($event)"
+        (mouseleave)="onMouseLeave()"
+      >
+        <img [src]="scroll_box_img1" draggable="false" />
+        <div class="h-[20px]"></div>
+        <img [src]="scroll_box_img2" draggable="false" />
+        <div class="h-[20px]"></div>
+        <img [src]="scroll_box_img3" draggable="false" />
+        <div class="h-[20px]"></div>
+        <img [src]="scroll_box_img4" draggable="false" />
+      </div>
+    </div>
+  </div>
+
+  <!--services-->
+  <div class="flex flex-col items-center bg-white">
+    <div class="text-center mt-[92px]">
+      <h1 class="font-bold text-[48px]">Dịch vụ</h1>
+      <h1 class="font-semibold text-[36px] text-color-amberGray mt-[16px]">
+        Preview
+      </h1>
+    </div>
+
+    <div
+      class="whitespace-nowrap w-[1163px] h-[249px] overflow-hidden mt-[50px]"
+      #serviceBoxPc
+    >
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[354px] h-[249px]"
+          [src]="serviceImgs[0]"
+        />
+        <div
+          class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray text-center"
+          >
+            CHUYÊN SÂU
+          </h1>
+        </div>
+      </div>
+
+      <div class="inline-block w-[50px]"></div>
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[354px] h-[249px]"
+          [src]="serviceImgs[1]"
+        />
+        <div
+          class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            Sửa đóng<br />đế giày âu
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[50px]"></div>
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[354px] h-[249px]"
+          [src]="serviceImgs[2]"
+        />
+        <div
+          class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            Custom Giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[50px]"></div>
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[354px] h-[249px]"
+          [src]="serviceImgs[3]"
+        />
+        <div
+          class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            Sửa đế giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[50px]"></div>
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[354px] h-[249px]"
+          [src]="serviceImgs[4]"
+        />
+        <div
+          class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            Sơn giày
+          </h1>
+        </div>
+      </div>
+      <div class="inline-block w-[50px]"></div>
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
+        <img
+          class="absolute rounded-[10px] w-[354px] h-[249px]"
+          [src]="serviceImgs[5]"
+        />
+        <div
+          class="group absolute w-[354px] h-[249px] flex justify-center items-center rounded-[10px]"
+        >
+          <div
+            class="rounded-[10px] w-[354px] h-[249px] bg-black bg-opacity-40 transform group-hover:translate-y-[249px] transition duration-300"
+          ></div>
+          <h1
+            class="absolute font-bold text-[28px] text-color-amberGray uppercase text-center"
+          >
+            vệ sinh<br />nâng cao
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex font-semibold text-[20px] gap-[160px] mt-[100px]">
+      <button
+        class="bg-color-amber rounded-[5px] w-[100px] h-[70px] hover:bg-color-amberGray"
+        (click)="prevServiceBox('xl')"
+      >
+        Trước
+      </button>
+      <button
+        class="bg-color-amber rounded-[5px] w-[100px] h-[70px] hover:bg-color-amberGray"
+        (click)="nextServiceBox('xl')"
+      >
+        Sau
+      </button>
+    </div>
+    <button
+      class="bg-color-amber rounded-[5px] w-[360px] h-[80px] flex justify-center items-center gap-[20px] mt-[76px] hover:bg-color-amberGray mb-[47px]"
+    >
+      <img [src]="iconMenuBook" class="w-[55.23px]" />
+      <p class="font-semibold text-[28px]">BẢNG GIÁ DỊCH VỤ</p>
+    </button>
+  </div>
+
+  <!--product-->
+  <div class="flex flex-col items-center bg-white font-openSans">
+    <p class="block font-bold text-[48px] mt-[81px]">SẢN PHẨM NỔI BẬT</p>
+    <p class="w-[313px] h-[3px] bg-black mt-[26px]"></p>
+    <div class="w-full flex justify-center gap-[7%] mt-[74px]">
+      <div
+        class="flex justify-center w-[337px] h-[427px]"
+        *ngFor="let x of tapletProduct"
+      >
+        <img [src]="x" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<Loomenes-footer></Loomenes-footer>

@@ -9,7 +9,7 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogParticularComponent } from './blog-particular/blog-particular.component';
 import { LichNewComponent } from './lich-new/lich-new.component';
 import { LichPage3Component } from './lich-page3/lich-page3.component';
-
+import { BlogAllComponent } from './blog-all/blog-all.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home-page' },
   { path: 'home-page', component: HomePageComponent },
@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'blog-particular', component: BlogParticularComponent },
   { path: 'lich-new', component: LichNewComponent },
   { path: 'lich-page-3', component: LichPage3Component },
+  { path: 'blog-all', component: BlogAllComponent },
 ];
 
 @NgModule({

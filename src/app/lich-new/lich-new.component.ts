@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'Loomenes-lich-new',
@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./lich-new.component.css'],
 })
 export class LichNewComponent {
+
+  @Output() newLichNewEvent = new EventEmitter<boolean>();
+
+  showLichPage3() {
+    this.newLichNewEvent.emit(true);
+  }
+
   onHidePage1() {
     const page1 = document.getElementById('page1');
     const page2 = document.getElementById('page2');
