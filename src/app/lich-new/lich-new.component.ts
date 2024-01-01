@@ -12,7 +12,9 @@ export class LichNewComponent {
   showLichPage3() {
     this.newLichNewEvent.emit(true);
   }
-
+  constructor(){
+    document.getElementById('top')?.scrollIntoView();
+  }
   onHidePage1() {
     const page1 = document.getElementById('page1');
     const page2 = document.getElementById('page2');

@@ -8,6 +8,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class LichPage3Component {
   @Output() newLichPage3Event = new EventEmitter<boolean>();
 
+  constructor() {
+    document.getElementById('top')?.scrollIntoView();
+  }
+
   showComfirmDone() {
     this.newLichPage3Event.emit(true);
   }

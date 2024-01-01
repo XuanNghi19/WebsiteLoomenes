@@ -42,7 +42,7 @@
   </div>
   <div
     *ngIf="isOpenedMenu"
-    class="absolute top-0 left-0 h-[448px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 xl:hidden"
+    class="absolute top-0 left-0 h-[400px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 xl:hidden"
   >
     <img (click)="onToggleMenu()" src="assets/header/close.svg" alt="" />
     <a [routerLink]="['/home-page']" class="mt-9 block">Trang chủ</a>
@@ -50,6 +50,5 @@
     <a [routerLink]="['/service-page']" class="mt-9 block">Dịch vụ</a>
     <a [routerLink]="['/product-page']" class="mt-9 block">Sản phẩm</a>
     <a [routerLink]="['/blog-all']" class="mt-9 block">Bài viết</a>
-    <a [routerLink]="['/lich-new']" class="mt-9 block">Đặt lịch</a>
   </div>
 </header>
