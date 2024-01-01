@@ -6,6 +6,9 @@ import { ServicesPageComponent } from './services-page/services-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { InfoCustomerPageComponent } from './info-customer-page/info-customer-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { IntroducePageComponent } from './introduce-page/introduce-page.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
 
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogParticularComponent } from './blog-particular/blog-particular.component';
@@ -24,12 +27,15 @@ const routes: Routes = [
   { path: 'lich-new', component: LichNewComponent },
   { path: 'lich-page-3', component: LichPage3Component },
   { path: 'blog-all', component: BlogAllComponent },
+  { path: 'introduce-page', component: IntroducePageComponent },
+  { path: 'detail-page', component: DetailPageComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
-}
+};
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, routerOptions)],

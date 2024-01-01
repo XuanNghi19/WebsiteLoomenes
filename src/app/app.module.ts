@@ -18,6 +18,9 @@ import { InfoCustomerPageComponent } from './info-customer-page/info-customer-pa
 import { RouterModule } from '@angular/router';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { BlogAllComponent } from './blog-all/blog-all.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { IntroducePageComponent } from './introduce-page/introduce-page.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
 
 registerLocaleData(localeVi, 'vi-VN');
 
@@ -37,6 +40,10 @@ registerLocaleData(localeVi, 'vi-VN');
     LichNewComponent,
     LichPage3Component,
     BlogAllComponent,
+    NotFoundComponent,
+    ProductPageComponent,
+    IntroducePageComponent,
+    DetailPageComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, RouterModule],
   providers: [],

@@ -12,6 +12,7 @@ export class InfoCustomerPageComponent {
     address: '',
     note: '',
   };
+  isShowPopUp = false;
 
   onBlurInput(element: any) {
     if (!element.value) {
@@ -29,6 +30,10 @@ export class InfoCustomerPageComponent {
       .closest('div')
       .querySelector('span.hidden')
       .classList.remove('active');
+  }
+
+  onChangeStatusPopUp() {
+    this.isShowPopUp = false;
   }
 
   onSubmitPurchase() {
@@ -49,6 +54,13 @@ export class InfoCustomerPageComponent {
       address?.classList.add('require');
       const parent = address.closest('div');
       parent.querySelector('span.hidden').classList.add('active');
+    }
+    if (
+      this.user.name !== '' &&
+      this.user.tel !== '' &&
+      this.user.address !== ''
+    ) {
+      this.isShowPopUp = true;
     }
   }
 }
