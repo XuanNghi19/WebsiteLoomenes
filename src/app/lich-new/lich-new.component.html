@@ -1,0 +1,167 @@
+<div class="w-full font-openSans lg:hidden">
+  <div
+    class="h-[170px] relative w-full bg-no-repeat bg-[url('assets/blog/bgDatlich.svg')]"
+  >
+    <span
+      class="block absolute font-extrabold text-[32px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white"
+      >ĐẶT LỊCH</span
+    >
+  </div>
+
+  <img src="assets/datlich/Lichchitiet.svg" alt="" class="mt-[30px]" />
+  <div class="px-5 mt-[15px]">
+    <span class="ml-[109px] font-bold text-[#152C5B]">Thông tin đặt lịch</span>
+    <!-- page1______________________________________________________________________ -->
+    <div class="mt-[6px] block lg:hidden" id="page1">
+      <!-- ho ten -->
+      <label for="" class="block">
+        <span class="text-[14px] text-[#152C5B]"
+          >Họ và tên <span class="text-red-600">*</span></span
+        >
+        <input
+          type="text"
+          class="mt-[5px] w-full h-[44px] bg-[#F5F6F8] rounded-[8px] placeholder:text-[#B6BAC3] text-[11px] pl-[11px]"
+          placeholder="Vui lòng nhập"
+        />
+      </label>
+      <!-- so dien thoai -->
+      <label for="" class="block mt-[12px]">
+        <span class="text-[14px] text-[#152C5B]"
+          >Số điện thoại <span class="text-red-600">*</span></span
+        >
+        <input
+          type="text"
+          class="mt-[5px] w-full h-[44px] bg-[#F5F6F8] rounded-[8px] placeholder:text-[#B6BAC3] text-[11px] pl-[11px]"
+          placeholder="Vui lòng nhập"
+        />
+      </label>
+      <!-- co so -->
+      <label for="" class="block mt-[12px]">
+        <p class="text-[14px] text-[#152C5B]">
+          Chọn cơ sở <span class="text-red-600">*</span>
+        </p>
+        <select
+          name=""
+          id="fr"
+          class="mt-[5px] w-full h-[44px] bg-[#F5F6F8] rounded-[8px] text-[12px] pl-[11px]"
+        >
+          <option value="" class="text-[12px]">
+            133 Nguyễn Văn Trỗi, Hà Đông, Hà Nội
+          </option>
+          <option value="" class="text-[12px]">
+            281 Khuất Duy Tiến, Thanh Xuân, Hà Nội
+          </option>
+        </select>
+      </label>
+
+      <!-- date -->
+      <label for="" class="relative inline-block mt-[12px]">
+        <p class="text-[14px] text-[#152C5B]">
+          Thời gian <span class="text-red-600">*</span>
+        </p>
+        <input
+          type="date"
+          class="pr-[10px] mt-[5px] w-[216px] h-[44px] bg-[#F5F6F8] rounded-[8px] placeholder:text-[#B6BAC3] text-[11px] pl-[11px]"
+        />
+        <input
+          type="text"
+          class="mt-[5px] ml-[20px] w-[114px] h-[44px] bg-[#F5F6F8] rounded-[8px] placeholder:text-[#B6BAC3] text-[11px] pl-[40px] ]"
+          placeholder="hh : mm"
+        />
+      </label>
+      <!-- Button next -->
+      <div class="flex justify-center mt-[24px]">
+        <div class="block">
+          <button
+            type="button"
+            class="block rounded-[10px] bg-[#3252DF] w-[90px] h-[30px] hover:bg-[#8AA0FF]"
+          >
+            <span (click)="onHidePage1()" class="text-[12px] text-white"
+              >Tiếp tục</span
+            >
+          </button>
+
+          <button
+            type="button"
+            class="block mt-[10px] rounded-[10px] bg-[#F5F6F8] w-[90px] h-[30px] hover:bg-[#888888]"
+          >
+            <span
+              [routerLink]="['/home-page']"
+              class="text-[12px] text-[#B3B3B3]"
+              >Hủy</span
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------------------------------------------------------- -->
+    <!-- page2 -->
+    <div class="mt-[6px] hidden lg:hidden" id="page2">
+      <!-- chon dịch vụ -->
+      <label for="" class="block mt-[12px]">
+        <p class="text-[14px] text-[#152C5B]">
+          Chọn dịch vụ <span class="text-red-600">*</span>
+        </p>
+        <select
+          name=""
+          id="fr"
+          class="w-full h-[44px] bg-[#F5F6F8] rounded-[8px] text-[12px] pl-[11px] mt-[5px]"
+        >
+          <option value="" class="text-[12px] font-bold text-black">
+            (Vui lòng chọn dịch vụ)
+          </option>
+          <option value="" class="text-[12px]">Vệ sinh giày chuyên sâu</option>
+          <option value="" class="text-[12px]">Vệ sinh chuyên sâu</option>
+          <option value="" class="text-[12px]">Sửa giày</option>
+        </select>
+        <textarea
+          class="leading-loose mt-[12px] bg-[#F5F6F8] rounded-[8px] ml-[43px] p-[18px] text-[12px]"
+          name=""
+          id=""
+          cols="40"
+          rows="3"
+        >
+Dịch vụ 1:      Vệ sinh chuyên sâu.
+Dịch vụ 2:      Sửa giày.
+Dịch vụ 3:      Vệ sinh.</textarea
+        >
+      </label>
+      <!-- Ghi chú -->
+      <label for="" class="block mt-[12px]">
+        <p class="text-[14px] text-[#152C5B]">Ghi chú</p>
+        <textarea
+          class="leading-loose mt-[12px] bg-[#F5F6F8] rounded-[8px] p-[18px] text-[12px] font-semibold"
+          name=""
+          id=""
+          cols="46"
+          rows="3"
+        ></textarea>
+      </label>
+      <!-- Button next -->
+      <div class="flex justify-center mt-[24px]">
+        <div class="block">
+          <button
+            type="button"
+            class="block rounded-[10px] bg-[#3252DF] w-[90px] h-[30px] hover:bg-[#8AA0FF]"
+            (click)="showLichPage3()"
+          >
+            <span class="text-[12px] text-white"
+              >Tiếp tục</span
+            >
+          </button>
+
+          <button
+            type="button"
+            class="block mt-[10px] rounded-[10px] bg-[#F5F6F8] w-[90px] h-[30px] hover:bg-[#888888]"
+          >
+            <span
+              [routerLink]="['/home-page']"
+              class="text-[12px] text-[#B3B3B3]"
+              >Hủy</span
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

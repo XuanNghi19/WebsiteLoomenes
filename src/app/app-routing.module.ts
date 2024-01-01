@@ -7,6 +7,11 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { InfoCustomerPageComponent } from './info-customer-page/info-customer-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 
+import { BlogPageComponent } from './blog-page/blog-page.component';
+import { BlogParticularComponent } from './blog-particular/blog-particular.component';
+import { LichNewComponent } from './lich-new/lich-new.component';
+import { LichPage3Component } from './lich-page3/lich-page3.component';
+import { BlogAllComponent } from './blog-all/blog-all.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home-page' },
   { path: 'home-page', component: HomePageComponent },
@@ -14,6 +19,11 @@ const routes: Routes = [
   { path: 'cart-page', component: CartPageComponent },
   { path: 'info-customer-page', component: InfoCustomerPageComponent },
   { path: 'product-page', component: ProductPageComponent },
+  { path: 'blog-page', component: BlogPageComponent },
+  { path: 'blog-particular', component: BlogParticularComponent },
+  { path: 'lich-new', component: LichNewComponent },
+  { path: 'lich-page-3', component: LichPage3Component },
+  { path: 'blog-all', component: BlogAllComponent },
 ];
 
 const routerOptions: ExtraOptions = {

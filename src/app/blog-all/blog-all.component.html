@@ -1,0 +1,720 @@
+<Loomenes-header-navigator></Loomenes-header-navigator>
+<div class="w-full font-openSans">
+  <div
+    class="h-[170px] relative w-full bg-no-repeat bg-cover bg-center bg-[url('assets/blog/Blog_imga.svg')] sm:h-[240px] xl:h-[320px]"
+  >
+    <div class="bg-black w-full h-full absolute top-0 opacity-20"></div>
+    <span
+      class="block absolute font-extrabold text-[32px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white sm:hidden"
+      >BÀI VIẾT</span
+    >
+    <div
+      class="hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center absolute sm:block"
+    >
+      <div class="flex justify-center">
+        <span class="font-semibold cursor-pointer">Trang chủ</span>
+        <img src="assets/cart/arrow-right.svg" alt="" class="ml-1" />
+        <span class="block ml-1">Bài viết</span>
+      </div>
+      <div class="font-semibold text-[32px] mt-1 xl:text-[48px]">Bài viết</div>
+    </div>
+  </div>
+  <!-- Mobile -->
+  <div class="px-5 mt-8 lg:px-[60px] sm:hidden">
+    <label class="relative block">
+      <span class="sr-only">Search</span>
+      <img
+        class="absolute top-1/2 -translate-y-1/2 right-4"
+        src="assets/blog/Icon_search.svg"
+        alt=""
+      />
+      <input
+        type="text"
+        class="h-9 w-full border rounded-lg play placeholder:text-slate-400 pl-3"
+        placeholder="Tìm kiếm"
+        name="search"
+      />
+    </label>
+    <h2 class="mt-4 font-bold text-base">Phổ biến</h2>
+    <!-- phobien1 -->
+    <div
+      [routerLink]="['/blog-particular']"
+      class="relative mt-[12px] w-full h-[196px] bg-cover bg-[url('assets/blog/bg_img.svg')]"
+    >
+      <div class="absolute px-[16px] mt-[120px] w-">
+        <h1 class="font-bold text-white">
+          Vệ sinh chuyên sâu đôi giày của bạn
+        </h1>
+        <div class="flex mt-[10px]">
+          <div class="flex">
+            <img class="" src="assets/blog/admin_icon.svg" alt="" />
+            <p class="ml-[10px] text-[12px] text-white">Admin</p>
+          </div>
+          <div class="flex ml-[150px]">
+            <img class="" src="assets/blog/lich_icon.svg" alt="" />
+            <p class="ml-[10px] text-[12px] text-white">14 Oct 2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img
+      src="assets/blog/nextpage_btn.svg"
+      alt=""
+      class="mt-[15px] absolute left-1/2 -translate-x-1/2"
+    />
+    <!-- moinhat -->
+    <h2 class="font-bold mt-[40px]">Mới nhất</h2>
+    <div
+      [routerLink]="['/blog-particular']"
+      class="relative mt-[12px] w-full h-[196px] bg-cover bg-[url('assets/blog/bg_img.svg')]"
+    >
+      <div class="absolute px-[16px] mt-[120px] w-">
+        <h1 class="font-bold text-white">Vệ sinh như nào cho đúng cách aaaa</h1>
+        <div class="flex mt-[10px]">
+          <div class="flex">
+            <img class="" src="assets/blog/admin_icon.svg" alt="" />
+            <p class="ml-[10px] text-[12px] text-white">Admin</p>
+          </div>
+          <div class="flex ml-[150px]">
+            <img class="" src="assets/blog/lich_icon.svg" alt="" />
+            <p class="ml-[10px] text-[12px] text-white">14 Oct 2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img
+      src="assets/blog/nextpage_btn.svg"
+      alt=""
+      class="mt-[15px] absolute left-1/2 -translate-x-1/2"
+    />
+    <!-- nextpage -->
+
+    <!-- baivietganday -->
+    <p class="mt-[40px] font-bold text-base">Bài viết gần đây</p>
+    <div class="mt-[6px] w-full relative">
+      <!-- ganday1 -->
+      <div
+        [routerLink]="['/blog-particular']"
+        class="relative mt-[12px] w-full h-[92px] bg-zinc-50 rounded-xl"
+      >
+        <img
+          src="assets/blog/giayda.svg"
+          alt=""
+          class="absolute top-1/2 -translate-y-1/2 left-[9px]"
+        />
+        <div class="absolute ml-[101px]">
+          <p class="text-[12px] mt-[17px] font-semibold">
+            Các mẫu giày tây thường gặp
+          </p>
+          <div class="mt-[30px] flex text-gray-400">
+            <div class="flex">
+              <img src="assets/blog/lich_gray.svg" alt="" class="" />
+              <p class="text-[12px] ml-[8.67px]">03 Aug 2022</p>
+            </div>
+            <div class="flex ml-[70px]">
+              <img src="assets/blog/admin_gray.svg" alt="" class="" />
+              <p class="text-[12px] ml-[8.67px] right-[24px]">Admin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ganday2 -->
+      <div
+        [routerLink]="['/blog-particular']"
+        class="relative mt-[21px] w-full h-[92px] rounded-xl"
+      >
+        <img
+          src="assets/blog/dungdichvsgiay.svg"
+          alt=""
+          class="absolute top-1/2 -translate-y-1/2 left-[9px]"
+        />
+        <div class="absolute ml-[101px]">
+          <p class="font-semibold text-[12px] mt-[17px]">
+            4 loại nước giặt ai cũng nên có
+          </p>
+          <div class="mt-[30px] flex text-gray-400">
+            <div class="flex">
+              <img src="assets/blog/lich_gray.svg" alt="" class="" />
+              <p class="text-[12px] ml-[8.67px]">03 Aug 2022</p>
+            </div>
+            <div class="flex ml-[70px]">
+              <img src="assets/blog/admin_gray.svg" alt="" class="" />
+              <p class="text-[12px] ml-[8.67px] right-[24px]">Admin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ganday3 -->
+      <div class="relative mt-[21px] w-full h-[92px] bg-zinc-50 rounded-xl">
+        <img
+          src="assets/blog/ddvs1.svg"
+          alt=""
+          class="absolute top-1/2 -translate-y-1/2 left-[9px]"
+        />
+        <div class="absolute ml-[101px]">
+          <p class="font-semibold text-[12px] mt-[17px]">
+            Những điều bạn chưa biết về chai vệ sinh giày?
+          </p>
+          <div class="mt-[30px] flex text-gray-400">
+            <div class="flex">
+              <img src="assets/blog/lich_gray.svg" alt="" class="" />
+              <p class="text-[12px] ml-[8.67px]">03 Aug 2022</p>
+            </div>
+            <div class="flex ml-[70px]">
+              <img src="assets/blog/admin_gray.svg" alt="" class="" />
+              <p class="text-[12px] ml-[8.67px] right-[24px]">Admin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ganday4 -->
+      <div class="relative mt-[21px] w-full h-[92px] rounded-xl">
+        <img
+          src="assets/blog/Tet.svg"
+          alt=""
+          class="absolute top-1/2 -translate-y-1/2 left-[9px]"
+        />
+        <div class="absolute ml-[101px]">
+          <p class="font-semibold text-[12px] mt-[17px]">
+            Lịch hoạt động Tết nguyên đán 2024
+          </p>
+          <div class="mt-[30px] flex text-gray-400">
+            <div class="flex">
+              <img src="assets/blog/lich_gray.svg" alt="" class="" />
+              <p class="text-[12px] ml-[8.67px]">03 Aug 2022</p>
+            </div>
+            <div class="flex ml-[70px]">
+              <img src="assets/blog/admin_gray.svg" alt="" class="" />
+              <p class="text-[12px] ml-[8.67px] right-[24px]">Admin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center mt-[30px]">
+        <img src="assets/blog/xemthembt.svg" alt="" class="" />
+      </div>
+    </div>
+    <!-- follow -->
+    <div class="w-full mt-[50px]">
+      <h1 class="text-[24px] font-bold text-center">Follow Us</h1>
+      <div class="flex mt-[18px]">
+        <img src="assets/blog/icon_fb.svg" alt="" class="ml-[36px]" />
+        <img src="assets/blog/ig_icon.svg" alt="" class="ml-[66px]" />
+        <img src="assets/blog/iconytb.svg" alt="" class="ml-[66px]" />
+      </div>
+    </div>
+  </div>
+  <!-- PC -->
+  <div class="w-full font-openSans">
+    <div class="hide px-[121px] hidden xl:block">
+      <h1 class="font-bold text-[24px] mt-[100px]">Phổ biến</h1>
+      <div class="flex justify-between mt-[24px]">
+        <div [routerLink]="['/blog-page']" class="w-[282px] h-[300px]">
+          <img src="assets/blognew/image 77.svg" alt="" class="" />
+          <div class="flex mt-[12px] justify-between">
+            <div class="flex">
+              <img src="assets/blognew/vevtor4.svg" alt="" class="" />
+              <span class="text-[12px] text-[#9C9C9C] font-semibold ml-[8px]"
+                >Admin</span
+              >
+            </div>
+            <div class="flex ml-[30px]">
+              <img src="assets/blognew/Vector3.svg" alt="" class="" />
+              <span class="text-[12px] text-[#9C9C9C] font-semibold ml-[8px]"
+                >03 Aug 2022</span
+              >
+            </div>
+          </div>
+          <p class="font-semibold mt-[10px]">
+            Vệ sinh chuyên sâu đôi giày của bạn
+          </p>
+        </div>
+
+        <div [routerLink]="['/blog-page']" class="w-[282px] h-[300px]">
+          <img src="assets/blognew/image 28.svg" alt="" class="" />
+          <div class="flex mt-[12px] justify-between">
+            <div class="flex">
+              <img src="assets/blognew/vevtor4.svg" alt="" class="" />
+              <span class="text-[12px] text-[#9C9C9C] font-semibold ml-[8px]"
+                >Admin</span
+              >
+            </div>
+            <div class="flex ml-[30px]">
+              <img src="assets/blognew/Vector3.svg" alt="" class="" />
+              <span class="text-[12px] text-[#9C9C9C] font-semibold ml-[8px]"
+                >03 Aug 2022</span
+              >
+            </div>
+          </div>
+          <p class="font-semibold mt-[10px]">
+            Các loại dung dịch vệ sinh giày cần có?
+          </p>
+        </div>
+
+        <div [routerLink]="['/blog-page']" class="w-[282px] h-[300px]">
+          <img src="assets/blognew/Rectangle 149.svg" alt="" class="" />
+          <div class="flex mt-[12px] justify-between">
+            <div class="flex">
+              <img src="assets/blognew/vevtor4.svg" alt="" class="" />
+              <span class="text-[12px] text-[#9C9C9C] font-semibold ml-[8px]"
+                >Admin</span
+              >
+            </div>
+            <div class="flex ml-[30px]">
+              <img src="assets/blognew/Vector3.svg" alt="" class="" />
+              <span class="text-[12px] text-[#9C9C9C] font-semibold ml-[8px]"
+                >03 Aug 2022</span
+              >
+            </div>
+          </div>
+
+          <p class="font-semibold mt-[10px]">
+            4 loại kem đánh giày chuyên dụng
+          </p>
+        </div>
+
+        <div [routerLink]="['/blog-page']" class="w-[282px] h-[300px]">
+          <img src="assets/blognew/Rectangle 69.svg" alt="" class="" />
+          <div class="flex mt-[12px] justify-between">
+            <div class="flex">
+              <img src="assets/blognew/vevtor4.svg" alt="" class="" />
+              <span class="text-[12px] text-[#9C9C9C] font-semibold ml-[8px]"
+                >Admin</span
+              >
+            </div>
+            <div class="flex ml-[30px]">
+              <img src="assets/blognew/Vector3.svg" alt="" class="" />
+              <span class="text-[12px] text-[#9C9C9C] font-semibold ml-[8px]"
+                >03 Aug 2022</span
+              >
+            </div>
+          </div>
+          <p class="font-semibold mt-[10px]">Vệ sinh giày da như thế nào?</p>
+        </div>
+      </div>
+      <div class="flex justify-between mt-[100px]">
+        <div class="w-[793px] text-[24px]">
+          <div class="flex justify-between">
+            <p class="ml-[20px] font-semibold">Mới nhất</p>
+            <p class="mr-[20px] font-semibold text-[#9C9C9C]">Gần đây</p>
+          </div>
+          <div class="w-full h-[2px] bg-[#bababa]"></div>
+          <div [routerLink]="['/blog-page']" class="flex mt-[30px] h-[210px]">
+            <img src="assets/blognew/nano.svg" alt="" class="rounded-[20px]" />
+            <div class="ml-[24px] mt-[10px]">
+              <p class="text-[20px] font-semibold">
+                Review Top 5 đôi giày bán chạy nhất Hà Nội và cách vệ sinh
+              </p>
+              <p class="text-[18px]">
+                Trên thị trường hiện nay có rất nhiều mẫu giày chạy bộ khác
+                nhau. Dựa theo những đánh giá của các chuyên gia và review từ
+                người đã trải...
+              </p>
+              <div class="flex justify-between mt-[20px]">
+                <div class="flex">
+                  <img src="assets/blognew/vevtor4.svg" alt="" class="" />
+                  <p class="ml-[8px] text-[16px] text-[#9C9C9C]">Admin</p>
+                </div>
+                <div class="flex">
+                  <img src="assets/blognew/Vector3.svg" alt="" class="" />
+                  <p class="ml-[8px] text-[16px] text-[#9C9C9C]">14 Oct 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div [routerLink]="['/blog-page']" class="flex mt-[24px] h-[210px]">
+            <img
+              src="assets/blognew/Chăm sóc giày da.svg"
+              alt=""
+              class="rounded-[20px]"
+            />
+            <div class="ml-[24px] mt-[10px]">
+              <p class="text-[20px] font-semibold">
+                Review Top 5 đôi giày bán chạy nhất Hà Nội và cách vệ sinh
+              </p>
+              <p class="text-[18px]">
+                Trên thị trường hiện nay có rất nhiều mẫu giày chạy bộ khác
+                nhau. Dựa theo những đánh giá của các chuyên gia và review từ
+                người đã trải...
+              </p>
+              <div class="flex justify-between mt-[20px]">
+                <div class="flex">
+                  <img src="assets/blognew/vevtor4.svg" alt="" class="" />
+                  <p class="ml-[8px] text-[16px] text-[#9C9C9C]">Admin</p>
+                </div>
+                <div class="flex">
+                  <img src="assets/blognew/Vector3.svg" alt="" class="" />
+                  <p class="ml-[8px] text-[16px] text-[#9C9C9C]">14 Oct 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div [routerLink]="['/blog-page']" class="flex mt-[24px] h-[210px]">
+            <img
+              src="assets/blognew/image 78.svg"
+              alt=""
+              class="rounded-[20px]"
+            />
+            <div class="ml-[24px] mt-[10px]">
+              <p class="text-[20px] font-semibold">
+                Review Top 5 đôi giày bán chạy nhất Hà Nội và cách vệ sinh
+              </p>
+              <p class="text-[18px]">
+                Trên thị trường hiện nay có rất nhiều mẫu giày chạy bộ khác
+                nhau. Dựa theo những đánh giá của các chuyên gia và review từ
+                người đã trải...
+              </p>
+              <div class="flex justify-between mt-[20px]">
+                <div class="flex">
+                  <img src="assets/blognew/vevtor4.svg" alt="" class="" />
+                  <p class="ml-[8px] text-[16px] text-[#9C9C9C]">Admin</p>
+                </div>
+                <div class="flex">
+                  <img src="assets/blognew/Vector3.svg" alt="" class="" />
+                  <p class="ml-[8px] text-[16px] text-[#9C9C9C]">14 Oct 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div [routerLink]="['/blog-page']" class="flex mt-[24px] h-[210px]">
+            <img
+              src="assets/blognew/image 79.svg"
+              alt=""
+              class="rounded-[20px]"
+            />
+            <div class="ml-[24px] mt-[10px]">
+              <p class="text-[20px] font-semibold">
+                Review Top 5 đôi giày bán chạy nhất Hà Nội và cách vệ sinh
+              </p>
+              <p class="text-[18px]">
+                Trên thị trường hiện nay có rất nhiều mẫu giày chạy bộ khác
+                nhau. Dựa theo những đánh giá của các chuyên gia và review từ
+                người đã trải...
+              </p>
+              <div class="flex justify-between mt-[20px]">
+                <div class="flex">
+                  <img src="assets/blognew/vevtor4.svg" alt="" class="" />
+                  <p class="ml-[8px] text-[16px] text-[#9C9C9C]">Admin</p>
+                </div>
+                <div class="flex">
+                  <img src="assets/blognew/Vector3.svg" alt="" class="" />
+                  <p class="ml-[8px] text-[16px] text-[#9C9C9C]">14 Oct 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="assets/PC/nextpage_pc.svg"
+            alt=""
+            class="mt-[100px] ml-[200px]"
+          />
+        </div>
+        <div
+          [routerLink]="['/blog-page']"
+          class="w-[350px] h-[500px] border rounded-[24px]"
+        >
+          <div class="p-[25px]">
+            <label class="block relative">
+              <img
+                src="assets/blognew/search_pc.svg"
+                alt=""
+                class="absolute top-1/2 -translate-y-1/2 right-4"
+              />
+              <input
+                type="text"
+                placeholder="Tìm kiếm"
+                class="w-full h-[50px] border - rounded-[12px] placeholder:pl-[20px]"
+              />
+            </label>
+            <h1 class="text-[32px] font-bold text-center mt-[40px]">
+              Follow Us
+            </h1>
+            <div class="flex justify-between mt-[50px]">
+              <img src="assets/PC/iconfb_pc.svg" alt="" class="" />
+              <img src="assets/PC/iconig_pc.svg" alt="" class="" />
+              <img src="assets/PC/iconytb_pc.svg" alt="" class="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tablet -->
+  <div
+    class="px-[60px] mt-[60px] w-full justify-between xl:hidden hidden sm:block"
+  >
+    <h1 class="text-[20px] font-bold">Phổ biến</h1>
+    <div class="flex justify-between mt-[15px]">
+      <!-- b1 -->
+      <div
+        [routerLink]="['/blog-page']"
+        class="w-[207px] h-[300px]"
+        [routerLink]="['/blog-page']"
+      >
+        <img src="assets/blognew/image 35.svg" alt="" class="" />
+        <div class="flex justify-between mt-[10px]">
+          <div class="flex">
+            <img src="/assets/blognew/Vector.svg" alt="" class="" />
+            <p class="ml-[8px] text-[12px] font-semibold text-[#9C9C9C]">
+              Admin
+            </p>
+          </div>
+          <div class="flex">
+            <img src="/assets/blognew/Vector (1).svg" alt="" class="" />
+            <p class="ml-[8px] text-[12px] font-semibold text-[#9C9C9C]">
+              14 Oct 2022
+            </p>
+          </div>
+        </div>
+        <p class="font-semibold text-[14px] mt-[15px]">
+          Vệ sinh chuyên sâu đôi giày của bạn
+        </p>
+      </div>
+      <!-- b2 -->
+      <div [routerLink]="['/blog-page']" class="w-[207px] h-[300px]">
+        <img src="assets/blognew/image 28 (1).svg" alt="" class="" />
+        <div class="flex justify-between mt-[10px]">
+          <div class="flex">
+            <img src="/assets/blognew/Vector.svg" alt="" class="" />
+            <p class="ml-[8px] text-[12px] font-semibold text-[#9C9C9C]">
+              Admin
+            </p>
+          </div>
+          <div class="flex">
+            <img src="/assets/blognew/Vector (1).svg" alt="" class="" />
+            <p class="ml-[8px] text-[12px] font-semibold text-[#9C9C9C]">
+              14 Oct 2022
+            </p>
+          </div>
+        </div>
+        <p class="font-semibold text-[14px] mt-[15px]">
+          Vệ sinh chuyên sâu đôi giày của bạn
+        </p>
+      </div>
+      <!-- b3 -->
+      <div [routerLink]="['/blog-page']" class="w-[207px] h-[300px]">
+        <img src="assets/blognew/Rectangle 150.svg" alt="" class="" />
+        <div class="flex justify-between mt-[10px]">
+          <div class="flex">
+            <img src="/assets/blognew/Vector.svg" alt="" class="" />
+            <p class="ml-[8px] text-[12px] font-semibold text-[#9C9C9C]">
+              Admin
+            </p>
+          </div>
+          <div class="flex">
+            <img src="/assets/blognew/Vector (1).svg" alt="" class="" />
+            <p class="ml-[8px] text-[12px] font-semibold text-[#9C9C9C]">
+              14 Oct 2022
+            </p>
+          </div>
+        </div>
+        <p class="font-semibold text-[14px] mt-[15px]">
+          Vệ sinh chuyên sâu đôi giày của bạn
+        </p>
+      </div>
+      <!-- b4 -->
+      <div [routerLink]="['/blog-page']" class="w-[207px] h-[300px]">
+        <img src="assets/blognew/Rectangle 151.svg" alt="" class="" />
+        <div class="flex justify-between mt-[10px]">
+          <div class="flex">
+            <img src="/assets/blognew/Vector.svg" alt="" class="" />
+            <p class="ml-[8px] text-[12px] font-semibold text-[#9C9C9C]">
+              Admin
+            </p>
+          </div>
+          <div class="flex">
+            <img src="/assets/blognew/Vector (1).svg" alt="" class="" />
+            <p class="ml-[8px] text-[12px] font-semibold text-[#9C9C9C]">
+              14 Oct 2022
+            </p>
+          </div>
+        </div>
+        <p class="font-semibold text-[14px] mt-[15px]">
+          Vệ sinh chuyên sâu đôi giày của bạn
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <div class="w-[570px]">
+        <div class="flex justify-between text-[20px]">
+          <h2 class="font-semibold">Mới nhất</h2>
+          <h2 class="font-semibold text-[#9C9C9C]">Gần đây</h2>
+        </div>
+        <div class="w-full h-[2px] bg-[#9C9C9C]"></div>
+        <!-- moi1 -->
+        <div class="mt-[30px]">
+          <div class="flex">
+            <img
+              src="assets/blognew/Phủ nano chống nước giày.svg"
+              alt=""
+              class="rounded-[12px]"
+            />
+            <div class="ml-[12px]">
+              <p class="mt-[12px] font-semibold">
+                Review Top 5 đôi giày bán chạy nhất Hà Nội và cách vệ sinh
+              </p>
+              <p class="text-[14px]">
+                Trên thị trường hiện nay có rất nhiều mẫu giày chạy bộ khác
+                nhau. Dựa theo những đánh giá của các chuyên gia và review từ
+                người đã trải...
+              </p>
+              <div class="flex justify-between">
+                <div class="flex">
+                  <img src="assets/blognew/Vector.svg" alt="" class="" />
+                  <span
+                    class="text-[12px] font-semibold text-[#9C9C9C] ml-[8px]"
+                    >Admin</span
+                  >
+                </div>
+                <div class="flex">
+                  <img src="assets/blognew/Vector (1).svg" alt="" class="" />
+                  <span
+                    class="text-[12px] font-semibold text-[#9C9C9C] ml-[8px]"
+                    >14 Oct 2022</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- moi2 -->
+        <div [routerLink]="['/blog-page']" class="mt-[20px]">
+          <div class="flex">
+            <img
+              src="assets/blognew/Chăm sóc giày da (1).svg"
+              alt=""
+              class="rounded-[12px]"
+            />
+            <div class="ml-[12px]">
+              <p class="mt-[12px] font-semibold">
+                Review Top 5 đôi giày bán chạy nhất Hà Nội và cách vệ sinh
+              </p>
+              <p class="text-[14px]">
+                Trên thị trường hiện nay có rất nhiều mẫu giày chạy bộ khác
+                nhau. Dựa theo những đánh giá của các chuyên gia và review từ
+                người đã trải...
+              </p>
+              <div class="flex justify-between">
+                <div class="flex">
+                  <img src="assets/blognew/Vector.svg" alt="" class="" />
+                  <span
+                    class="text-[12px] font-semibold text-[#9C9C9C] ml-[8px]"
+                    >Admin</span
+                  >
+                </div>
+                <div class="flex">
+                  <img src="assets/blognew/Vector (1).svg" alt="" class="" />
+                  <span
+                    class="text-[12px] font-semibold text-[#9C9C9C] ml-[8px]"
+                    >14 Oct 2022</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- moi3 -->
+        <div [routerLink]="['/blog-page']" class="mt-[20px]">
+          <div class="flex">
+            <img
+              src="assets/blognew/image 80.svg"
+              alt=""
+              class="rounded-[12px]"
+            />
+            <div class="ml-[12px]">
+              <p class="mt-[12px] font-semibold">
+                Review Top 5 đôi giày bán chạy nhất Hà Nội và cách vệ sinh
+              </p>
+              <p class="text-[14px]">
+                Trên thị trường hiện nay có rất nhiều mẫu giày chạy bộ khác
+                nhau. Dựa theo những đánh giá của các chuyên gia và review từ
+                người đã trải...
+              </p>
+              <div class="flex justify-between">
+                <div class="flex">
+                  <img src="assets/blognew/Vector.svg" alt="" class="" />
+                  <span
+                    class="text-[12px] font-semibold text-[#9C9C9C] ml-[8px]"
+                    >Admin</span
+                  >
+                </div>
+                <div class="flex">
+                  <img src="assets/blognew/Vector (1).svg" alt="" class="" />
+                  <span
+                    class="text-[12px] font-semibold text-[#9C9C9C] ml-[8px]"
+                    >14 Oct 2022</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- moi4 -->
+        <div [routerLink]="['/blog-page']" class="mt-[20px]">
+          <div class="flex">
+            <img
+              src="assets/blognew/image 81.svg"
+              alt=""
+              class="rounded-[12px]"
+            />
+            <div class="ml-[12px]">
+              <p class="mt-[12px] font-semibold">
+                Review Top 5 đôi giày bán chạy nhất Hà Nội và cách vệ sinh
+              </p>
+              <p class="text-[14px]">
+                Trên thị trường hiện nay có rất nhiều mẫu giày chạy bộ khác
+                nhau. Dựa theo những đánh giá của các chuyên gia và review từ
+                người đã trải...
+              </p>
+              <div class="flex justify-between">
+                <div class="flex">
+                  <img src="assets/blognew/Vector.svg" alt="" class="" />
+                  <span
+                    class="text-[12px] font-semibold text-[#9C9C9C] ml-[8px]"
+                    >Admin</span
+                  >
+                </div>
+                <div class="flex">
+                  <img src="assets/blognew/Vector (1).svg" alt="" class="" />
+                  <span
+                    class="text-[12px] font-semibold text-[#9C9C9C] ml-[8px]"
+                    >14 Oct 2022</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- nextpage -->
+        <img
+          src="assets/blognew/Group 348 1.png"
+          alt=""
+          class="mt-[60px] ml-[116px]"
+        />
+      </div>
+      <div class="w-[260px] h-[400px] border rounded-[12px]">
+        <div class="px-[18px]">
+          <label for="" class="block relative">
+            <img
+              src="assets/blognew/akar-icons_search.svg"
+              alt=""
+              class="absolute top-1/2 -translate-y-1/4 right-2" />
+            <input
+              type="text"
+              class="w-full h-[45px] rounded-[12px] border mt-[18px] placeholder:pl-[12px]"
+              placeholder="Tìm kiếm"
+          /></label>
+          <h1 class="font-bold text-[20px] text-center mt-[40px]">Follow Us</h1>
+          <div class="flex justify-between mt-[30px]">
+            <img src="assets/blognew/image 57.svg" alt="" class="" />
+            <img src="assets/blognew/image 56.svg" class="" />
+            <img src="assets/blognew/iconytb_tab 2.svg" alt="" class="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <Loomenes-footer></Loomenes-footer>
+  </div>
+</div>
+<Loomenes-footer></Loomenes-footer>

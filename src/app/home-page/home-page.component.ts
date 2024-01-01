@@ -1,5 +1,11 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'Loomenes-home-page',
@@ -9,6 +15,91 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements AfterViewInit {
 
   constructor(private router: Router) {}
+  stateDatLich = 0;
+  stateDatlich_pc = 0;
+
+  hideHome = false;
+  isConfirmDone = false;
+  isShowLichNew = false;
+  isShowLichPage3 = false;
+
+  statePageConfirmDone(flag: boolean) {
+    document.getElementById('top')?.scrollIntoView();
+    this.isShowLichPage3 = false;
+    this.isConfirmDone = flag;
+    this.hideHome = false;
+  }
+
+  cancelComfirmDone() {
+    this.isConfirmDone = false;
+  }
+
+  stateShowLichNew(flag: boolean) {
+    this.hideHome = true;
+    this.isShowLichNew = flag;
+  }
+
+  stateShowLichPage3(flag: boolean) {
+    document.getElementById('top')?.scrollIntoView();
+    this.isShowLichPage3 = flag;
+    this.isShowLichNew = !flag;
+  }
+  showPageConfirm() {
+    const pageconfirm = document.getElementById('pageconfirm');
+    pageconfirm?.classList.add('show');
+    pageconfirm?.classList.remove('hide');
+  }
+  hidePageConfirm() {
+    const pageconfirm = document.getElementById('pageconfirm');
+    pageconfirm?.classList.add('hide');
+  }
+  CancelDatlich() {
+    const pageconfirm = document.getElementById('pageconfirm');
+    pageconfirm?.classList.add('hide');
+  }
+
+  datlichtab() {
+    const pageconfirmtab = document.getElementById('pageconfirm_tab');
+    pageconfirmtab?.classList.remove('hide');
+  }
+  clickclosebtn_tab() {
+    const clickclosebtn_tab = document.getElementById('pageconfirm_tab');
+
+    clickclosebtn_tab?.classList.add('hide');
+    this.stateDatLich = 0;
+  }
+  clickclosebtn_pc() {
+    const clickclosebtn_pc = document.getElementById('pageconfirmpc');
+    clickclosebtn_pc?.classList.add('hide');
+    this.stateDatlich_pc = 0;
+  }
+  tieptucdatlich1() {
+    const clickclosebtn_tab = document.getElementById('pageconfirm_tab');
+    clickclosebtn_tab?.classList.add('hide');
+    const pagedatlich1_2_tab = document.getElementById('pagedatlich1_2_tab');
+    pagedatlich1_2_tab?.classList.remove('hide');
+    const thongtinpage1_tab = document.getElementById('thongtinpage1_tab');
+    thongtinpage1_tab?.classList.remove('hide');
+  }
+  statePagedatlich(index: number) {
+    document.getElementById('pageconfirm_tab')?.classList.add('hide');
+    if (index == 0) {
+      this.isConfirmDone = true;
+    }
+
+    this.stateDatLich = index;
+  }
+  statePagedatlichpc(index: number) {
+    document.getElementById('pageconfirmpc')?.classList.add('hide');
+    if (index == 0) {
+      this.isConfirmDone = true;
+    }
+    this.stateDatlich_pc = index;
+  }
+  showpageconfirm() {
+    const pageconfirmpc = document.getElementById('pageconfirmpc');
+    pageconfirmpc?.classList.remove('hide');
+  }
 
   imgBanersPhone = '/assets/home/home banner phone.svg';
   imgBaners = '/assets/home/header_home_banners.svg';
@@ -67,18 +158,18 @@ export class HomePageComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const service_box = this.serviceBox.nativeElement as HTMLElement;
-    const serviceBox_Taplet = this.serviceBoxTaplet.nativeElement as HTMLElement;
+    const serviceBox_Taplet = this.serviceBoxTaplet
+      .nativeElement as HTMLElement;
     const serviceBox_Pc = this.serviceBoxPc.nativeElement as HTMLElement;
     const dot_1 = this.dot1.nativeElement as HTMLElement;
     const dot_2 = this.dot2.nativeElement as HTMLElement;
     const dot_3 = this.dot3.nativeElement as HTMLElement;
 
     this.prevServiceBox = (responsive: string): void => {
-
       if (responsive == 'sm') {
         serviceBox_Taplet.scrollLeft -= 252 + 36;
-        console.log("prev");
-      } else if (responsive == 'xl'){
+        console.log('prev');
+      } else if (responsive == 'xl') {
         serviceBox_Pc.scrollLeft -= 354 + 51;
       } else {
         service_box.scrollLeft -= 106 + 15;
@@ -92,8 +183,8 @@ export class HomePageComponent implements AfterViewInit {
       ) {
         if (responsive == 'sm') {
           serviceBox_Taplet.scrollLeft += 252 + 36;
-          console.log("next");
-        } else if (responsive == 'xl'){
+          console.log('next');
+        } else if (responsive == 'xl') {
           serviceBox_Pc.scrollLeft += 354 + 51;
         } else {
           service_box.scrollLeft += 106 + 15;
@@ -151,31 +242,29 @@ export class HomePageComponent implements AfterViewInit {
 
     this.onTouchStart = (event: TouchEvent) => {
       this.lastXProduct = event.changedTouches[0].clientX;
-    }
-  
-    this.onTouchEnd = (event: TouchEvent) => {
+    };
 
+    this.onTouchEnd = (event: TouchEvent) => {
       const deltaX = this.lastXProduct - event.changedTouches[0].clientX;
-      if(deltaX > 0 && this.slIdxProduct < 2){
+      if (deltaX > 0 && this.slIdxProduct < 2) {
         this.slIdxProduct++;
         this.getProduct(this.slIdxProduct);
-      } else if(deltaX < 0 && this.slIdxProduct > 0){
+      } else if (deltaX < 0 && this.slIdxProduct > 0) {
         this.slIdxProduct--;
         this.getProduct(this.slIdxProduct);
       }
       console.log(deltaX);
       this.lastXProduct = 0;
-    }
-
+    };
   }
 
   lastXProduct = 0;
-  
-  onTouchStart(event: TouchEvent){
+
+  onTouchStart(event: TouchEvent) {
     this.onTouchStart(event);
   }
 
-  onTouchEnd(event: TouchEvent){
+  onTouchEnd(event: TouchEvent) {
     this.onTouchEnd(event);
   }
 
@@ -228,5 +317,3 @@ class service_box {
     this.name = name;
   }
 }
-
-
