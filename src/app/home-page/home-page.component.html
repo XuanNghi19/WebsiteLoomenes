@@ -1,7 +1,11 @@
-<Loomenes-header-navigator></Loomenes-header-navigator>
+
+<Loomenes-header-navigator id="top"></Loomenes-header-navigator>
+
 
 <!-- mobile -->
-<div class="sm:hidden">
+<Loomenes-lich-new (newLichNewEvent)="stateShowLichPage3($event)" class="sm:hidden" *ngIf="isShowLichNew"></Loomenes-lich-new>
+<Loomenes-lich-page3 (newLichPage3Event)="statePageConfirmDone($event)" class="sm:hidden" *ngIf="isShowLichPage3"></Loomenes-lich-page3>
+<div class="sm:hidden z-0" *ngIf="!hideHome">
   <div class="w-full flex relative justify-center items-center">
     <img [src]="imgBanersPhone" class="w-full" />
     <div class="absolute text-center text-white font-openSans">
@@ -363,7 +367,7 @@
 </div>
 
 <!-- taplet -->
-<div class="hidden sm:block xl:hidden">
+<div class="hidden sm:block xl:hidden z-0" *ngIf="!hideHome">
   <div class="w-full flex relative">
     <img [src]="imgBaners" class="w-full" />
     <div class="ml-[176px] absolute text-white font-openSans mt-[153px]">
@@ -384,7 +388,385 @@
       </button>
     </div>
   </div>
-  
+
+  <!-- pageConfirm -->
+  <div
+    class="absolute rounded-[12px] w-[520px] -translate-x-1/2 left-1/2 bg-white h-[420px] top-[185px] hide"
+    id="pageconfirm_tab"
+  >
+    <img
+      (click)="clickclosebtn_tab()"
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[30px] mt-[30px]"
+    />
+    <img
+      src="assets/datlich/pageNumber_tab.svg"
+      alt=""
+      class="mx-auto mt-[80px]"
+    />
+    <div class="text-center mt-[20px]">
+      <p class="font-semibold text-[#152C5B] text-[24px]">Thông tin đặt lịch</p>
+      <p class="text-[#999999] text-[16px]">
+        Vui lòng xác nhận để tiếp tục đặt lịch
+      </p>
+    </div>
+    <!-- checked! -->
+    <div class="flex justify-center">
+      <label class="mt-[40px]">
+        <input
+          type="checkbox"
+          name=""
+          id=""
+          class="absolute w-[25px] h-[25px]"
+        />
+
+        <span class="ml-[40px] text-[#999999]"
+          >Tôi đồng ý cung cấp thông tin</span
+        ></label
+      >
+    </div>
+
+    <!-- button -->
+    <div class="absolute -translate-x-1/2 left-1/2 mt-[50px]">
+      <button
+        (click)="statePagedatlich(1)"
+        class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]"
+      >
+        <span class="text-white">Tiếp tục</span>
+      </button>
+      <button
+        class="mt-[10px] block w-[150px] h-[34px] rounded-[10px] bg-[#F5F6F8]"
+      >
+        <span (click)="clickclosebtn_tab()" class="text-[#B3B3B3]">Hủy</span>
+      </button>
+    </div>
+  </div>
+  <!-- pageConfirmDone -->
+  <div
+    class="absolute rounded-[12px] w-[560px] -translate-x-1/2 left-1/2 bg-white h-[480px] top-[150px]"
+    *ngIf="isConfirmDone"
+  >
+    <img
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[30px] mt-[30px]"
+    />
+
+    <div class="flex justify-center flex-wrap flex-col mt-[80px]">
+      <p class="font-bold text-center text-[#152C5B] text-[36px]">THANK YOU</p>
+      <img src="assets/datlich/ticked_tab.svg" alt="" class="mt-[20px]" />
+      <div
+        class="font-semibold text-[#152C5B] mt-[50px] text-[14px] text-center"
+      >
+        <p class="">Cảm ơn bạn đã điền vào mẫu của chúng tôi.</p>
+        <p class="">
+          Lịch của bạn đang được xử lí, chúng tôi sẽ liên hệ với bạn sớm nhất có
+          thể.
+        </p>
+      </div>
+      <p class="text-center text-[14px] text-[#B6BAC3] mt-[40px]">
+        2023 Multimedia PTIT. All rights reverved
+      </p>
+    </div>
+    <!-- button -->
+    <div class="absolute -translate-x-1/2 left-1/2 mt-[50px]">
+      <button class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]">
+        <span (click)="statePageConfirmDone(false)" class="text-white">OK</span>
+      </button>
+    </div>
+  </div>
+  <!-- datlich1 -->
+  <div
+    class="absolute rounded-[12px] w-[720px] -translate-x-1/2 left-1/2 bg-white h-[560px] top-[130px]"
+    [ngClass]="stateDatLich == 1 ? 'block' : 'hidden'"
+  >
+    <img
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[20px] mt-[20px]"
+    />
+    <img
+      src="assets/datlich/pageNumber_tab.svg"
+      alt=""
+      class="mx-auto mt-[60px]"
+    />
+    <div class="text-center mt-[15px]">
+      <h1 class="text-[24px] font-semibold text-[#152C5B]">
+        Thông tin đặt lịch
+      </h1>
+      <h6 class="text-[#999999]">Vui lòng nhập vào các trường còn trống</h6>
+    </div>
+    <div class="flex justify-between px-[20px]">
+      <!-- lich -->
+      <div class="flex w-[300px] h-[290px] justify-between items-center">
+        <div class="w-[10px] h-[10px]">
+          <img src="assets/datlich/pre_btn_tab.svg" alt="" class="" />
+        </div>
+        <div class="w-[261px] h-[209px]">
+          <img src="assets/datlich/lich_tab.svg" alt="" class="" />
+        </div>
+        <div class="w-[10px] h-[10px]">
+          <img src="assets/datlich/next_btn_tab.svg" alt="" class=" " />
+        </div>
+      </div>
+      <!-- line_center -->
+      <div class="w-[1px] h-[260px] bg-[#E5E5E5] mt-[10px]"></div>
+      <!-- thongtin page1 -->
+      <div class="w-[350px] h-[290px]" id="thongtinpage1_tab">
+        <div class="mt-[20px]">
+          <!-- Ho ten -->
+          <label for=""
+            ><span class="block text-[#152C5B]"
+              >Họ và tên <span class="text-color-red">*</span></span
+            >
+            <input
+              type="text "
+              placeholder="Vui lòng nhập"
+              class="bg-[#F5F6F8] w-full h-[35px] rounded-[10px] placeholder:text-[#B6BAC3] text-[14px] pl-[12px]"
+          /></label>
+          <!-- so dien thoai -->
+          <label for="" class="block mt-[5px]"
+            ><span class="block text-[#152C5B]"
+              >Số điện thoại <span class="text-color-red">*</span></span
+            >
+            <input
+              type="text "
+              placeholder="Vui lòng nhập"
+              class="bg-[#F5F6F8] w-full h-[35px] rounded-[10px] placeholder:text-[#B6BAC3] text-[14px] pl-[12px] pt-[5px]"
+          /></label>
+          <!-- Chọn cơ sở -->
+          <label for="" class="block mt-[5px]"
+            ><span class="block text-[#152C5B]"
+              >Chọn cơ sở <span class="text-color-red">*</span></span
+            >
+            <select
+              name=""
+              id=""
+              class="bg-[#F5F6F8] w-full h-[35px] rounded-[10px] pl-[12px] text-[14px]"
+            >
+              <option value="" class="text-[12px]">(Vui lòng chọn)</option>
+              <option value="" class="text-[12px]">
+                133 Nguyễn Văn Trỗi, Hà Đông, Hà Nội
+              </option>
+            </select>
+          </label>
+          <!-- Thời gian -->
+          <label for="" class="in-block mt-[5px]"
+            ><span class="block text-[#152C5B]"
+              >Thời gian <span class="text-color-red">*</span></span
+            >
+            <input
+              type="date"
+              name=""
+              id=""
+              class="bg-[#F5F6F8] w-[200px] h-[35px] pl-[12px] pr-[12px] rounded-[10px]"
+            />
+            <input
+              type="text"
+              placeholder="hh:mm"
+              name=""
+              id=""
+              class="bg-[#F5F6F8] w-[120px] h-[35px] text-center ml-[30px] rounded-[10px] placeholder:text-[#B6BAC3] pt-[5px]"
+            />
+          </label>
+        </div>
+        <!-- button -->
+        <div class="absolute -translate-x-1/2 left-1/2 mt-[25px]">
+          <button
+            (click)="statePagedatlich(2)"
+            class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]"
+          >
+            <span class="text-white">Tiếp tục</span>
+          </button>
+          <button
+            class="mt-[10px] block w-[150px] h-[34px] rounded-[10px] bg-[#F5F6F8]"
+          >
+            <span (click)="clickclosebtn_tab()" class="text-[#B3B3B3]"
+              >Hủy</span
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- datlich2 -->
+  <div
+    class="absolute rounded-[12px] w-[720px] -translate-x-1/2 left-1/2 bg-white h-[560px] top-[130px]"
+    [ngClass]="stateDatLich == 2 ? 'block' : 'hidden'"
+  >
+    <img
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[20px] mt-[20px]"
+    />
+    <img
+      src="assets/datlich/pageNumber2_tab.svg"
+      alt=""
+      class="mx-auto mt-[60px]"
+    />
+    <div class="text-center mt-[15px]">
+      <h1 class="text-[24px] font-semibold text-[#152C5B]">
+        Thông tin đặt lịch
+      </h1>
+      <h6 class="text-[#999999]">Vui lòng nhập vào các trường còn trống</h6>
+    </div>
+    <div class="flex justify-between px-[20px]">
+      <!-- lich -->
+      <div class="flex w-[300px] h-[290px] justify-between items-center">
+        <div class="w-[10px] h-[10px]">
+          <img src="assets/datlich/pre_btn_tab.svg" alt="" class="" />
+        </div>
+        <div class="w-[261px] h-[209px]">
+          <img src="assets/datlich/lich_tab.svg" alt="" class="" />
+        </div>
+        <div class="w-[10px] h-[10px]">
+          <img src="assets/datlich/next_btn_tab.svg" alt="" class=" " />
+        </div>
+      </div>
+      <!-- line_center -->
+      <div class="w-[1px] h-[260px] bg-[#E5E5E5] mt-[10px]"></div>
+      <!-- thongtin page2 -->
+      <div class="w-[350px] h-[290px]" id="thongtinpage1_tab">
+        <div class="mt-[20px]">
+          <!-- Chon dich vu -->
+          <label for=""
+            ><span class="block text-[#152C5B]"
+              >Chọn dịch vụ <span class="text-color-red">*</span></span
+            >
+            <select
+              class="w-full h-[35px] bg-[#F5F6F8] rounded-[10px] pl-[12px] text-[14px]"
+            >
+              <option class="text-[12px]" value="">(Vui lòng chọn)</option>
+              <option class="text-[12px]">Vệ sinh giày</option>
+              <option class="text-[12px]">Sửa đế giày</option>
+            </select>
+            <textarea
+              class="mt-[10px] rounded-[10px] ml-[100px] w-[250px] h-[70px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+          <label for=""
+            ><span class="block text-[#152C5B]">Ghi chú </span>
+
+            <textarea
+              class="mt-[10px] rounded-[10px] w-full h-[70px] bg-[#F5F6F8]"
+            ></textarea>
+          </label>
+        </div>
+        <!-- button -->
+        <div class="absolute -translate-x-1/2 left-1/2 mt-[20px]">
+          <button
+            (click)="statePagedatlich(3)"
+            class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]"
+          >
+            <span class="text-white">Tiếp tục</span>
+          </button>
+          <button
+            class="mt-[10px] block w-[150px] h-[34px] rounded-[10px] bg-[#F5F6F8]"
+          >
+            <span (click)="clickclosebtn_tab()" class="text-[#B3B3B3]"
+              >Hủy</span
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- datlich3 -->
+  <div
+    class="absolute rounded-[12px] w-[720px] -translate-x-1/2 left-1/2 bg-white h-[560px] top-[130px]"
+    [ngClass]="stateDatLich == 3 ? 'block' : 'hidden'"
+  >
+    <img
+      src="assets/datlich/close_btn_tab.svg"
+      alt=""
+      class="absolute right-[20px] mt-[20px]"
+    />
+    <img
+      src="assets/datlich/pageNumber3_tab.svg"
+      alt=""
+      class="mx-auto mt-[60px]"
+    />
+    <div class="text-center mt-[15px]">
+      <h1 class="text-[24px] font-semibold text-[#152C5B]">
+        Thông tin đặt lịch
+      </h1>
+      <h6 class="text-[#999999]">Vui lòng xác nhận thông tin về đặt lịch</h6>
+    </div>
+    <div class="flex justify-between px-[20px]">
+      <!-- trai -->
+      <div class="w-[320px] h-[290px]">
+        <!-- ho va ten -->
+        <label for="" class="block">
+          <span class="block text-[#152C5B]">Họ và tên</span>
+          <textarea
+            name=""
+            class="w-full h-[35px] rounded-[8px] bg-[#F5F6F8] pl-[12px] pt-[5px]"
+          ></textarea>
+        </label>
+        <!-- so dien thoai -->
+        <label for="" class="block mt-[5px]">
+          <span class="block text-[#152C5B]">Số điện thoại</span>
+          <textarea
+            name=""
+            class="w-full h-[35px] rounded-[8px] bg-[#F5F6F8] pl-[12px] pt-[5px]"
+          ></textarea>
+        </label>
+        <!-- co so -->
+        <label for="" class="block mt-[5px]">
+          <span class="block text-[#152C5B]">Cơ sở</span>
+          <textarea
+            name=""
+            class="w-full h-[35px] rounded-[8px] bg-[#F5F6F8] pl-[12px] pt-[5px]"
+          ></textarea>
+        </label>
+        <!-- thoi gian -->
+        <label class="in-block">
+          <span class="block text-[#152C5B]">Thời gian</span>
+          <textarea
+            class="bg-[#F5F6F8] w-[200px] h-[35px] pl-[12px] pr-[12px] rounded-[10px] pt-[5px]"
+          ></textarea>
+          <textarea
+            class="pl-[12px] bg-[#F5F6F8] w-[90px] h-[35px] text-center ml-[30px] rounded-[10px] placeholder:text-[#B6BAC3] pt-[5px]"
+          ></textarea>
+        </label>
+      </div>
+      <!-- line_center -->
+      <div class="w-[1px] h-[260px] bg-[#E5E5E5] mt-[10px]"></div>
+      <!-- phai -->
+      <div class="w-[320px] h-[290px]">
+        <label for="" class="block mt-[5px]">
+          <span class="block text-[#152C5B]">Dịch vụ</span>
+          <textarea
+            name=""
+            class="w-full h-[100px] rounded-[8px] bg-[#F5F6F8] pl-[12px]"
+          ></textarea>
+        </label>
+        <label for="" class="block mt-[px]">
+          <span class="block text-[#152C5B]">Ghi chú</span>
+          <textarea
+            name=""
+            class="w-full h-[80px] rounded-[8px] bg-[#F5F6F8] pl-[12px]"
+          ></textarea>
+        </label>
+      </div>
+    </div>
+
+    <!-- button -->
+    <div class="absolute -translate-x-1/2 left-1/2 mb-[50px]">
+      <button
+        class="block w-[150px] h-[34px] rounded-[10px] bg-[#3252DF]"
+        (click)="statePagedatlich(0)"
+      >
+        <span class="text-white">Tiếp tục</span>
+      </button>
+      <button
+        class="mt-[10px] block w-[150px] h-[34px] rounded-[10px] bg-[#F5F6F8]"
+      >
+        <span (click)="clickclosebtn_tab()" class="text-[#B3B3B3]">Hủy</span>
+      </button>
+    </div>
+  </div>
   <!--introduce-->
   <div
     class="bg-white flex flex-col items-center text-center font-openSans mb-[69.44px]"
@@ -1171,9 +1553,11 @@
       </div>
 
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+<<<<<<< HEAD
+
+=======
+>>>>>>> hung
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[2]"
@@ -1193,9 +1577,11 @@
       </div>
 
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+<<<<<<< HEAD
+
+=======
+>>>>>>> hung
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[3]"
@@ -1215,9 +1601,11 @@
       </div>
 
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+<<<<<<< HEAD
+
+=======
+>>>>>>> hung
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[4]"
@@ -1236,9 +1624,11 @@
         </div>
       </div>
       <div class="inline-block w-[50px]"></div>
-      <div
-        class="relative inline-block w-[354px] h-[249px] cursor-pointer"
-      >
+<<<<<<< HEAD
+
+=======
+>>>>>>> hung
+      <div class="relative inline-block w-[354px] h-[249px] cursor-pointer">
         <img
           class="absolute rounded-[10px] w-[354px] h-[249px]"
           [src]="serviceImgs[5]"
@@ -1287,7 +1677,11 @@
     <p class="block font-bold text-[48px] mt-[81px]">SẢN PHẨM NỔI BẬT</p>
     <p class="w-[313px] h-[3px] bg-black mt-[26px]"></p>
     <div class="w-full flex justify-center gap-[7%] mt-[74px]">
-      <div class="flex justify-center w-[337px] h-[427px]" *ngFor="let x of tapletProduct">
+      <div
+        class="flex justify-center w-[337px] h-[427px] bg-white hover:shadow-lg"
+        *ngFor="let x of tapletProduct"
+        [routerLink]="['/product-page']"
+      >
         <img [src]="x" />
       </div>
     </div>
