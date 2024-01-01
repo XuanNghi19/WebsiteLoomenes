@@ -1,6 +1,46 @@
-<Loomenes-header-navigator></Loomenes-header-navigator>
+<Loomenes-header-navigator class="xl:block hidden"></Loomenes-header-navigator>
 <!--mobile-->
 <div class="text-[14px] w-full font-openSans sm:hidden">
+  <header class="w-screen relative font-openSans">
+    <div
+      class="h-[112px] px-5 flex justify-between items-center sm:h-[120px] sm:px-[60px] xl:px-[120px] xl:h-[120px]"
+    >
+      <img
+        [routerLink]="['/product-page']"
+        src="assets/detail/back.svg"
+        alt=""
+        class="block sm:h-[30px] xl:hidden"
+      />
+      <img
+        [routerLink]="['/home-page']"
+        src="assets/header/logo.svg"
+        alt=""
+        class="block cursor-pointer sm:h-[52px] sm:w-[170px] xl:h-[43px] xl:w-[152px]"
+      />
+      <div
+        class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[594px] font-semibold justify-between xl:flex"
+      >
+        <a [routerLink]="['/home-page']">Trang chủ</a>
+        <a [routerLink]="['/introduce-page']">Giới thiệu</a>
+        <a [routerLink]="['/service-page']">Dịch vụ</a>
+        <a [routerLink]="['/product-page']">Sản phẩm</a>
+        <a href="">Bài viết</a>
+      </div>
+      <div [routerLink]="['/cart-page']" class="block cursor-pointer relative">
+        <img
+          src="assets/header/shopping-cart.svg"
+          alt=""
+          class="block sm:h-[28px]"
+        />
+        <div
+          class="absolute -top-[5px] -right-1 font-bold text-white bg-[#F1CF87] text-[8px] h-4 w-4 text-center rounded-2xl border-2 border-white sm:-right-2 sm:h-5 sm:w-5 sm:text-[10px] sm:pt-[2px]"
+        >
+          5
+        </div>
+      </div>
+    </div>
+  </header>
+
   <div>
     <div class="img-feature flex justify-center">
       <img class="h-[250px] w-[250px]" src="assets/detail/2.svg" alt="" />
@@ -19,21 +59,28 @@
     <p class="mt-[15px]">499.000đ</p>
     <div class="flex gap-[6%]">
       <p class="text-[12px] mt-[25px]">Số lượng</p>
-      <textarea
-        class="bg-[#F5F6F8] w-[30px] h-[24px] rounded-[5px] mt-[20px]"
-      ></textarea>
+      <input
+        value="1"
+        class="bg-[#F5F6F8] w-[30px] h-[24px] rounded-[5px] mt-[20px] px-2 text-center"
+      />
       <img class="mt-[20px]" src="assets/detail/ar.svg" />
     </div>
   </div>
   <div class="mt-[40px]">
     <div class="flex justify-center">
       <button
-        class="w-[136px] h-[28px] bg-[#F2ECBE] rounded-[5%] flex justify-center items-center font-semibold"
+        [routerLink]="['/cart-page']"
+        class="w-[136px] h-[40px] bg-[#F2ECBE] rounded-[5%] flex justify-center items-center font-semibold"
       >
         MUA NGAY
       </button>
     </div>
-    <p class="flex justify-center text-[12px] mt-[7px]">Thêm vào giỏ hàng</p>
+    <p
+      [routerLink]="['/cart-page']"
+      class="flex justify-center text-[12px] mt-[12px]"
+    >
+      Thêm vào giỏ hàng
+    </p>
     <div class="h-[1px] w-full bg-black mt-[40px]"></div>
   </div>
   <div class="flex justify-center mt-[35px]">
@@ -74,9 +121,16 @@
   <div class="w-full font-openSans hidden xl:block">
     <div class="ml-[122px] mt-[90px]">
       <div class="text-[16px] flex items-center gap-[1%]">
-        <p class="text-[#9F9F9F]">Trang chủ</p>
+        <p [routerLink]="['/home-page']" class="text-[#9F9F9F] cursor-pointer">
+          Trang chủ
+        </p>
         <img src="assets/detail/nxt.svg" />
-        <p class="text-[#9F9F9F]">Sản phẩm</p>
+        <p
+          [routerLink]="['/product-page']"
+          class="text-[#9F9F9F] cursor-pointer"
+        >
+          Sản phẩm
+        </p>
         <img src="assets/detail/nxt.svg" />
         <div class="h-[37px] bg-[#9F9F9F] w-[1px]"></div>
         <p>Dung dịch vệ sinh giày</p>
@@ -119,12 +173,16 @@
           <div class="mt-[55px]">
             <div class="flex justify-center">
               <button
+                [routerLink]="['/cart-page']"
                 class="w-[520px] h-[64px] bg-[#F2ECBE] rounded-[5%] text-[20px] flex justify-center items-center font-semibold"
               >
                 MUA NGAY
               </button>
             </div>
-            <p class="flex justify-center text-[20px] mt-[20px]">
+            <p
+              [routerLink]="['/cart-page']"
+              class="flex justify-center text-[20px] mt-[20px] cursor-pointer"
+            >
               Thêm vào giỏ hàng
             </p>
           </div>
@@ -205,6 +263,45 @@
 </div>
 <!--Tablet-->
 <div class="w-full font-openSans hidden sm:block xl:hidden">
+  <header class="w-screen relative font-openSans">
+    <div
+      class="h-[112px] px-5 flex justify-between items-center sm:h-[120px] sm:px-[60px] xl:px-[120px] xl:h-[120px]"
+    >
+      <img
+        [routerLink]="['/product-page']"
+        src="assets/detail/back.svg"
+        alt=""
+        class="block sm:h-[30px] xl:hidden"
+      />
+      <img
+        [routerLink]="['/home-page']"
+        src="assets/header/logo.svg"
+        alt=""
+        class="block cursor-pointer sm:h-[52px] sm:w-[170px] xl:h-[43px] xl:w-[152px]"
+      />
+      <div
+        class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[594px] font-semibold justify-between xl:flex"
+      >
+        <a [routerLink]="['/home-page']">Trang chủ</a>
+        <a [routerLink]="['/introduce-page']">Giới thiệu</a>
+        <a [routerLink]="['/service-page']">Dịch vụ</a>
+        <a [routerLink]="['/product-page']">Sản phẩm</a>
+        <a href="">Bài viết</a>
+      </div>
+      <div [routerLink]="['/cart-page']" class="block cursor-pointer relative">
+        <img
+          src="assets/header/shopping-cart.svg"
+          alt=""
+          class="block sm:h-[28px]"
+        />
+        <div
+          class="absolute -top-[5px] -right-1 font-bold text-white bg-[#F1CF87] text-[8px] h-4 w-4 text-center rounded-2xl border-2 border-white sm:-right-2 sm:h-5 sm:w-5 sm:text-[10px] sm:pt-[2px]"
+        >
+          5
+        </div>
+      </div>
+    </div>
+  </header>
   <div class="flex justify-start">
     <!--image-->
     <div>
@@ -239,12 +336,16 @@
         <div class="mt-[55px]">
           <div class="flex justify-center">
             <button
+              [routerLink]="['/cart-page']"
               class="w-[420px] h-[64px] bg-[#F2ECBE] rounded-[5%] text-[18px] flex justify-center items-center font-semibold"
             >
               MUA NGAY
             </button>
           </div>
-          <p class="flex justify-center text-[18px] mt-[20px]">
+          <p
+            [routerLink]="['/cart-page']"
+            class="flex justify-center text-[18px] mt-[20px]"
+          >
             Thêm vào giỏ hàng
           </p>
         </div>
