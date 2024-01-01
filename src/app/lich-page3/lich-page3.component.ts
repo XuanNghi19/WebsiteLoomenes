@@ -11,4 +11,5 @@ export class LichPage3Component {
   showComfirmDone() {
     this.newLichPage3Event.emit(true);
   }
+  
 }

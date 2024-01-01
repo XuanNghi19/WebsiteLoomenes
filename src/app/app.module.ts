@@ -11,7 +11,6 @@ import { FooterComponent } from './widgets/footer/footer.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
-import { ModalComponent } from './modal/modal.component';
 import { BlogParticularComponent } from './blog-particular/blog-particular.component';
 import { LichNewComponent } from './lich-new/lich-new.component';
 import { LichPage3Component } from './lich-page3/lich-page3.component';
@@ -32,7 +31,6 @@ registerLocaleData(localeVi, 'vi-VN');
     ServicesPageComponent,
     CartPageComponent,
     BlogPageComponent,
-    ModalComponent,
     BlogParticularComponent,
     LichNewComponent,
     LichPage3Component,
