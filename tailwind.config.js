@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       openSans: ['"Open Sans"'],
       playfairDisplay: ['"Playfair Display"'],
+      popins: ['"Poppins"'],
     },
     extend: {
       colors: {

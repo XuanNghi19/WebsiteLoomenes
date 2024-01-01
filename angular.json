@@ -96,6 +96,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": false
+=======
+    "analytics": "578df4fd-11a4-4cdb-9299-a4919e62d09c"
+>>>>>>> thanhminh
   }
 }

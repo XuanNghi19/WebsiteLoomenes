@@ -7,6 +7,8 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { InfoCustomerPageComponent } from './info-customer-page/info-customer-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { IntroducePageComponent } from './introduce-page/introduce-page.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home-page' },
@@ -15,13 +17,15 @@ const routes: Routes = [
   { path: 'cart-page', component: CartPageComponent },
   { path: 'info-customer-page', component: InfoCustomerPageComponent },
   { path: 'product-page', component: ProductPageComponent },
-  { path: '**', pathMatch: 'full', component: NotFoundComponent },
+  { path: 'introduce-page', component: IntroducePageComponent },
+  { path: 'detail-page', component: DetailPageComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
-}
+};
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, routerOptions)],

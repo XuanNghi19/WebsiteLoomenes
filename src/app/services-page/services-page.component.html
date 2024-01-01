@@ -207,9 +207,7 @@
         <img src="/assets/services/narrow.svg" alt="" />
         <p>Dịch vụ</p>
       </div>
-      <p class="font-extrabold text-[48px] text-white text-center">
-        Dịch vụ
-      </p>
+      <p class="font-semibold text-[48px] text-white text-center">Dịch vụ</p>
     </div>
   </div>
 
@@ -273,7 +271,7 @@
       *ngFor="let item of stackServices[index]; let e = even"
       class="w-full flex justify-center items-center gap-[10%]"
       [ngClass]="e ? 'bg-[#F6F6F6]' : 'bg-white'"
-      id="{{item.name}}"
+      id="{{ item.name }}"
     >
       <ng-container *ngIf="e; else odd">
         <ng-container *ngTemplateOutlet="image"></ng-container>
@@ -410,18 +408,18 @@
 <div class="hidden xl:block font-openSans">
   <!-- banners -->
   <div class="w-full flex flex-col relative justify-center items-center">
-    <img [src]="imgBanner" class="w-full"/>
+    <img [src]="imgBanner" class="w-full" />
     <div class="absolute">
       <div
         class="text-white text-center text-[16px] justify-center items-center flex gap-[14px]"
       >
-        <p [routerLink]="['/home-page']" class="cursor-pointer font-semibold">Trang chủ</p>
+        <p [routerLink]="['/home-page']" class="cursor-pointer font-semibold">
+          Trang chủ
+        </p>
         <img src="/assets/services/narrow.svg" alt="" />
         <p>Dịch vụ</p>
       </div>
-      <p class="font-extrabold text-[48px] text-white text-center">
-        Dịch vụ
-      </p>
+      <p class="font-semibold text-[48px] text-white text-center">Dịch vụ</p>
     </div>
   </div>
 
@@ -442,7 +440,7 @@
       <div
         class="bg-white rounded-[10px] flex flex-col items-center justify-center shadow-lg w-[189px] h-[136px]"
       >
-        <img [src]="introduceImg[1]" class="w-[50px]"/>
+        <img [src]="introduceImg[1]" class="w-[50px]" />
         <p
           class="text-[14px] font-semibold text-center mt-[12.09px] mb-[6.28px]"
         >
@@ -453,17 +451,17 @@
       <div
         class="bg-white rounded-[10px] flex flex-col items-center justify-center shadow-lg w-[189px] h-[136px]"
       >
-        <img [src]="introduceImg[2]" class="w-[68px] h-[50px]"/>
+        <img [src]="introduceImg[2]" class="w-[68px] h-[50px]" />
         <p
           class="text-[14px] font-semibold text-center mt-[12.09px] mb-[6.28px]"
         >
-          Giao nhận tiện lợi  
+          Giao nhận tiện lợi
         </p>
       </div>
       <div
         class="bg-white rounded-[10px] flex flex-col items-center justify-center shadow-lg w-[189px] h-[136px]"
       >
-        <img [src]="introduceImg[3]" class="w-[50px]"/>
+        <img [src]="introduceImg[3]" class="w-[50px]" />
         <p
           class="text-[14px] font-semibold text-center mt-[12.09px] mb-[6.28px]"
         >

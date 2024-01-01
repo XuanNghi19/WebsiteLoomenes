@@ -21,7 +21,7 @@
         class="flex items-center justify-between font-openSans font-semibold text-[21px] w-full"
       >
         <li class=""><a [routerLink]="['/home-page']">Trang chủ</a></li>
-        <li class=""><a href="#">Giới thiệu</a></li>
+        <li class=""><a [routerLink]="['/introduce-page']">Giới thiệu</a></li>
         <li class=""><a [routerLink]="['/service-page']">Dịch vụ</a></li>
         <li class=""><a [routerLink]="['/product-page']">Sản phẩm</a></li>
         <li class=""><a href="#">Bài viết</a></li>
@@ -46,7 +46,7 @@
   >
     <img (click)="onToggleMenu()" src="assets/header/close.svg" alt="" />
     <a [routerLink]="['/home-page']" class="mt-9 block">Trang chủ</a>
-    <a href="" class="mt-9 block">Giới thiệu</a>
+    <a [routerLink]="['/introduce-page']" class="mt-9 block">Giới thiệu</a>
     <a [routerLink]="['/service-page']" class="mt-9 block">Dịch vụ</a>
     <a [routerLink]="['/product-page']" class="mt-9 block">Sản phẩm</a>
     <a href="" class="mt-9 block">Bài viết</a>

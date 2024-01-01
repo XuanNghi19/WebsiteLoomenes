@@ -1,0 +1,423 @@
+<Loomenes-header-navigator class="xl:block hidden"></Loomenes-header-navigator>
+<!--mobile-->
+<div class="text-[14px] w-full font-openSans sm:hidden">
+  <header class="w-screen relative font-openSans">
+    <div
+      class="h-[112px] px-5 flex justify-between items-center sm:h-[120px] sm:px-[60px] xl:px-[120px] xl:h-[120px]"
+    >
+      <img
+        [routerLink]="['/product-page']"
+        src="assets/detail/back.svg"
+        alt=""
+        class="block sm:h-[30px] xl:hidden"
+      />
+      <img
+        [routerLink]="['/home-page']"
+        src="assets/header/logo.svg"
+        alt=""
+        class="block cursor-pointer sm:h-[52px] sm:w-[170px] xl:h-[43px] xl:w-[152px]"
+      />
+      <div
+        class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[594px] font-semibold justify-between xl:flex"
+      >
+        <a [routerLink]="['/home-page']">Trang chủ</a>
+        <a [routerLink]="['/introduce-page']">Giới thiệu</a>
+        <a [routerLink]="['/service-page']">Dịch vụ</a>
+        <a [routerLink]="['/product-page']">Sản phẩm</a>
+        <a href="">Bài viết</a>
+      </div>
+      <div [routerLink]="['/cart-page']" class="block cursor-pointer relative">
+        <img
+          src="assets/header/shopping-cart.svg"
+          alt=""
+          class="block sm:h-[28px]"
+        />
+        <div
+          class="absolute -top-[5px] -right-1 font-bold text-white bg-[#F1CF87] text-[8px] h-4 w-4 text-center rounded-2xl border-2 border-white sm:-right-2 sm:h-5 sm:w-5 sm:text-[10px] sm:pt-[2px]"
+        >
+          5
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div>
+    <div class="img-feature flex justify-center">
+      <img class="h-[250px] w-[250px]" src="assets/detail/2.svg" alt="" />
+    </div>
+    <div class="flex justify-center">
+      <div><img src="assets/detail/2.svg" alt="" /></div>
+      <div><img src="assets/detail/3.svg" alt="" /></div>
+      <div><img src="assets/detail/4.svg" alt="" /></div>
+      <div><img src="assets/detail/5.svg" alt="" /></div>
+    </div>
+  </div>
+  <div class="mt-[23px] ml-[14px] text-[16px]">
+    <H6 class="w-[220px] font-semibold">
+      Bộ Vệ Sinh Giày Chuyên Sâu PREMIUM KIT
+    </H6>
+    <p class="mt-[15px]">499.000đ</p>
+    <div class="flex gap-[6%]">
+      <p class="text-[12px] mt-[25px]">Số lượng</p>
+      <input
+        value="1"
+        class="bg-[#F5F6F8] w-[30px] h-[24px] rounded-[5px] mt-[20px] px-2 text-center"
+      />
+      <img class="mt-[20px]" src="assets/detail/ar.svg" />
+    </div>
+  </div>
+  <div class="mt-[40px]">
+    <div class="flex justify-center">
+      <button
+        [routerLink]="['/cart-page']"
+        class="w-[136px] h-[40px] bg-[#F2ECBE] rounded-[5%] flex justify-center items-center font-semibold"
+      >
+        MUA NGAY
+      </button>
+    </div>
+    <p
+      [routerLink]="['/cart-page']"
+      class="flex justify-center text-[12px] mt-[12px]"
+    >
+      Thêm vào giỏ hàng
+    </p>
+    <div class="h-[1px] w-full bg-black mt-[40px]"></div>
+  </div>
+  <div class="flex justify-center mt-[35px]">
+    <div class="w-[344px]">
+      <p>
+        <span class="font-semibold"
+          >BỘ VỆ SINH GIÀY CHUYÊN SÂU PREMIUM KIT<br
+        /></span>
+        Làm sạch, chăm sóc và bảo vệ đôi giày của bạn với 04 sản phầm thiết yếu
+        được thiết kế nhỏ gọn dễ dàng mang đi du lịch.
+      </p>
+      <p class="mt-[14px]">
+        <span class="font-semibold"
+          >BỘ VỆ SINH GIÀY SNEAKER LAB CHUYÊN SÂU GỒM:<br
+        /></span>
+      </p>
+      <p class="mt-[14px]">
+        <span class="font-semibold">Dung dịch làm sạch giày:</span>
+        thành phần thân thiện với môi trường, an toàn cho sức khỏe, hiệu quả làm
+        sạch sâu lâu dài lên đến 3 ngày sau khi sử dụng giày bằng dung dịch.
+      </p>
+      <p class="mt-[14px]">
+        <span class="font-semibold">Sản phẩm khử mùi:</span>
+        kết cấu là dung dịch gốc nước thẩm thấu vào trong từng sợi vải tạo thành
+        một hàng rào chống lại bụi bẩn và khử mùi hiệu quả.
+      </p>
+      <p class="mt-[14px]">
+        <span class="font-semibold">Sản phẩm bảo vệ giày:</span>
+        dung dịch gốc nước thẩm thấu vào sâu bên trong sợi vải tạo nên hàng rào
+        vô hình ngăn chặn bụi bẩn.
+      </p>
+      <p class="font-semibold mt-[14px]">Bàn chải chuyên dụng</p>
+    </div>
+  </div>
+</div>
+<!--Desktop-->
+<div>
+  <div class="w-full font-openSans hidden xl:block">
+    <div class="ml-[122px] mt-[90px]">
+      <div class="text-[16px] flex items-center gap-[1%]">
+        <p [routerLink]="['/home-page']" class="text-[#9F9F9F] cursor-pointer">
+          Trang chủ
+        </p>
+        <img src="assets/detail/nxt.svg" />
+        <p
+          [routerLink]="['/product-page']"
+          class="text-[#9F9F9F] cursor-pointer"
+        >
+          Sản phẩm
+        </p>
+        <img src="assets/detail/nxt.svg" />
+        <div class="h-[37px] bg-[#9F9F9F] w-[1px]"></div>
+        <p>Dung dịch vệ sinh giày</p>
+      </div>
+    </div>
+    <div class="flex justify-start">
+      <!--image-->
+      <div>
+        <img class="h-[600px] w-[600px] ml-[50px]" src="assets/detail/2.svg" />
+        <div>
+          <div class="flex ml-[90px]">
+            <img class="h-[180px] w-[180px]" src="assets/detail/2.svg" alt="" />
+            <img class="h-[180px] w-[180px]" src="assets/detail/3.svg" alt="" />
+            <img class="h-[180px] w-[180px]" src="assets/detail/4.svg" alt="" />
+          </div>
+          <img
+            class="h-[180px] w-[180px] ml-[70px]"
+            src="assets/detail/5.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <!--text-->
+      <div class="font-openSans mt-[90px] ml-[150px]">
+        <div>
+          <h6 class="text-[36px] font-semibold w-[520px]">
+            Bộ Vệ Sinh Giày Chuyên Sâu PREMIUM KIT
+          </h6>
+          <p class="text-[36px] mt-[25px]">499.000đ</p>
+          <div class="flex gap-[3%] mt-[25px]">
+            <p class="text-[14px] mt-[25px]">Số lượng</p>
+            <textarea
+              class="bg-[#F5F6F8] w-[50px] h-[40px] rounded-[10px] mt-[15px]"
+            ></textarea>
+            <img
+              class="mt-[15px] w-[20px] h-[40px]"
+              src="assets/detail/ar.svg"
+            />
+          </div>
+          <div class="mt-[55px]">
+            <div class="flex justify-center">
+              <button
+                [routerLink]="['/cart-page']"
+                class="w-[520px] h-[64px] bg-[#F2ECBE] rounded-[5%] text-[20px] flex justify-center items-center font-semibold"
+              >
+                MUA NGAY
+              </button>
+            </div>
+            <p
+              [routerLink]="['/cart-page']"
+              class="flex justify-center text-[20px] mt-[20px] cursor-pointer"
+            >
+              Thêm vào giỏ hàng
+            </p>
+          </div>
+        </div>
+        <div class="mt-[77px]">
+          <div class="w-[501px] text-[20px]">
+            <p>
+              <span class="font-semibold"
+                >BỘ VỆ SINH GIÀY CHUYÊN SÂU PREMIUM KIT<br
+              /></span>
+              Làm sạch, chăm sóc và bảo vệ đôi giày của bạn với 04 sản phầm
+              thiết yếu được thiết kế nhỏ gọn dễ dàng mang đi du lịch.
+            </p>
+            <p class="mt-[20px]">
+              <span class="font-semibold"
+                >BỘ VỆ SINH GIÀY SNEAKER LAB CHUYÊN SÂU GỒM:<br
+              /></span>
+            </p>
+            <p class="mt-[20px]">
+              <span class="font-semibold">Dung dịch làm sạch giày:</span>
+              thành phần thân thiện với môi trường, an toàn cho sức khỏe, hiệu
+              quả làm sạch sâu lâu dài lên đến 3 ngày sau khi sử dụng giày bằng
+              dung dịch.
+            </p>
+            <p class="mt-[20px]">
+              <span class="font-semibold">Sản phẩm khử mùi:</span>
+              kết cấu là dung dịch gốc nước thẩm thấu vào trong từng sợi vải tạo
+              thành một hàng rào chống lại bụi bẩn và khử mùi hiệu quả.
+            </p>
+            <p class="mt-[20px]">
+              <span class="font-semibold">Sản phẩm bảo vệ giày:</span>
+              dung dịch gốc nước thẩm thấu vào sâu bên trong sợi vải tạo nên
+              hàng rào vô hình ngăn chặn bụi bẩn.
+            </p>
+            <p class="font-semibold mt-[20px]">Bàn chải chuyên dụng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center mt-[90px]">
+      <div class="w-[574px] h-[1px] bg-black flex"></div>
+    </div>
+    <div>
+      <h1 class="text-[32px] ml-[138px] mt-[109px] font-openSans font-semibold">
+        Bạn cũng có thể thích..
+      </h1>
+    </div>
+    <div class="flex justify-evenly mt-[148px]">
+      <div>
+        <img src="assets/detail/6.svg" alt="" />
+        <p class="text-[16px]">Dung dịch vệ sinh Cure Crep</p>
+        <p class="font-semibold text-[24px] mt-[13px]">400.000đ</p>
+      </div>
+      <div>
+        <img class="h-[240px] w-[240px]" src="assets/detail/7.svg" alt="" />
+        <p class="text-[16px]">Bộ vệ sinh Deluxe Premium</p>
+        <p class="font-semibold text-[24px] mt-[13px]">799.000đ</p>
+      </div>
+      <div>
+        <img class="h-[240px] w-[240px]" src="assets/detail/8.svg" alt="" />
+        <p class="text-[16px]">Khăn vệ sinh giày</p>
+        <p class="font-semibold text-[24px] mt-[13px]">129.000đ</p>
+      </div>
+      <div>
+        <img class="h-[240px] w-[240px]" src="assets/detail/9.svg" alt="" />
+        <p class="text-[16px]">Bộ vệ sinh BASIC KIT</p>
+        <p class="font-semibold text-[24px] mt-[13px]">399.000đ</p>
+      </div>
+    </div>
+    <div class="flex justify-center mt-[84px]">
+      <button
+        class="w-[252px] h-[64px] bg-[#F2ECBE] rounded-[8px] flex items-center justify-center"
+      >
+        XEM THÊM
+      </button>
+    </div>
+  </div>
+</div>
+<!--Tablet-->
+<div class="w-full font-openSans hidden sm:block xl:hidden">
+  <header class="w-screen relative font-openSans">
+    <div
+      class="h-[112px] px-5 flex justify-between items-center sm:h-[120px] sm:px-[60px] xl:px-[120px] xl:h-[120px]"
+    >
+      <img
+        [routerLink]="['/product-page']"
+        src="assets/detail/back.svg"
+        alt=""
+        class="block sm:h-[30px] xl:hidden"
+      />
+      <img
+        [routerLink]="['/home-page']"
+        src="assets/header/logo.svg"
+        alt=""
+        class="block cursor-pointer sm:h-[52px] sm:w-[170px] xl:h-[43px] xl:w-[152px]"
+      />
+      <div
+        class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[594px] font-semibold justify-between xl:flex"
+      >
+        <a [routerLink]="['/home-page']">Trang chủ</a>
+        <a [routerLink]="['/introduce-page']">Giới thiệu</a>
+        <a [routerLink]="['/service-page']">Dịch vụ</a>
+        <a [routerLink]="['/product-page']">Sản phẩm</a>
+        <a href="">Bài viết</a>
+      </div>
+      <div [routerLink]="['/cart-page']" class="block cursor-pointer relative">
+        <img
+          src="assets/header/shopping-cart.svg"
+          alt=""
+          class="block sm:h-[28px]"
+        />
+        <div
+          class="absolute -top-[5px] -right-1 font-bold text-white bg-[#F1CF87] text-[8px] h-4 w-4 text-center rounded-2xl border-2 border-white sm:-right-2 sm:h-5 sm:w-5 sm:text-[10px] sm:pt-[2px]"
+        >
+          5
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="flex justify-start">
+    <!--image-->
+    <div>
+      <img class="h-[360px] w-[360px] ml-[50px]" src="assets/detail/2.svg" />
+      <div>
+        <div class="flex ml-[80px]">
+          <img class="h-[100px] w-[100px]" src="assets/detail/2.svg" alt="" />
+          <img class="h-[100px] w-[100px]" src="assets/detail/3.svg" alt="" />
+          <img class="h-[100px] w-[100px]" src="assets/detail/4.svg" alt="" />
+        </div>
+        <img
+          class="h-[100px] w-[100px] ml-[60px]"
+          src="assets/detail/5.svg"
+          alt=""
+        />
+      </div>
+    </div>
+    <!--text-->
+    <div class="font-openSans mt-[50px] ml-[80px]">
+      <div>
+        <h6 class="text-[28px] font-semibold w-[420px]">
+          Bộ Vệ Sinh Giày Chuyên Sâu PREMIUM KIT
+        </h6>
+        <p class="text-[28px] mt-[25px]">499.000đ</p>
+        <div class="flex gap-[3%] mt-[25px]">
+          <p class="text-[14px] mt-[25px]">Số lượng</p>
+          <textarea
+            class="bg-[#F5F6F8] w-[50px] h-[40px] rounded-[10px] mt-[15px]"
+          ></textarea>
+          <img class="mt-[15px] w-[20px] h-[40px]" src="assets/detail/ar.svg" />
+        </div>
+        <div class="mt-[55px]">
+          <div class="flex justify-center">
+            <button
+              [routerLink]="['/cart-page']"
+              class="w-[420px] h-[64px] bg-[#F2ECBE] rounded-[5%] text-[18px] flex justify-center items-center font-semibold"
+            >
+              MUA NGAY
+            </button>
+          </div>
+          <p
+            [routerLink]="['/cart-page']"
+            class="flex justify-center text-[18px] mt-[20px]"
+          >
+            Thêm vào giỏ hàng
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center mt-[70px]">
+    <div class="w-[600px] h-[1px] bg-black"></div>
+  </div>
+  <div class="mt-[77px] flex justify-center">
+    <div class="w-[860px] text-[18px]">
+      <p>
+        <span class="font-semibold"
+          >BỘ VỆ SINH GIÀY CHUYÊN SÂU PREMIUM KIT<br
+        /></span>
+        Làm sạch, chăm sóc và bảo vệ đôi giày của bạn với 04 sản phầm thiết yếu
+        được thiết kế nhỏ gọn dễ dàng mang đi du lịch.
+      </p>
+      <p class="mt-[18px]">
+        <span class="font-semibold"
+          >BỘ VỆ SINH GIÀY SNEAKER LAB CHUYÊN SÂU GỒM:<br
+        /></span>
+      </p>
+      <p class="mt-[18px]">
+        <span class="font-semibold">Dung dịch làm sạch giày:</span>
+        thành phần thân thiện với môi trường, an toàn cho sức khỏe, hiệu quả làm
+        sạch sâu lâu dài lên đến 3 ngày sau khi sử dụng giày bằng dung dịch.
+      </p>
+      <p class="mt-[18px]">
+        <span class="font-semibold">Sản phẩm khử mùi:</span>
+        kết cấu là dung dịch gốc nước thẩm thấu vào trong từng sợi vải tạo thành
+        một hàng rào chống lại bụi bẩn và khử mùi hiệu quả.
+      </p>
+      <p class="mt-[18px]">
+        <span class="font-semibold">Sản phẩm bảo vệ giày:</span>
+        dung dịch gốc nước thẩm thấu vào sâu bên trong sợi vải tạo nên hàng rào
+        vô hình ngăn chặn bụi bẩn.
+      </p>
+      <p class="font-semibold mt-[20px]">Bàn chải chuyên dụng</p>
+    </div>
+  </div>
+  <div class="flex justify-center mt-[70px]">
+    <div class="w-[600px] h-[1px] bg-black"></div>
+  </div>
+  <div class="flex justify-start">
+    <div>
+      <h1 class="text-[24px] ml-[60px] mt-[50px] font-openSans font-semibold">
+        Xem thêm
+      </h1>
+    </div>
+  </div>
+  <div class="flex justify-evenly mt-[35px]">
+    <div>
+      <img class="h-[180px] w-[180px]" src="assets/detail/6.svg" alt="" />
+      <p class="text-[14px]">Dung dịch vệ sinh Cure Crep</p>
+      <p class="font-semibold text-[24px] mt-[13px]">400.000đ</p>
+    </div>
+    <div>
+      <img class="h-[180px] w-[180px]" src="assets/detail/7.svg" alt="" />
+      <p class="text-[14px]">Bộ vệ sinh Deluxe Premium</p>
+      <p class="font-semibold text-[24px] mt-[13px]">799.000đ</p>
+    </div>
+    <div>
+      <img class="h-[180px] w-[180px]" src="assets/detail/8.svg" alt="" />
+      <p class="text-[14px]">Khăn vệ sinh giày</p>
+      <p class="font-semibold text-[24px] mt-[13px]">129.000đ</p>
+    </div>
+    <div>
+      <img class="h-[180px] w-[180px]" src="assets/detail/9.svg" alt="" />
+      <p class="text-[14px]">Bộ vệ sinh BASIC KIT</p>
+      <p class="font-semibold text-[24px] mt-[13px]">399.000đ</p>
+    </div>
+  </div>
+</div>
+<Loomenes-footer></Loomenes-footer>
