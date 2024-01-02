@@ -3,8 +3,16 @@
 
 
 <!-- mobile -->
-<Loomenes-lich-new (newLichNewEvent)="stateShowLichPage3($event)" class="sm:hidden" *ngIf="isShowLichNew"></Loomenes-lich-new>
-<Loomenes-lich-page3 (newLichPage3Event)="statePageConfirmDone($event)" class="sm:hidden" *ngIf="isShowLichPage3"></Loomenes-lich-page3>
+<Loomenes-lich-new
+  (newLichNewEvent)="stateShowLichPage3($event)"
+  class="sm:hidden"
+  *ngIf="isShowLichNew"
+></Loomenes-lich-new>
+<Loomenes-lich-page3
+  (newLichPage3Event)="statePageConfirmDone($event)"
+  class="sm:hidden"
+  *ngIf="isShowLichPage3"
+></Loomenes-lich-page3>
 <div class="sm:hidden z-0" *ngIf="!hideHome">
   <div class="w-full flex relative justify-center items-center">
     <img [src]="imgBanersPhone" class="w-full" />
@@ -1048,7 +1056,7 @@
       class="hide absolute w-[700px] h-[600px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
       id="pageconfirmpc"
     >
-      <img 
+      <img
         src="assets/datlich/clsBtn_pc.svg"
         alt=""
         class="absolute right-0 m-[30px] cursor-pointer"
@@ -1128,7 +1136,8 @@
       class="absolute w-[900px] h-[840px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
       [ngClass]="stateDatlich_pc == 1 ? 'block' : 'hidden'"
     >
-      <img (click)="clickclosebtn_pc()" 
+      <img
+        (click)="clickclosebtn_pc()"
         src="assets/datlich/clsBtn_pc.svg"
         alt=""
         class="absolute right-0 m-[30px] cursor-pointer"
@@ -1153,13 +1162,21 @@
           class="items-center w-[400px] h-[280px] flex justify-between mt-[40px]"
         >
           <div class="w-[17px] h-[17px]">
-            <img src="assets/datlich/pre_btn_pc.svg" alt="" class="" />
+            <img
+              src="assets/datlich/pre_btn_pc.svg"
+              alt=""
+              class="cursor-pointer"
+            />
           </div>
           <div class="w-[350px] h-[280px]">
             <img src="assets/datlich/lich_btn_pc.svg" alt="" class="" />
           </div>
           <div class="w-[17px] h-[17px]">
-            <img src="assets/datlich/next_btn_pc.svg" alt="" class="" />
+            <img
+              src="assets/datlich/next_btn_pc.svg"
+              alt=""
+              class="cursor-pointer"
+            />
           </div>
         </div>
         <!-- linecenter -->
@@ -1239,7 +1256,8 @@
       class="absolute w-[900px] h-[840px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
       [ngClass]="stateDatlich_pc == 2 ? 'block' : 'hidden'"
     >
-      <img (click)="clickclosebtn_pc() "
+      <img
+        (click)="clickclosebtn_pc()"
         src="assets/datlich/clsBtn_pc.svg"
         alt=""
         class="absolute right-0 m-[30px] cursor-pointer"
@@ -1264,13 +1282,21 @@
           class="items-center w-[400px] h-[280px] flex justify-between mt-[40px]"
         >
           <div class="w-[17px] h-[17px]">
-            <img src="assets/datlich/pre_btn_pc.svg" alt="" class="" />
+            <img
+              src="assets/datlich/pre_btn_pc.svg"
+              alt=""
+              class="cursor-pointer"
+            />
           </div>
           <div class="w-[350px] h-[280px]">
             <img src="assets/datlich/lich_btn_pc.svg" alt="" class="" />
           </div>
           <div class="w-[17px] h-[17px]">
-            <img src="assets/datlich/next_btn_pc.svg" alt="" class="" />
+            <img
+              src="assets/datlich/next_btn_pc.svg"
+              alt=""
+              class="cursor-pointer"
+            />
           </div>
         </div>
         <!-- linecenter -->
@@ -1298,7 +1324,7 @@
             <span class="block"
               ><span class="text-[#152C5B] font-semibold">Ghi chú</span></span
             ><textarea
-              class="mt-[15px] rounded-[12px] w-full h-[100px] bg-[#F5F6F8]"
+              class="mt-[15px] rounded-[12px] w-full h-[100px] bg-[#F5F6F8] p-[20px]"
             ></textarea>
           </label>
         </div>
@@ -1311,7 +1337,8 @@
         >
           <span class="text-white">Tiếp tục</span>
         </button>
-        <button (click)="clickclosebtn_pc()"
+        <button
+          (click)="clickclosebtn_pc()"
           class="mt-[20px] rounded-[20px] block bg-[#F5F6F8] w-[220px] h-[50px]"
         >
           <span class="text-[#B3B3B3]">Hủy</span>
@@ -1323,7 +1350,8 @@
       class="absolute w-[900px] h-[840px] left-1/2 -translate-x-1/2 bg-white rounded-[20px] top-1/2 -translate-y-1/2"
       [ngClass]="stateDatlich_pc == 3 ? 'block' : 'hidden'"
     >
-      <img (click)="clickclosebtn_pc()"
+      <img
+        (click)="clickclosebtn_pc()"
         src="assets/datlich/clsBtn_pc.svg"
         alt=""
         class="absolute right-0 m-[30px] cursor-pointer"
@@ -1396,7 +1424,7 @@
               >Chọn dịch vụ
             </span>
             <textarea
-              class="w-full mt-[15px] h-[150px] rounded-[12px] bg-[#F5F6F8]"
+              class="w-full mt-[15px] h-[150px] rounded-[12px] bg-[#F5F6F8] p-[20px]"
             ></textarea>
           </label>
           <!-- Ghi chu -->
@@ -1404,7 +1432,7 @@
             <span class="block"
               ><span class="text-[#152C5B] font-semibold">Ghi chú</span></span
             ><textarea
-              class="mt-[15px] rounded-[12px] w-full h-[100px] bg-[#F5F6F8]"
+              class="mt-[15px] rounded-[12px] w-full h-[100px] bg-[#F5F6F8] p-[20px]"
             ></textarea>
           </label>
         </div>
@@ -1417,7 +1445,8 @@
         >
           <span class="text-white">Tiếp tục</span>
         </button>
-        <button (click)="clickclosebtn_pc()"
+        <button
+          (click)="clickclosebtn_pc()"
           class="mt-[20px] rounded-[20px] block bg-[#F5F6F8] w-[220px] h-[50px]"
         >
           <span class="text-[#B3B3B3]">Hủy</span>
