@@ -19,4 +19,5 @@ export class LichNewComponent {
     page1?.classList.add('hide');
     page2?.classList.add('show');
   }
+
 }
