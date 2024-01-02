@@ -57,13 +57,13 @@
         </div>
       </div>
     </div>
-    <img
-      src="assets/blog/nextpage_btn.svg"
-      alt=""
-      class="mt-[15px] absolute left-1/2 -translate-x-1/2"
-    />
+    <div class="flex justify-center mt-[15px]">
+      <img src="assets/PC/Ellipse 19.svg" alt="" class="" />
+      <img src="assets/PC/Ellipse 21.svg" alt="" class="ml-[20px]" />
+      <img src="assets/PC/Ellipse 21.svg" alt="" class="ml-[20px]" />
+    </div>
     <!-- moinhat -->
-    <h2 class="font-bold mt-[40px]">Mới nhất</h2>
+    <h2 class="font-bold mt-[20px]">Mới nhất</h2>
     <div
       [routerLink]="['/blog-particular']"
       class="relative mt-[12px] w-full h-[196px] bg-cover bg-[url('assets/blog/bg_img.svg')]"
@@ -82,11 +82,11 @@
         </div>
       </div>
     </div>
-    <img
-      src="assets/blog/nextpage_btn.svg"
-      alt=""
-      class="mt-[15px] absolute left-1/2 -translate-x-1/2"
-    />
+    <div class="flex justify-center mt-[15px]">
+      <img src="assets/PC/Ellipse 19.svg" alt="" class="" />
+      <img src="assets/PC/Ellipse 21.svg" alt="" class="ml-[20px]" />
+      <img src="assets/PC/Ellipse 21.svg" alt="" class="ml-[20px]" />
+    </div>
     <!-- nextpage -->
 
     <!-- baivietganday -->
@@ -209,7 +209,10 @@
     <div class="hide px-[121px] hidden xl:block">
       <h1 class="font-bold text-[24px] mt-[100px]">Phổ biến</h1>
       <div class="flex justify-between mt-[24px]">
-        <div [routerLink]="['/blog-page']" class="w-[282px] h-[300px]">
+        <div
+          [routerLink]="['/blog-page']"
+          class="w-[282px] h-[300px] cursor-pointer"
+        >
           <img src="assets/blognew/image 77.svg" alt="" class="" />
           <div class="flex mt-[12px] justify-between">
             <div class="flex">
@@ -230,7 +233,10 @@
           </p>
         </div>
 
-        <div [routerLink]="['/blog-page']" class="w-[282px] h-[300px]">
+        <div
+          [routerLink]="['/blog-page']"
+          class="w-[282px] h-[300px] cursor-pointer"
+        >
           <img src="assets/blognew/image 28.svg" alt="" class="" />
           <div class="flex mt-[12px] justify-between">
             <div class="flex">
@@ -251,7 +257,10 @@
           </p>
         </div>
 
-        <div [routerLink]="['/blog-page']" class="w-[282px] h-[300px]">
+        <div
+          [routerLink]="['/blog-page']"
+          class="w-[282px] h-[300px] cursor-pointer"
+        >
           <img src="assets/blognew/Rectangle 149.svg" alt="" class="" />
           <div class="flex mt-[12px] justify-between">
             <div class="flex">
@@ -273,7 +282,10 @@
           </p>
         </div>
 
-        <div [routerLink]="['/blog-page']" class="w-[282px] h-[300px]">
+        <div
+          [routerLink]="['/blog-page']"
+          class="w-[282px] h-[300px] cursor-pointer"
+        >
           <img src="assets/blognew/Rectangle 69.svg" alt="" class="" />
           <div class="flex mt-[12px] justify-between">
             <div class="flex">
@@ -296,10 +308,18 @@
         <div class="w-[793px] text-[24px]">
           <div class="flex justify-between">
             <p class="ml-[20px] font-semibold">Mới nhất</p>
-            <p class="mr-[20px] font-semibold text-[#9C9C9C]">Gần đây</p>
+            <p
+              [routerLink]="['/blog-all']"
+              class="mr-[20px] font-semibold text-[#9C9C9C] cursor-pointer"
+            >
+              Gần đây
+            </p>
           </div>
           <div class="w-full h-[2px] bg-[#bababa]"></div>
-          <div [routerLink]="['/blog-page']" class="flex mt-[30px] h-[210px]">
+          <div
+            [routerLink]="['/blog-page']"
+            class="flex mt-[30px] h-[210px] cursor-pointer"
+          >
             <img src="assets/blognew/nano.svg" alt="" class="rounded-[20px]" />
             <div class="ml-[24px] mt-[10px]">
               <p class="text-[20px] font-semibold">
@@ -322,7 +342,10 @@
               </div>
             </div>
           </div>
-          <div [routerLink]="['/blog-page']" class="flex mt-[24px] h-[210px]">
+          <div
+            [routerLink]="['/blog-page']"
+            class="flex mt-[24px] h-[210px] cursor-pointer"
+          >
             <img
               src="assets/blognew/Chăm sóc giày da.svg"
               alt=""
@@ -349,7 +372,10 @@
               </div>
             </div>
           </div>
-          <div [routerLink]="['/blog-page']" class="flex mt-[24px] h-[210px]">
+          <div
+            [routerLink]="['/blog-page']"
+            class="flex mt-[24px] h-[210px] cursor-pointer"
+          >
             <img
               src="assets/blognew/image 78.svg"
               alt=""
@@ -376,7 +402,10 @@
               </div>
             </div>
           </div>
-          <div [routerLink]="['/blog-page']" class="flex mt-[24px] h-[210px]">
+          <div
+            [routerLink]="['/blog-page']"
+            class="flex mt-[24px] h-[210px] cursor-pointer"
+          >
             <img
               src="assets/blognew/image 79.svg"
               alt=""
@@ -403,16 +432,29 @@
               </div>
             </div>
           </div>
-          <img
-            src="assets/PC/nextpage_pc.svg"
-            alt=""
-            class="mt-[100px] ml-[200px]"
-          />
+          <!-- button_next_page_pc -->
+          <div class="flex justify-center mt-[100px] cursor-pointer">
+            <button class="w-[67px] h-[67px] bg-[#F1CF87] rounded-[12px]">
+              <span class="text-[18px]">1</span>
+            </button>
+            <button
+              class="ml-[40px] w-[67px] h-[67px] bg-[#F2ECBE] rounded-[12px] hover:bg-[#F1CF87]"
+            >
+              <span class="text-[18px]">2</span>
+            </button>
+            <button
+              class="ml-[40px] w-[67px] h-[67px] bg-[#F2ECBE] rounded-[12px] hover:bg-[#F1CF87]"
+            >
+              <span class="text-[18px]">3</span>
+            </button>
+            <button
+              class="ml-[40px] w-[109px] h-[67px] bg-[#F2ECBE] rounded-[12px] hover:bg-[#F1CF87]"
+            >
+              <span class="text-[18px]">Tiếp</span>
+            </button>
+          </div>
         </div>
-        <div
-          [routerLink]="['/blog-page']"
-          class="w-[350px] h-[500px] border rounded-[24px]"
-        >
+        <div class="w-[350px] h-[500px] border rounded-[24px]">
           <div class="p-[25px]">
             <label class="block relative">
               <img
@@ -423,16 +465,28 @@
               <input
                 type="text"
                 placeholder="Tìm kiếm"
-                class="w-full h-[50px] border - rounded-[12px] placeholder:pl-[20px]"
+                class="w-full h-[50px] border - rounded-[12px] pl-[20px]"
               />
             </label>
             <h1 class="text-[32px] font-bold text-center mt-[40px]">
               Follow Us
             </h1>
             <div class="flex justify-between mt-[50px]">
-              <img src="assets/PC/iconfb_pc.svg" alt="" class="" />
-              <img src="assets/PC/iconig_pc.svg" alt="" class="" />
-              <img src="assets/PC/iconytb_pc.svg" alt="" class="" />
+              <img
+                src="assets/PC/iconfb_pc.svg"
+                alt=""
+                class="cursor-pointer"
+              />
+              <img
+                src="assets/PC/iconig_pc.svg"
+                alt=""
+                class="cursor-pointer"
+              />
+              <img
+                src="assets/PC/iconytb_pc.svg"
+                alt=""
+                class="cursor-pointer"
+              />
             </div>
           </div>
         </div>
@@ -686,11 +740,32 @@
           </div>
         </div>
         <!-- nextpage -->
-        <img
-          src="assets/blognew/Group 348 1.png"
-          alt=""
-          class="mt-[60px] ml-[116px]"
-        />
+        <div class="flex justify-center mt-[91px]">
+          <button
+            [routerLink]="['/blog-all']"
+            class="w-[60px] h-[60px] bg-[#F2ECBE] rounded-[10px] hover:bg-[#F1CF87]"
+          >
+            1
+          </button>
+          <button
+            [routerLink]="['/blog-all']"
+            class="w-[60px] h-[60px] bg-[#F2ECBE] rounded-[10px] hover:bg-[#F1CF87] ml-[38px]"
+          >
+            2
+          </button>
+          <button
+            [routerLink]="['/blog-all']"
+            class="w-[60px] h-[60px] bg-[#F2ECBE] rounded-[10px] hover:bg-[#F1CF87] ml-[38px]"
+          >
+            3
+          </button>
+          <button
+            [routerLink]="['/blog-all']"
+            class="w-[98px] h-[60px] bg-[#F2ECBE] rounded-[10px] hover:bg-[#F1CF87] ml-[38px]"
+          >
+            Tiếp
+          </button>
+        </div>
       </div>
       <div class="w-[260px] h-[400px] border rounded-[12px]">
         <div class="px-[18px]">
